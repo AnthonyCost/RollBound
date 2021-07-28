@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
 from app.models import User, db
+from app.s3_helpers import (
+    upload_file_to_s3, allowed_file, get_unique_filename)
 
 user_routes = Blueprint('users', __name__)
 
@@ -12,10 +14,10 @@ def users():
     return {'users': [user.to_dict() for user in users]}
 
 def upload_image():
-    if "image" not in request.files:
+    if "img_url" not in request.files:
         return {"errors": "image required"}, 400
 
-    image = request.files["image"]
+    image = request.files["img_url"]
 
     if not allowed_file(image.filename):
         return {"errors": "file type not permitted"}, 400
@@ -32,10 +34,10 @@ def upload_image():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_image = Image(user=current_user, url=url)
+    new_image = User(user=current_user, img_url=url)
     db.session.add(new_image)
     db.session.commit()
-    return {"url": url}
+    return {"img_url": url}
 
 @user_routes.route('/<int:id>')
 @login_required

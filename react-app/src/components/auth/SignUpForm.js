@@ -18,7 +18,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password, img_url));
       if (data) {
         setErrors(data)
       }
@@ -26,8 +26,8 @@ const SignUpForm = () => {
 
     // image uploading to AWS here
 
-    const formData = new FormData();
-    formData.append("image", img_url);
+    const formData = new User();
+    formData.append("img_url", img_url);
     
     // aws uploads can be a bit slow—displaying
     // some sort of loading message is a good idea
@@ -108,7 +108,6 @@ const updateImage = (e) => {
               accept="image/*"
               onChange={updateImage}
             />
-            <button type="submit">Submit</button>
             {(imageLoading)&& <p>Loading...</p>}
       </div>
       <div>
