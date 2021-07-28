@@ -7,6 +7,7 @@ class Race(db.Model):
 
     def to_dict(self):
         return {
+        'id': self.id,
         'raceName': self.raceName,
         'raceDescription': self.raceDescription
         }

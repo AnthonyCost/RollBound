@@ -7,6 +7,7 @@ class Background(db.Model):
 
     def to_dict(self):
         return {
+        'id': self.id,
         'backgroundName': self.backgroundName,
         'backgroundDescription': self.backgroundDescription
         }

@@ -7,6 +7,7 @@ class Alignment(db.Model):
 
     def to_dict(self):
         return {
+        'id': self.id,
         'alignmentName': self.alignmentName,
         'alignmentDescription': self.alignmentDescription
         }

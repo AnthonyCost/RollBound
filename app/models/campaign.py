@@ -10,6 +10,7 @@ class Campaign(db.Model):
 
     def to_dict(self):
         return {
+        'id': self.id,
         'hostId': self.hostId,
         'title': self.title,
         'coverImage': self.coverImage,

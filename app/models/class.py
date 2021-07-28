@@ -7,6 +7,7 @@ class Class(db.Model):
 
     def to_dict(self):
         return {
+        'id': self.id,
         'className': self.className,
         'classDescription': self.classDescription
         }
