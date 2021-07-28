@@ -70,31 +70,49 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (username, email, password) => async (dispatch) => {
+export const signUp = (username, email, password, img_url) => async (dispatch) => {
+  const formdata = new FormData();
+  formdata.append('username', username);
+  formdata.append('email', email);
+  formdata.append('password', password);
+  if (img_url) {
+    formdata.append('image', img_url);
+  }
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'enctype': 'multipart/form-data',
     },
-    body: JSON.stringify({
-      username,
-      email,
-      password,
-    }),
+    body: formdata
+
   });
-  
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    }
-  } else {
-    return ['An error occurred. Please try again.']
+
+  const data = await response.json();
+
+  console.log("We are making it to the thunk!" + data);
+
+  if (data.errors) {
+    return data
   }
+
+  dispatch(setUser(data));
+
+  console.log("If this dispatches correctly, data = validated" + data);
+
+  return data
+  
+  // if (response.ok) {
+  //   const data = await response.json();
+  //   dispatch(setUser(data))
+  //   return null;
+  // } else if (response.status < 500) {
+  //   const data = await response.json();
+  //   if (data.errors) {
+  //     return data.errors;
+  //   }
+  // } else {
+  //   return ['An error occurred. Please try again.']
+  // }
 }
 
 export default function reducer(state = initialState, action) {

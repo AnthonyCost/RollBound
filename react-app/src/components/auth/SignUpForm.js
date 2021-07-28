@@ -24,30 +24,30 @@ const SignUpForm = () => {
       }
     }
 
-    // image uploading to AWS here
+    // // image uploading to AWS here
 
-    const formData = new User();
-    formData.append("img_url", img_url);
+    // const formData = new User();
+    // formData.append("img_url", img_url);
     
-    // aws uploads can be a bit slow—displaying
-    // some sort of loading message is a good idea
-    setImageLoading(true);
+    // // aws uploads can be a bit slow—displaying
+    // // some sort of loading message is a good idea
+    // setImageLoading(true);
 
-    const res = await fetch('/api/images', {
-        method: "POST",
-        body: formData,
-    });
-    if (res.ok) {
-        await res.json();
-        setImageLoading(false);
-        history.push("/images");
-    }
-    else {
-        setImageLoading(false);
-        // a real app would probably use more advanced
-        // error handling
-        console.log("error");
-    }
+    // const res = await fetch('/api/images', {
+    //     method: "POST",
+    //     body: formData,
+    // });
+    // if (res.ok) {
+    //     await res.json();
+    //     setImageLoading(false);
+    //     history.push("/images");
+    // }
+    // else {
+    //     setImageLoading(false);
+    //     // a real app would probably use more advanced
+    //     // error handling
+    //     console.log("error");
+  // }
   };
 
   const updateUsername = (e) => {
