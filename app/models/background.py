@@ -2,8 +2,8 @@ from .db import db
 
 class Background(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    backgroundName = db.Column(db.String(30))
-    backgroundDescription = db.Column(db.String(255))
+    backgroundName = db.Column(db.String(30), nullable=False)
+    backgroundDescription = db.Column(db.String(255), nullable=False)
 
     def to_dict(self):
         return {
