@@ -4,9 +4,9 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     user1 = User(
-        username='Demo', email='demo@aa.io', password='password', img_url="https://img.icons8.com/color/452/dungeons-and-dragons.png")
+        username='Demo', email='demo@aa.io', password='password', img_url='https://img.icons8.com/color/452/dungeons-and-dragons.png')
     user2 = User(
-        username="AnthonyCost", email="anthonycost99@gmail.com", password="OGpassword", img_url="https://user-images.githubusercontent.com/35717793/127236513-33020f40-6c71-479d-b96e-dd6bb46e97ee.jpg")
+        username='AnthonyCost', email="anthonycost99@gmail.com", password="OGpassword", img_url="https://user-images.githubusercontent.com/35717793/127236513-33020f40-6c71-479d-b96e-dd6bb46e97ee.jpg")
     user3 = User(
         username="GaryGygax", email="user1@mail.com", password="password1!", img_url="https://media.wired.com/photos/593381db58b0d64bb35d5c71/master/pass/ff_gygax_f.jpg")
     user4 = User(
@@ -32,9 +32,9 @@ def seed_users():
     user14 = User(
         username="TravisWillingham", email="user12@mail.com", password="password1!", img_url="https://resizing.flixster.com/qjjIjLBonqf8DO5-XO9LdYQyffM=/506x652/v2/https://flxt.tmsimg.com/v9/AllPhotos/490770/490770_v9_bb.jpg")
     user15 = User(
-        username="SamRiegel", email="user13@mail.com", password="password1!", img_url="https://static.wikia.nocookie.net/disney/images/9/9c/Sam_Riegel.jpg/revision/latest?cb=20180831203535")
+        username='SamRiegel', email='user13@mail.com', password='password1!', img_url='https://static.wikia.nocookie.net/disney/images/9/9c/Sam_Riegel.jpg/revision/latest?cb=20180831203535')
     user16 = User(
-        username="LiamO'Brien", email="user14@mail.com", password="password1!", img_url="https://static.wikia.nocookie.net/disney/images/9/95/Liam_O%27Brien.jpg/revision/latest?cb=20180812015101")
+        username='LiamOBrien', email='user14@mail.com', password='password1!', img_url='https://static.wikia.nocookie.net/disney/images/9/95/Liam_O%27Brien.jpg/revision/latest?cb=20180812015101')
 
     db.session.add_all([
         user1,
