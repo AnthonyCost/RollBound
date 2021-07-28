@@ -13,7 +13,7 @@ class Character(db.Model):
     portraitImage = db.Column(db.String(255), nullable=False)
     backstory = db.Column(db.Text, nullable=False)
 
-    classModel = relationship("Class", lazy="joined", innerjoin=True)
+    classModel = relationship("CharClass", lazy="joined", innerjoin=True)
     race = relationship("Race", lazy="joined", innerjoin=True)
     alignment = relationship("alignment", lazy="joined", innerjoin=True)
     background = relationship("background", lazy="joined", innerjoin=True)

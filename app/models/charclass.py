@@ -1,6 +1,8 @@
 from .db import db
 
-class Class(db.Model):
+class CharClass(db.Model):
+    __tablename__ = 'charclasses'
+
     id = db.Column(db.Integer, primary_key=True)
     className = db.Column(db.String(30), nullable=False)
     classDescription = db.Column(db.String(255), nullable=False)
