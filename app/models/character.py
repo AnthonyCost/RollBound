@@ -6,14 +6,13 @@ class Character(db.Model):
     __tablename__ = 'characters'
 
     id = db.Column(db.Integer, primary_key=True)
-    #! bug is on the line above here, not registering as a serial key 
     userId = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50), nullable=False)
     level = db.Column(db.Integer, nullable=False)
-    classId = db.Column(db.Integer, db.ForeignKey('charclasses.id'), nullable=False, primary_key=True)
-    raceId = db.Column(db.Integer, db.ForeignKey('races.id'), nullable=False, primary_key=True)
-    alignmentId = db.Column(db.Integer, db.ForeignKey('alignments.id'), nullable=False, primary_key=True)
-    backgroundId = db.Column(db.Integer, db.ForeignKey('backgrounds.id'), nullable=False, primary_key=True)
+    classId = db.Column(db.Integer, db.ForeignKey('charclasses.id'), nullable=False)
+    raceId = db.Column(db.Integer, db.ForeignKey('races.id'), nullable=False)
+    alignmentId = db.Column(db.Integer, db.ForeignKey('alignments.id'), nullable=False)
+    backgroundId = db.Column(db.Integer, db.ForeignKey('backgrounds.id'), nullable=False)
     portraitImage = db.Column(db.String(255), nullable=False)
     backstory = db.Column(db.Text, nullable=False)
 
