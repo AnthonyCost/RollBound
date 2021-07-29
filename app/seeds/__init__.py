@@ -3,7 +3,7 @@ from .users import seed_users, undo_users
 from .charclasses import seed_charclasses, undo_charclasses
 from .races import seed_races, undo_races
 from .alignments import seed_alignments, undo_alignments
-# from .backgrounds import seed_backgrounds, undo_backgrounds
+from .backgrounds import seed_backgrounds, undo_backgrounds
 # from .characters import seed_characters, undo_characters
 # from .campaigns import seed_campaigns, undo_campaigns
 
@@ -19,7 +19,7 @@ def seed():
     seed_charclasses()
     seed_races()
     seed_alignments()
-    # seed_backgrounds()
+    seed_backgrounds()
     # seed_characters()
     # seed_campaigns()
 
@@ -31,6 +31,6 @@ def undo():
     undo_charclasses()
     undo_races()
     undo_alignments()
-    # undo_backgrounds()
+    undo_backgrounds()
     # undo_characters()
     # undo_campaigns()
