@@ -87,7 +87,7 @@ nav {
 }
 
 .navbar-leftSide a{
-    transition: 900ms;
+    transition: 1000ms;
     animation: ease-in-out;  
     display: flex;
     flex-direction: row;
@@ -105,5 +105,5 @@ nav {
 
 .navbar-leftSide a:hover, a:active {
     color: white;
-    filter: saturate(3) hue-rotate(250deg)  contrast(3);
+    filter: saturate(3) hue-rotate(-110deg)  contrast(3);
 }
