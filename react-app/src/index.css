@@ -59,7 +59,7 @@ nav {
     margin-bottom: 0;
 }
 
-.navbar li a { 
+.navbar .navbar__link a{ 
     position: relative;
     transition: 900ms;
     animation: ease-in-out;   
@@ -74,7 +74,7 @@ nav {
     font-size: 20px;
 }
 
-.navbar li a:hover,a:active { 
+.navbar .navbar__link a:hover,a:active { 
     color: #00FDEC;
 }
 
@@ -108,4 +108,18 @@ nav {
 .navbar-leftSide a:hover, a:active {
     color: white;
     filter: saturate(3) hue-rotate(-110deg)  contrast(3);
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#navbar-userProfilePic:hover .profile-dropdown {
+    display: flex;
+    flex: 1;
 }

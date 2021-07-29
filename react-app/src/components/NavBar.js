@@ -32,35 +32,35 @@ const NavBar = () => {
   
   else {
     navContent = (
-      <ul className='navbar'>
-        <li className='navbar__link'>
+      <div className='navbar'>
+        <div className='navbar__link'>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home 
           </NavLink>
-      </li>
-      <li>
+      </div>
+      <div>
         |
-        </li>
-        <li className='navbar__link'>
+        </div>
+        <div className='navbar__link'>
           <NavLink to='/users' exact={true} activeClassName='active'>
             My Campaigns 
           </NavLink>
-        </li>
-        <li>
+        </div>
+        <div>
         |
-        </li>
-        <li className='navbar__link'>
+        </div>
+        <div className='navbar__link'>
           <NavLink to='/users' exact={true} activeClassName='active'>
             My Characters 
           </NavLink>
-        </li>
-        <li className="navbar__link">
+        </div>
+        <div className="navbar__link" id="navbar-userProfilePic">
               <img alt="profile-pic" src={`${profileImage}`} style={{height:'45px', width:'45px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
-          </li>
-        <li>
+          </div>
+          <div>
           <LogoutButton />
-        </li>
-      </ul>
+          </div>
+      </div>
     )
   }
 
