@@ -3,6 +3,8 @@ from .db import db
 # this needs  a join table related to the charcter and the user
 
 class Character(db.Model):
+    __tablename__ = 'character'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     level = db.Column(db.Integer, nullable=False)

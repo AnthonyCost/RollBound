@@ -1,6 +1,8 @@
 from .db import db
 
 class Race(db.Model):
+    __tablename__ = 'races'
+
     id = db.Column(db.Integer, primary_key=True)
     raceName = db.Column(db.String(30), nullable=False)
     raceDescription = db.Column(db.String(255), nullable=False)

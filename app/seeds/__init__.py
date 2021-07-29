@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .charclasses import seed_charclasses, undo_charclasses
+from .races import seed_races, undo_races
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`

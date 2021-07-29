@@ -1,6 +1,8 @@
 from .db import db
 
 class Alignment(db.Model):
+    __tablename__ = 'alignment'
+
     id = db.Column(db.Integer, primary_key=True)
     alignmentName = db.Column(db.String(40), nullable=False)
     alignmentDescription = db.Column(db.String(255), nullable=False)
