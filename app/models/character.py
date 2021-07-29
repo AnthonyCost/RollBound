@@ -6,7 +6,7 @@ class Character(db.Model):
     __tablename__ = 'characters'
 
     id = db.Column(db.Integer, primary_key=True)
-    userId = db.Column(db.Integer, nullable=False)
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String(50), nullable=False)
     level = db.Column(db.Integer, nullable=False)
     classId = db.Column(db.Integer, db.ForeignKey('charclasses.id'), nullable=False)
@@ -16,6 +16,7 @@ class Character(db.Model):
     portraitImage = db.Column(db.String(255), nullable=False)
     backstory = db.Column(db.Text, nullable=False)
 
+    user = relationship("User", lazy="joined", innerjoin=True)
     classModel = relationship("CharClass", lazy="joined", innerjoin=True)
     race = relationship("Race", lazy="joined", innerjoin=True)
     alignment = relationship("Alignment", lazy="joined", innerjoin=True)
@@ -24,7 +25,7 @@ class Character(db.Model):
     def to_dict(self):
         return {
         'id': self.id,
-        'userId': self.userId,
+        'userId': self.user.to_dict(),
         'name': self.name,
         'level': self.level,
         'class': self.classModel.to_dict(),
