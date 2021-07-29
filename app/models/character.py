@@ -3,7 +3,7 @@ from .db import db
 # this needs  a join table related to the charcter and the user
 
 class Character(db.Model):
-    __tablename__ = 'character'
+    __tablename__ = 'characters'
 
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, nullable=False)

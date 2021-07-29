@@ -1,7 +1,7 @@
 from .db import db
 
 class Background(db.Model):
-    __tablename__ = 'background'
+    __tablename__ = 'backgrounds'
 
     id = db.Column(db.Integer, primary_key=True)
     backgroundName = db.Column(db.String(30), nullable=False)
