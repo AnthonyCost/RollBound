@@ -6,6 +6,7 @@ class Character(db.Model):
     __tablename__ = 'character'
 
     id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50), nullable=False)
     level = db.Column(db.Integer, nullable=False)
     classId = db.Column(db.Integer, db.foreign_key('class.id'), nullable=False)
@@ -23,6 +24,7 @@ class Character(db.Model):
     def to_dict(self):
         return {
         'id': self.id,
+        'userId': self.userId,
         'name': self.name,
         'level': self.level,
         'class': self.classModel.to_dict(),
