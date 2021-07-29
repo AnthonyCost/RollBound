@@ -29,7 +29,7 @@ nav {
     margin-bottom: 0;
 }
 
-.navbar__link a { 
+.navbar li a { 
     position: relative;
     transition: 900ms;
     animation: ease-in-out;   
@@ -42,6 +42,19 @@ nav {
     line-height: 80px;
 }
 
-.navbar__link a:hover,a:active { 
+.navbar li a:hover,a:active { 
     color: #00FDEC;
 }
+
+/* .navbar__link a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    transition: width 900ms;
+  }
+
+  .navbar__link a:hover::after {
+    width: 100%;
+    transition: width 900ms;
+  } */
