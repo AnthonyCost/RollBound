@@ -2,6 +2,8 @@ from .db import db
 # this needs  a join table related to the campaign and the user
 
 class Campaign(db.Model):
+    __tablename__ = 'campaigns'
+
     id = db.Column(db.Integer, primary_key=True)
     hostId = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(50), nullable=False)
