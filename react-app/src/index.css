@@ -117,3 +117,41 @@ nav {
     font-size: 250px;
     padding-top: 10px;
 }
+
+.splash-subheader {
+    font-family: "Balgruf";
+    font-size: 60px;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url("https://user-images.githubusercontent.com/35717793/127571786-c42c2f79-20f6-47fe-8994-a1b8c554b351.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.splash-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000001a;
+}
+
+.formTitle {
+    display: flex;
+    justify-content: center;
+    font-family: "Balgruf";
+    text-decoration: underline;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #0000001a;
+} 

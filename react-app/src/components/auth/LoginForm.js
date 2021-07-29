@@ -36,50 +36,52 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/'/>;
   }
 
   return (
-    <div>
-      <div>
+    <div className="splash-container">
+      <div className="splash-banner">
       <h1 className="splash-header">RollBound</h1>
+      <h3 className="splash-subheader">Weave your legend</h3>
       </div>
-    <div>
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+      <div className="form">
+      <form onSubmit={onLogin}>
+        <h2 className="formTitle">Log In</h2>
+        <div>
+          <label htmlFor='email'>Email</label>
+          <input
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <div>
+          <label htmlFor='password'>Password</label>
+          <input
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+            />
+        </div>
+            <div>
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
+            </div>
+        <div>
+          <button type='submit'>Login</button>
+        </div>
+      </form>
+        <div>
+          <DemoUserButton />
+          <button onClick={redirectToSignUp}>Sign Up</button>
+        </div>
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-      </div>
-      <div>
-        <button type='submit'>Login</button>
-      </div>
-    </form>
-      <div>
-        <DemoUserButton />
-        <button onClick={redirectToSignUp}>Sign Up</button>
-      </div>
-    </div>
     </div>
   );
 };

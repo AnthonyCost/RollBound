@@ -52,12 +52,9 @@ const updateImage = (e) => {
   }
 
   return (
+    <div className="form">
     <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
+      <h2 className="formTitle">Sign Up</h2>
       <div>
         <label>User Name</label>
         <input
@@ -65,7 +62,7 @@ const updateImage = (e) => {
           name='username'
           onChange={updateUsername}
           value={username}
-        ></input>
+          ></input>
       </div>
       <div>
         <label>Email</label>
@@ -74,7 +71,7 @@ const updateImage = (e) => {
           name='email'
           onChange={updateEmail}
           value={email}
-        ></input>
+          ></input>
       </div>
       <div>
         <label>Profile Image</label>
@@ -82,7 +79,7 @@ const updateImage = (e) => {
               type="file"
               accept="image/*"
               onChange={updateImage}
-            />
+              />
             {(imageLoading)&& <p>Loading...</p>}
       </div>
       <div>
@@ -92,7 +89,7 @@ const updateImage = (e) => {
           name='password'
           onChange={updatePassword}
           value={password}
-        ></input>
+          ></input>
       </div>
       <div>
         <label>Repeat Password</label>
@@ -102,10 +99,16 @@ const updateImage = (e) => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
-        ></input>
+          ></input>
       </div>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
       <button type='submit'>Sign Up</button>
     </form>
+    </div>
   );
 };
 
