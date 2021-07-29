@@ -6,18 +6,13 @@ import LogoutButton from './auth/LogoutButton';
 
 const NavBar = () => {
 
-  const user = useSelector(state => state.auth.user);
+  const user = useSelector(state => state.session.user);
   const profileImage = user?.img_url;
   let navContent = null;
 
   if(!user) {
     navContent = (
       <ul className='navbar'>
-        <li className='navbar__link'>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
         <li className='navbar__link'>
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login
@@ -33,7 +28,7 @@ const NavBar = () => {
   }
   
   else {
-    navcontent = (
+    navContent = (
       <ul className='navbar'>
         <li className='navbar__link'>
           <NavLink to='/' exact={true} activeClassName='active'>
@@ -64,13 +59,15 @@ const NavBar = () => {
 
   return (
     <nav>
-      { user? <div>
+      { user? <div className="navbar-leftSide">
         <NavLink to='/' exact={true} activeClassName='active'>
-        <img  />
+        <img  className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" />
+        <h2 className="nav-brand">RollBound</h2>
         </NavLink>
-      </div>  : <div>
-        <NavLink>
-          <img/>
+      </div>  : <div className="navbar-leftSide">
+        <NavLink to='/login' exact={true} activeClassName='active'>
+          <img className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" />
+          <h2 className="nav-brand">RollBound</h2>
         </NavLink>
       </div>
 

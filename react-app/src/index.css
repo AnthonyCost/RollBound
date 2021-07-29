@@ -1,5 +1,10 @@
 /* TODO Add site wide styles */
 
+@font-face {
+    font-family: "Balgruf";
+    src: url("../src/fonts/Balgruf.otf"), format("opentype");
+}
+
 body {
     margin: 0;
     color: #FFFFFF;
@@ -46,15 +51,27 @@ nav {
     color: #00FDEC;
 }
 
-/* .navbar__link a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    transition: width 900ms;
-  }
+.nav-logo {
+    width: 60px;
+}
 
-  .navbar__link a:hover::after {
-    width: 100%;
-    transition: width 900ms;
-  } */
+.navbar-leftSide{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-leftSide a{
+    transition: 900ms;
+    animation: ease-in-out;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Balgruf";
+}
+
+.navbar-leftSide a:hover, a:active {
+    color: #00FDEC;
+}
