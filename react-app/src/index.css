@@ -1,5 +1,175 @@
 /* TODO Add site wide styles */
 
+@font-face {
+    font-family: "Balgruf";
+    src: local("Balgruf"),
+     url("../src/fonts/Balgruf.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Inthedark";
+    src: local("Inthedark"),
+     url("../src/fonts/Inthedark-Lgzn.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DevinneSwash";
+    src: local("DevinneSwash"),
+     url("../src/fonts/DevinneSwash-qZd5.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Heorot";
+    src: local("Heorot"),
+    url("../src/fonts/Heorot.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Runic";
+    src: local("Runic"),
+    url("../src/fonts/Runic.ttf") format("truetype");
+}
+
 body {
     margin: 0;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: 'Ubuntu', sans-serif;
 }
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 0;
+    background-color: #060923;
+}
+
+.navbar {
+    list-style-type: none;
+    float: right;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar .navbar__link a{ 
+    position: relative;
+    transition: 900ms;
+    animation: ease-in-out;   
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+    line-height: 80px;
+    font-family: "Balgruf";
+    font-size: 20px;
+}
+
+.navbar .navbar__link a:hover,a:active { 
+    color: #00FDEC;
+}
+
+.nav-logo {
+    width: 60px;
+}
+
+.navbar-leftSide{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-leftSide a{
+    transition: 1000ms;
+    animation: ease-in-out;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #00FDEC;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar-leftSide a h2 {
+    font-family: "Runic";
+    font-size: 100px;
+    padding-top: 10px;
+}
+
+
+.navbar-leftSide a:hover, a:active {
+    color: white;
+    filter: saturate(3) hue-rotate(-110deg)  contrast(3);
+}
+
+/* splash page */
+
+.splash-header {
+    font-family: "Runic";
+    font-size: 300px;
+    padding-top: 10px;
+}
+
+.splash-subheader {
+    font-family: "Balgruf";
+    font-size: 60px;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://user-images.githubusercontent.com/35717793/127571786-c42c2f79-20f6-47fe-8994-a1b8c554b351.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.splash-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000001a;
+    height: 70vh;
+    width: 50vw;
+}
+
+.formTitle {
+    display: flex;
+    justify-content: center;
+    font-family: "Balgruf";
+    text-decoration: underline;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-element label {
+    font-family: "Ubuntu";
+    text-decoration: underline;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #0000001a;
+    height: 45vh;
+    width: 25vw;
+} 
