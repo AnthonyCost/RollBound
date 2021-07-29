@@ -104,6 +104,6 @@ nav {
 }
 
 .navbar-leftSide a:hover, a:active {
-    color: #FFFFFF;
-    -webkit-filter: grayscale(1);
+    color: white;
+    filter: saturate(3) hue-rotate(250deg)  contrast(3);
 }
