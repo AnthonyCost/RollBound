@@ -20,8 +20,8 @@ def seed():
     seed_races()
     seed_alignments()
     seed_backgrounds()
-    seed_characters()
     seed_campaigns()
+    seed_characters()
 
 
 # Creates the `flask seed undo` command
@@ -32,5 +32,5 @@ def undo():
     undo_races()
     undo_alignments()
     undo_backgrounds()
-    undo_characters()
     undo_campaigns()
+    undo_characters()
