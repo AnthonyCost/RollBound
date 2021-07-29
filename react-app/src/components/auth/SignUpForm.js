@@ -55,7 +55,7 @@ const updateImage = (e) => {
     <div className="form">
     <form onSubmit={onSignUp}>
       <h2 className="formTitle">Sign Up</h2>
-      <div>
+      <div className="form-element">
         <label>User Name</label>
         <input
           type='text'
@@ -64,7 +64,7 @@ const updateImage = (e) => {
           value={username}
           ></input>
       </div>
-      <div>
+      <div className="form-element">
         <label>Email</label>
         <input
           type='text'
@@ -73,7 +73,7 @@ const updateImage = (e) => {
           value={email}
           ></input>
       </div>
-      <div>
+      <div className="form-element">
         <label>Profile Image</label>
         <input
               type="file"
@@ -82,7 +82,7 @@ const updateImage = (e) => {
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>
-      <div>
+      <div className="form-element">
         <label>Password</label>
         <input
           type='password'
@@ -91,7 +91,7 @@ const updateImage = (e) => {
           value={password}
           ></input>
       </div>
-      <div>
+      <div className="form-element">
         <label>Repeat Password</label>
         <input
           type='password'

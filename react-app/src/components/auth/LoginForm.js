@@ -48,7 +48,7 @@ const LoginForm = () => {
       <div className="form">
       <form onSubmit={onLogin}>
         <h2 className="formTitle">Log In</h2>
-        <div>
+        <div className="form-element">
           <label htmlFor='email'>Email</label>
           <input
             name='email'
@@ -58,7 +58,7 @@ const LoginForm = () => {
             onChange={updateEmail}
           />
         </div>
-        <div>
+        <div className="form-element">
           <label htmlFor='password'>Password</label>
           <input
             name='password'
