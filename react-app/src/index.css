@@ -16,7 +16,7 @@ nav {
     width: 100%;
     font-size: 16px;
     margin-top: 0;
-    background-color: #0B032D;
+    background-color: #060923;
 }
 
 .navbar {
@@ -33,11 +33,15 @@ nav {
     position: relative;
     transition: 900ms;
     animation: ease-in-out;   
-    color: #F2D492;
+    color: #FFFFFF;
     text-decoration: none;
-    /* background-color: #3A3B40; */
+    text-transform: uppercase;
     border-radius: 3px;
     margin: 0 5px;
     cursor: pointer;
     line-height: 80px;
+}
+
+.navbar__link a:hover,a:active { 
+    color: #00FDEC;
 }
