@@ -13,6 +13,7 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_charclasses()
+    seed_races()
     # Add other seed functions here
 
 
@@ -21,4 +22,5 @@ def seed():
 def undo():
     undo_users()
     undo_charclasses()
+    undo_races()
     # Add other undo functions here
