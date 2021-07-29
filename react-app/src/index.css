@@ -2,4 +2,7 @@
 
 body {
     margin: 0;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: 'Ubuntu', sans-serif;
 }
