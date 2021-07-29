@@ -109,3 +109,11 @@ nav {
     color: white;
     filter: saturate(3) hue-rotate(-110deg)  contrast(3);
 }
+
+/* splash page */
+
+.splash-header {
+    font-family: "Runic";
+    font-size: 250px;
+    padding-top: 10px;
+}

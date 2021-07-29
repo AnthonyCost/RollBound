@@ -41,6 +41,10 @@ const LoginForm = () => {
 
   return (
     <div>
+      <div>
+      <h1 className="splash-header">RollBound</h1>
+      </div>
+    <div>
     <form onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
@@ -75,6 +79,7 @@ const LoginForm = () => {
         <DemoUserButton />
         <button onClick={redirectToSignUp}>Sign Up</button>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
 const SignUpForm = () => {
@@ -13,7 +13,6 @@ const SignUpForm = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory(); // so that we can redirect after the image upload is successful
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -24,30 +23,6 @@ const SignUpForm = () => {
       }
     }
 
-    // // image uploading to AWS here
-
-    // const formData = new User();
-    // formData.append("img_url", img_url);
-    
-    // // aws uploads can be a bit slow—displaying
-    // // some sort of loading message is a good idea
-    // setImageLoading(true);
-
-    // const res = await fetch('/api/images', {
-    //     method: "POST",
-    //     body: formData,
-    // });
-    // if (res.ok) {
-    //     await res.json();
-    //     setImageLoading(false);
-    //     history.push("/images");
-    // }
-    // else {
-    //     setImageLoading(false);
-    //     // a real app would probably use more advanced
-    //     // error handling
-    //     console.log("error");
-  // }
   };
 
   const updateUsername = (e) => {
