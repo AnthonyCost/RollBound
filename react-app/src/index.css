@@ -2,7 +2,32 @@
 
 @font-face {
     font-family: "Balgruf";
-    src: url("../src/fonts/Balgruf.otf"), format("opentype");
+    src: local("Balgruf"),
+     url("../src/fonts/Balgruf.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Inthedark";
+    src: local("Inthedark"),
+     url("../src/fonts/Inthedark-Lgzn.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DevinneSwash";
+    src: local("DevinneSwash"),
+     url("../src/fonts/DevinneSwash-qZd5.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Heorot";
+    src: local("Heorot"),
+    url("../src/fonts/Heorot.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Runic";
+    src: local("Runic"),
+    url("../src/fonts/Runic.ttf") format("truetype");
 }
 
 body {
@@ -45,6 +70,7 @@ nav {
     margin: 0 5px;
     cursor: pointer;
     line-height: 80px;
+    font-family: "Balgruf";
 }
 
 .navbar li a:hover,a:active { 
@@ -66,12 +92,18 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #FFFFFF;
+    color: #00FDEC;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: "Balgruf";
+}
+
+.navbar-leftSide a h2 {
+    font-family: "Runic";
+    font-size: 100px;
+    padding-top: 10px;
 }
 
 .navbar-leftSide a:hover, a:active {
-    color: #00FDEC;
+    color: #FFFFFF;
+    -webkit-filter: grayscale(1);
 }
