@@ -18,6 +18,9 @@ const NavBar = () => {
             Login
           </NavLink>
         </li>
+        <li>
+        |
+        </li>
         <li className='navbar__link'>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
@@ -32,12 +35,23 @@ const NavBar = () => {
       <ul className='navbar'>
         <li className='navbar__link'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            Home
+            Home 
           </NavLink>
       </li>
+      <li>
+        |
+        </li>
         <li className='navbar__link'>
           <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
+            My Campaigns 
+          </NavLink>
+        </li>
+        <li>
+        |
+        </li>
+        <li className='navbar__link'>
+          <NavLink to='/users' exact={true} activeClassName='active'>
+            My Characters 
           </NavLink>
         </li>
         <li className="navbar__link">
