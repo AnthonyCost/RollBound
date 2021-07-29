@@ -71,6 +71,7 @@ nav {
     cursor: pointer;
     line-height: 80px;
     font-family: "Balgruf";
+    font-size: 20px;
 }
 
 .navbar li a:hover,a:active { 
@@ -102,6 +103,7 @@ nav {
     font-size: 100px;
     padding-top: 10px;
 }
+
 
 .navbar-leftSide a:hover, a:active {
     color: white;

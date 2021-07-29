@@ -34,22 +34,15 @@ const NavBar = () => {
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
-        </li>
-        <li className='navbar__link'>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li>
-        <li className='navbar__link'>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li>
+      </li>
         <li className='navbar__link'>
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
         </li>
+        <li className="navbar__link">
+              <img alt="profile-pic" src={`${profileImage}`} style={{height:'45px', width:'45px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
+          </li>
         <li>
           <LogoutButton />
         </li>
@@ -61,12 +54,12 @@ const NavBar = () => {
     <nav>
       { user? <div className="navbar-leftSide">
         <NavLink to='/' exact={true} activeClassName='active'>
-        <img  className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" />
+        <img  className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" alt="RollBound logo" />
         <h2 className="nav-brand">RollBound</h2>
         </NavLink>
       </div>  : <div className="navbar-leftSide">
         <NavLink to='/login' exact={true} activeClassName='active'>
-          <img className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" />
+          <img className="nav-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" alt="RollBound logo" />
           <h2 className="nav-brand">RollBound</h2>
         </NavLink>
       </div>
