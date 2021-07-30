@@ -22,41 +22,34 @@ const CampaignPage = () => {
 
     const user = useSelector(state => state.session.user);
     const userId = user?.id
-    let camptabbuttons = null;
+    let camppagebuttons = null;
   
-    // if(userId !== campaign.hostId.id) {
-    //     camptabbuttons = (
-    //         <div className='campTab-buttons'>          
-    //             <div className="campTab-buttonSingle">
-    //                 <NavLink to={`/campaigns/${campaign.id}`}>
-    //                     <p>View</p>
-    //                 </NavLink>
-    //             </div>
-    //         </div>
-    //     )
-    // }
-    
-    // else {
-    //   camptabbuttons = (
-    //     <div className='campTab-buttons'>          
-    //         <div className="campTab-buttonSingle">
-    //             <NavLink to={`/campaigns/${campaign.id}`}>
-    //                 <p>View</p>
-    //             </NavLink>
-    //         </div>
-    //     </div>
-    //   )
-    // }
+    if(userId === campaign?.hostId.id) {
+        camppagebuttons = (
+            <div className='campTab-buttons'>          
+                <div className="campTab-buttonSingle">
+                    <NavLink to={``}>
+                        <button>Edit</button>
+                    </NavLink>
+                </div>
+                <div className="campTab-buttonSingle">
+                    <NavLink to={``}>
+                        <button>Delete</button>
+                    </NavLink>
+                </div>
+            </div>
+        )
+    }
 
 
 
 
 
   return (
-      <div className="campTab-container">
+      <div className="campPage-container">
          <div>
          <img
-         className="campTab-cover"
+         className="campPage-cover"
           src={
             campaign?.coverImage
               ? campaign.coverImage
@@ -64,16 +57,20 @@ const CampaignPage = () => {
           }
           style={{height:'700px', width:'700px', objectFit: 'cover'}}
           alt="Campaign Cover"
-        />
+          />
+          {camppagebuttons}
          </div>
-         <div className="campTab-info">
-             <div className="campTab-title">
+         <div className="campPage-info">
+             <div className="campPage-title">
                <h3>{campaign?.title}</h3>
              </div>
-            {/* <div className="campTab-hostedBy">
+            <div className="campPage-hostedBy">
                 <h3>Hosted by: {campaign?.hostId?.username}</h3>
-            </div> */}
-            {camptabbuttons}
+                <img alt="host-profile-pic" src={`${campaign?.hostId?.img_url}`} style={{height:'45px', width:'45px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
+            </div>
+             <div className="campPage-title">
+               <p>{campaign?.story}</p>
+             </div>
          </div>
       </div>
   );
