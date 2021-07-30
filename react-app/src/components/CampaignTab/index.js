@@ -39,8 +39,9 @@ const CampaignTab = ({ campaign }) => {
 
   return (
       <div className="campTab-container">
-         <div className="campTab-cover">
+         <div>
          <img
+         className="campTab-cover"
           src={
             campaign?.coverImage
               ? campaign.coverImage
@@ -54,9 +55,9 @@ const CampaignTab = ({ campaign }) => {
              <div className="campTab-title">
                <h3>{campaign?.title}</h3>
              </div>
-            <div className="campTab-hostedBy">
+            {/* <div className="campTab-hostedBy">
                 <h3>Hosted by: {campaign?.hostId?.username}</h3>
-            </div>
+            </div> */}
             {camptabbuttons}
          </div>
       </div>
