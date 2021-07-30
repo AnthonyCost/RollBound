@@ -22,6 +22,7 @@ def get_campaign(campaign_id):
     return campaign
 
 @campaigns_routes.route('/campaigns', methods=['POST'])
+@login_required
 def create_campaign():
     """
     Create a campaign
@@ -32,6 +33,7 @@ def create_campaign():
     return createdCampaign
 
 @campaigns_routes.route('/campaigns/<int:campaign_id>', methods=['PUT'])
+@login_required
 def update_campaign(campaign_id):
     """
     Update a campaign
@@ -42,6 +44,7 @@ def update_campaign(campaign_id):
     return updatedCampaign
 
 @campaigns_routes.route('/campaigns/<int:campaign_id>', methods=['DELETE'])
+@login_required
 def delete_campaign(campaign_id):
     """
     Delete a campaign
