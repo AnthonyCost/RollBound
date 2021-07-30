@@ -7,7 +7,7 @@ import "./AllCampaigns.css"
 const AllCampaigns = () => {
 
   const dispatch = useDispatch();
-  const campaigns = useSelector(state => state.campaigns);
+  const campaigns = useSelector(state => state?.campaigns?.campaigns);
 
   console.log(campaigns);
 

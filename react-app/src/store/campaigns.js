@@ -11,8 +11,11 @@ const getCampaigns = (campaigns) => ({
 
 export const grabCampaigns = () => async (dispatch) => {
     const res = await fetch('/api/campaigns');
-    const campaigns = await res.json();
-    dispatch(getCampaigns(campaigns));
+    if (res.ok) {
+        const campaigns = await res.json();
+        dispatch(getCampaigns(campaigns));
+        return campaigns;
+    }
 }
 
 // initial state

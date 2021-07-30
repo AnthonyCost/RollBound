@@ -44,6 +44,7 @@ const CampaignTab = ({ campaign }) => {
               ? group.coverImage
               : "https://cdn.vox-cdn.com/thumbor/l9L9YGFs2MFdYshsS48hJNc6Rqk=/0x469:2773x2566/1400x933/filters:focal(1233x1130:1675x1572):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/61861299/D_D_Art_and_Arcan__Regular_Edition__book_cover.0.jpg"
           }
+          style={{height:'300px', width:'300px', margin: '5px', objectFit: 'cover'}}
         />
          </div>
          <div className="campTab-info">
