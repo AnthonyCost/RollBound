@@ -53,7 +53,7 @@ const CampaignTab = ({ campaign }) => {
             {/* <div className="cardSubTitle">
                 <h3>Hosted by: {group?.host?.username}</h3>
             </div> */}
-            <campTabButtons />
+            <campTabButtons/>
          </div>
       </div>
   );
