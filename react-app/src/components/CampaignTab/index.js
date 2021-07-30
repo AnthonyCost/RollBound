@@ -7,7 +7,7 @@ const CampaignTab = ({ campaign }) => {
     const user = useSelector(state => state.session.user);
     let campTabButtons = null;
   
-    if(user.id !== campaign.hostId) {
+    if(user.id !== campaign.hostId.id) {
         campTabButtons = (
             <div className='campTab-buttons'>          
                 <div className="campTab-buttonSingle">
@@ -51,9 +51,9 @@ const CampaignTab = ({ campaign }) => {
              <div className="campTab-title">
                <h3>{campaign?.title}</h3>
              </div>
-            {/* <div className="cardSubTitle">
-                <h3>Hosted by: {group?.host?.username}</h3>
-            </div> */}
+            <div className="campTab-hostedBy">
+                <h3>Hosted by: {campaign?.hostId?.username}</h3>
+            </div>
             <campTabButtons/>
          </div>
       </div>
