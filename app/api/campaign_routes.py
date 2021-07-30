@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, redirect
 from flask_login.utils import login_required
 from app.models import db, Campaign
 from flask_login import login_required
@@ -52,4 +52,4 @@ def delete_campaign(campaign_id):
     campaign = Campaign.query.filter_by(id=campaign_id).first()
     db.session.delete(campaign)
     db.session.commit()
-    return 'Campaign deleted'
+    return redirect('/')
