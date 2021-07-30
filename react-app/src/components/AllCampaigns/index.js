@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import campaigntab component
+import CampaignTab from '../CampaignTab';
 import { grabCampaigns } from '../../store/campaigns';
 import "./AllCampaigns.css"
 
 const AllCampaigns = () => {
 
   const dispatch = useDispatch();
-  const campaigns = useSelector(state => state?.campaigns?.campaigns);
+  const campaigns = useSelector(state => Object.values(state.campaigns));
 
   console.log(campaigns);
 
@@ -25,7 +25,7 @@ const AllCampaigns = () => {
           </div>
           <div className="index-campaignsList">
               {campaigns?.map((campaign) => (
-                  <h2>{campaign?.title}</h2>
+                  <CampaignTab key={campaign.id} campaign={campaign} />
               ))}
         </div>
       </div>

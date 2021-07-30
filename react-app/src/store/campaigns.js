@@ -23,7 +23,7 @@ const initialState = {}
 
 // Reducer
 
-const campaignsReducer = (state = initialState, action) => {
+const campaignsReducer = (state=initialState, action) => {
     switch (action.type) {
         case GET_CAMPAIGNS:
             const allCampaigns = {};
