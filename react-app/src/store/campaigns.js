@@ -24,7 +24,7 @@ const campaignsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_CAMPAIGNS:
             const allCampaigns = {};
-            action.campaigns.forEach((campaign) => {
+            action.campaigns.campaigns.forEach((campaign) => {
                 allCampaigns[campaign.id] = campaign;
             });
             return {
