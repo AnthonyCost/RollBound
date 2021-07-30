@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import AllCampaigns from './components/AllCampaigns';
+import CampaignPage from './components/CampaignPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +47,10 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
           <AllCampaigns/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
+        <NavBar />
+          <CampaignPage/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
