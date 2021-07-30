@@ -1,10 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "./AllCampaigns.css"
+// import campaigntab component
+// import getCampaigns reducer from the redux store
 
 const AllCampaigns = () => {
 
   const dispatch = useDispatch();
+  // const campaigns = useSelector(state => Object.values(state.campaigns));
 
   return (
       <div>
