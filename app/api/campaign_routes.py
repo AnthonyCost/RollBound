@@ -21,7 +21,7 @@ def get_campaign(campaign_id):
     campaign = Campaign.query.filter_by(id=campaign_id).first()
     return campaign
 
-@campaigns_routes.route('/', methods=['POST'])
+@campaigns_routes.route('/createCampaign', methods=['POST'])
 @login_required
 def create_campaign():
     """

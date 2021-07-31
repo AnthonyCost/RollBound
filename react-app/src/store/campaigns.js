@@ -52,7 +52,7 @@ export const getSingleCampaign = (campaignId) => async (dispatch) => {
 }
 
 export const createCampaign = (campaign) => async (dispatch) => {
-    const res = await fetch('/api/campaigns', {
+    const res = await fetch('/api/createCampaign', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
