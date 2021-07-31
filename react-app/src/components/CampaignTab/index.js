@@ -29,6 +29,16 @@ const CampaignTab = ({ campaign }) => {
                     <p>View</p>
                 </NavLink>
             </div>
+            <div className="campTab-buttonSingle">
+                <NavLink to={`/campaigns/${campaign?.id}`}>
+                    <p>Edit</p>
+                </NavLink>
+            </div>
+            <div className="campTab-buttonSingle">
+                <NavLink to={`/campaigns/${campaign?.id}`}>
+                    <p>Delete</p>
+                </NavLink>
+            </div>
         </div>
       )
     }

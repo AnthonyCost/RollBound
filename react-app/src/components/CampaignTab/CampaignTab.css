@@ -15,11 +15,14 @@
 }
 
 .campTab-buttons {
-
+    display: flex;
+    flex-direction: row;
 }
 
 .campTab-buttonSingle {
-
+    
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .campTab-single {
