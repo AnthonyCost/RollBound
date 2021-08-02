@@ -41,7 +41,7 @@ const CreateCampaignForm = () => {
     
         let createdCampaign = await dispatch(createCampaign(payload));
         if (createdCampaign) {
-          history.push(`/groups/${createdCampaign.id}`);
+          history.push(`/campaigns/${createdCampaign.id}`);
         }
       };
 

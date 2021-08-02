@@ -64,7 +64,7 @@ export const createCampaign = (hostId, title, coverImage, story) => async (dispa
     const res = await fetch('/api/campaigns/createCampaign', {
         method: 'POST',
         headers: {
-            'Content-Type': 'multipart/form-data',
+            'enctype': 'multipart/form-data',
         },
         body: formData,
     });
@@ -75,7 +75,7 @@ export const createCampaign = (hostId, title, coverImage, story) => async (dispa
         return data
     }
 
-    dispatch(grabSingleCampaign(data));
+    dispatch(addCampaign(data));
 
     return data;
 
