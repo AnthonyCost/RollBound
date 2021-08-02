@@ -19,6 +19,12 @@ const CreateCampaignForm = () => {
 
     // update functions here
 
+    const updateTitle = (e) => setTitle(e.target.value);
+    const updateStory = (e) => setStory(e.target.value);
+    const updateCoverImage = (e) => {
+        const file = e.target.files[0];
+        setCoverImage(file);
+    }
     
     const user = useSelector(state => state.session.user);
     const userId = user?.id;
@@ -76,7 +82,7 @@ const CreateCampaignForm = () => {
         <input
               type="file"
               accept="image/*"
-              onChange={updateImage}
+              onChange={updateCoverImage}
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>

@@ -51,19 +51,49 @@ export const getSingleCampaign = (campaignId) => async (dispatch) => {
     }
 }
 
-export const createCampaign = (campaign) => async (dispatch) => {
-    const res = await fetch('/api/createCampaign', {
+export const createCampaign = (hostId, title, coverImage, story) => async (dispatch) => {
+    
+    const formData = new FormData();
+    formData.append('hostId', hostId);
+    formData.append('title', title);
+        formData.append('story', story);
+    if (coverImage) {
+        formData.append('coverImage', coverImage);
+    }
+
+    const res = await fetch('/api/campaigns/createCampaign', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'multipart/form-data',
         },
-        body: JSON.stringify(campaign),
+        body: formData,
     });
-    if (res.ok) {
-        const campaign = await res.json();
-        dispatch(addCampaign(campaign));
-        return campaign;
-    }}
+
+    const data = await res.json();
+
+    if (data.errors) {
+        return data
+    }
+
+    dispatch(grabSingleCampaign(data));
+
+    return data;
+
+    
+    
+    // const res = await fetch('/api/createCampaign', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(campaign),
+    // });
+    // if (res.ok) {
+    //     const campaign = await res.json();
+    //     dispatch(addCampaign(campaign));
+    //     return campaign;
+    // }
+}
 
 export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
     const res = await fetch(`/api/campaigns/${campaignId}`, {
