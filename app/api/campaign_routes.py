@@ -41,14 +41,6 @@ def upload_image():
     db.session.commit()
     return {"coverImage": url}
 
-@campaigns_routes.route('/<int:campaign_id>', methods=['GET'])
-def get_campaign(campaign_id):
-    """
-    Get a single campaign
-    """
-    campaign = Campaign.query.filter_by(id=campaign_id).first()
-    return campaign
-
 @campaigns_routes.route('/createCampaign', methods=['POST'])
 @login_required
 def create_campaign():
@@ -59,6 +51,16 @@ def create_campaign():
     db.session.add(createdCampaign)
     db.session.commit()
     return createdCampaign
+
+
+@campaigns_routes.route('/<int:campaign_id>', methods=['GET'])
+def get_campaign(campaign_id):
+    """
+    Get a single campaign
+    """
+    campaign = Campaign.query.filter_by(id=campaign_id).first()
+    return campaign
+
 
 @campaigns_routes.route('/<int:campaign_id>', methods=['PUT'])
 @login_required
