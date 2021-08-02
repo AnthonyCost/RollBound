@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { updateCampaign } from '../../store/campaigns';
+import { useHistory, useParams } from "react-router-dom";
+import { updateCampaign, getSingleCampaign } from '../../store/campaigns';
 import "./UpdateCampaignForm.css"
 
 
@@ -9,14 +9,14 @@ const UpdateCampaignForm = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const campaign = useSelector((state) => state.session.campaigns[id]);
+    const campaign = getSingleCampaign(id);
 
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [title, setTitle] = useState(campaign.title);
-    const [story, setStory] = useState(campaign.story);
-    const [coverImage, setCoverImage] = useState(campaign.coverImage);
+    const [title, setTitle] = useState(campaign?.title);
+    const [story, setStory] = useState(campaign?.story);
+    const [coverImage, setCoverImage] = useState(campaign?.coverImage);
     const [imageLoading, setImageLoading] = useState(false);
 
     // update functions here
@@ -62,7 +62,7 @@ const UpdateCampaignForm = () => {
         //     history.push(`/campaigns/${createdCampaign.id}`);
         //   }
         // };
-        
+
       const handleCancelClick = (e) => {
         e.preventDefault();
         history.push(`/`);

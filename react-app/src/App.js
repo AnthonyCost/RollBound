@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import AllCampaigns from './components/AllCampaigns';
 import CampaignPage from './components/CampaignPage';
 import CreateCampaignForm from './components/CreateCampaignForm';
+import UpdateCampaignForm from './components/UpdateCampaignForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +57,10 @@ function App() {
         <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
         <NavBar />
           <CampaignPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/:campaignId/updateCampaign' exact={true} >
+        <NavBar />
+          <UpdateCampaignForm/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

@@ -62,7 +62,7 @@ def get_campaign(campaign_id):
     return campaign
 
 
-@campaigns_routes.route('/<int:campaign_id>', methods=['PUT'])
+@campaigns_routes.route('/<int:campaign_id>/updateCampaign', methods=['PUT'])
 @login_required
 def update_campaign(campaign_id):
     """

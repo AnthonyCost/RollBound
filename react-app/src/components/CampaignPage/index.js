@@ -29,8 +29,8 @@ const CampaignPage = () => {
         camppagebuttons = (
             <div className='campTab-buttons'>          
                 <div className="campTab-buttonSingle">
-                    <NavLink to={``}>
-                        <button>Edit</button>
+                    <NavLink to={`/campaigns/${campaign?.id}/updateCampaign`}>
+                        <button>Update {campaign?.title}</button>
                     </NavLink>
                 </div>
                 <div className="campTab-buttonSingle">
