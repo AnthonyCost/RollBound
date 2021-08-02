@@ -6,15 +6,17 @@ import "./DeleteCampaignForm.css";
 function DeleteCampaignModal() {
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = (e) => {
+    
+  }
+
   return (
     <>
       <button className="btn" onClick={() => setShowModal(true)}>
         Delete Campaign
       </button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <DeleteCampaignPrompt/>
-        </Modal>
+          <DeleteCampaignPrompt setShowModal={setShowModal}/>
       )}
     </>
   );

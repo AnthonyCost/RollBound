@@ -14,6 +14,7 @@ const UpdateCampaignForm = () => {
 
     // states here
     const [errors, setErrors] = useState([]);
+    const [hostId] = useState(campaign?.hostId);
     const [title, setTitle] = useState(campaign?.title);
     const [story, setStory] = useState(campaign?.story);
     const [coverImage, setCoverImage] = useState(campaign?.coverImage);
@@ -28,15 +29,12 @@ const UpdateCampaignForm = () => {
         setCoverImage(file);
     }
     
-    const user = useSelector(state => state.session.user);
-    const userId = user?.id;
 
-    
     
     const handleSubmit = async (e) => {
       e.preventDefault();
       const data = await dispatch(updateCampaign(
-        userId,
+        hostId,
         title,
           coverImage,
           story ));
@@ -46,22 +44,6 @@ const UpdateCampaignForm = () => {
           }
         };
         
-        // const handleSubmit = async (e) => {
-        //   e.preventDefault();
-      
-        //   const payload = {
-        //     hostId: userId,
-        //     title,
-        //     coverImage,
-        //     story
-        //   };
-      
-        //   let createdCampaign = await dispatch(updateCampaign(payload));
-        //   if (createdCampaign) {
-        //       dispatch(getSingleCampaign());
-        //     history.push(`/campaigns/${createdCampaign.id}`);
-        //   }
-        // };
 
       const handleCancelClick = (e) => {
         e.preventDefault();
@@ -79,7 +61,7 @@ const UpdateCampaignForm = () => {
         <label>Title</label>
         <input
           type="string"
-          placeholder="Title of your campaign"
+          placeholder={`Current title of campaign:`}
           required
           value={title}
           onChange={updateTitle}

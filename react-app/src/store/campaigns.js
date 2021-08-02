@@ -51,22 +51,24 @@ export const getSingleCampaign = (campaignId) => async (dispatch) => {
     }
 }
 
-export const createCampaign = (hostId, title, coverImage, story) => async (dispatch) => {
+export const createCampaign = (payload) => async (dispatch) => {
     
-    const formData = new FormData();
-    formData.append('hostId', hostId);
-    formData.append('title', title);
-        formData.append('story', story);
-    if (coverImage) {
-        formData.append('coverImage', coverImage);
-    }
+    // const formData = new FormData();
+    // formData.append('hostId', hostId);
+    // formData.append('title', title);
+    // formData.append('story', story);
+    // if (coverImage) {
+    //     formData.append('coverImage', coverImage);
+    // }
 
-    const res = await fetch('/api/campaigns/createCampaign', {
+    debugger
+
+    const res = await fetch('/api/campaigns/createCampaign/', {
         method: 'POST',
-        headers: {
-            'enctype': 'multipart/form-data',
-        },
-        body: formData,
+        // headers: {
+        //     'enctype': 'multipart/form-data',
+        // },
+        body: payload,
     });
 
     const data = await res.json();

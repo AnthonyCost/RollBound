@@ -28,20 +28,28 @@ const CreateCampaignForm = () => {
     
     const user = useSelector(state => state.session.user);
     const userId = user?.id;
+    const hostId = userId;
 
       const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const payload = {
-          hostId: userId,
-          title,
-          coverImage,
-          story
-        };
-    
-        let createdCampaign = await dispatch(createCampaign(payload));
-        if (createdCampaign) {
-          history.push(`/campaigns/${createdCampaign.id}`);
+        // const payload = {
+        //   hostId: userId,
+        //   title,
+        //   coverImage,
+        //   story
+        // };
+
+    const formData = new FormData();
+    formData.append('hostId', hostId);
+    formData.append('title', title);
+    formData.append('story', story);
+    if (coverImage) {
+        formData.append('coverImage', coverImage);
+    }
+        let newCampaign = await dispatch(createCampaign(formData));
+        if (newCampaign) {
+          history.push(`/campaigns/${newCampaign.id}`);
         }
       };
 
