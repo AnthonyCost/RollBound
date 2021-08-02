@@ -1,0 +1,78 @@
+form {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.deleteCampaign-banner h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    margin: 0;
+}
+
+.no-btn {
+    text-transform: uppercase;
+    outline: none;
+    display: block;
+    border: solid 1px red;
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #373f51;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+  }
+  
+  .no-btn:focus {
+    background-color: red;
+    color: #373f51;
+  }
+  
+  .no-btn:active {
+    background: #373f51;
+    color: red;
+    border: solid 1px red;
+  }
+  
+  .no-btn:hover {
+    background-color: red;
+    color: #373f51;
+  }
+
+  /* submit button */
+  .yes-btn {
+    text-transform: uppercase;
+    outline: none;
+    display: block;
+    border: solid 1px green;
+    color: green;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #373f51;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+  }
+  
+  .yes-btn:focus {
+    background-color: green;
+    color: #373f51;
+  }
+  
+  .yes-btn:active {
+    background: #373f51;
+    color: green;
+    border: solid 1px green;
+  }
+  
+  .yes-btn:hover {
+    background-color: green;
+    color: white;
+  }
