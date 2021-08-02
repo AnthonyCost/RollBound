@@ -112,7 +112,7 @@ export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
 
 export const deleteCampaign = (campaignId) => async (dispatch) => {
     console.log("we are hitting this store");
-    const res = await fetch(`/api/campaigns/${campaignId}/`, {
+    const res = await fetch(`/api/campaigns/${campaignId}`, {
         method: 'DELETE'
     });
     console.log("res here: ", res);
