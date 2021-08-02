@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import  DeleteCampaignPrompt  from "./DeleteCampaignPrompt";
-import "./DeleteGroupModal.css";
+import  DeleteCampaignPrompt  from "../DeleteCampaignPrompt";
+import "./DeleteCampaignForm.css";
 
 function DeleteCampaignModal() {
   const [showModal, setShowModal] = useState(false);
@@ -13,7 +13,7 @@ function DeleteCampaignModal() {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteCampaignPrompt />
+          <DeleteCampaignPrompt/>
         </Modal>
       )}
     </>

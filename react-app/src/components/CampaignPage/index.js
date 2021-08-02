@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { grabCampaigns } from '../../store/campaigns';
+import DeleteCampaignModal from "../DeleteCampaignForm";
 import "./CampaignPage.css"
 
 
@@ -33,9 +34,7 @@ const CampaignPage = () => {
                     </NavLink>
                 </div>
                 <div className="campTab-buttonSingle">
-                    <NavLink to={``}>
-                        <button>Delete</button>
-                    </NavLink>
+                    <DeleteCampaignModal />
                 </div>
             </div>
         )
