@@ -11,7 +11,6 @@ const CampaignPage = () => {
     const dispatch = useDispatch();
 
     const {campaignId} = useParams();
-    console.log(campaignId);
     const campaign = useSelector(state => state.campaigns[campaignId]);
     console.log(campaign);
 

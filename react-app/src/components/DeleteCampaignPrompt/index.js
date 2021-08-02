@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 import "./DeleteCampaignPrompt.css";
 
-const DeleteCampaignPrompt = () => {
+const DeleteCampaignPrompt = ({setShowModal}) => {
   const { id } = useParams();
 
   const campaign = useSelector((state) => state.campaigns[id]);
@@ -27,8 +27,10 @@ const DeleteCampaignPrompt = () => {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    history.push(`/campaigns/${id}`);
+    // history.push(`/campaigns/${id}`);
+    setShowModal(prev => !prev);
   };
+
 
   return (
     <div className="deleteCampaign-container">
