@@ -11,9 +11,9 @@ const CampaignPage = () => {
     const dispatch = useDispatch();
 
     const {campaignId} = useParams();
-    const campaign = useSelector(state => state.campaigns[campaignId]);
-    console.log(campaign);
 
+
+    const campaign = useSelector(state => state.campaigns[campaignId]);
     useEffect(() => {
         dispatch(grabCampaigns());
       }, [dispatch]);
@@ -33,7 +33,7 @@ const CampaignPage = () => {
                     </NavLink>
                 </div>
                 <div className="campTab-buttonSingle">
-                    <DeleteCampaignModal />
+                    <DeleteCampaignModal campaignId={campaignId}/>
                 </div>
             </div>
         )

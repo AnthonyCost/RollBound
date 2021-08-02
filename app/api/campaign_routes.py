@@ -93,9 +93,9 @@ def get_campaign(campaign_id):
     return campaign
 
 
-@campaigns_routes.route('/<int:campaign_id>/updateCampaign', methods=['PUT'])
+@campaigns_routes.route('/<int:campaignId>/updateCampaign/', methods=['PUT'])
 @login_required
-def update_campaign(campaign_id):
+def update_campaign(campaignId):
     """
     Update a campaign
     """
@@ -116,13 +116,14 @@ def update_campaign(campaign_id):
     db.session.commit()
     return updatedCampaign
 
-@campaigns_routes.route('/<int:campaign_id>', methods=['DELETE'])
-@login_required
-def delete_campaign(campaign_id):
+@campaigns_routes.route('/<int:campaignId>', methods=['DELETE'])
+def delete_campaign(campaignId):
     """
     Delete a campaign
     """
-    campaign = Campaign.query.filter_by(id=campaign_id).first()
+    print("************************************** ", campaignId)
+    campaign = Campaign.query.filter_by(id=campaignId).first()
     db.session.delete(campaign)
     db.session.commit()
-    return redirect('/')
+    return "successful"
+    #! try and catch block later here ^^^

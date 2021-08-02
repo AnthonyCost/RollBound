@@ -61,8 +61,6 @@ export const createCampaign = (payload) => async (dispatch) => {
     //     formData.append('coverImage', coverImage);
     // }
 
-    debugger
-
     const res = await fetch('/api/campaigns/createCampaign/', {
         method: 'POST',
         // headers: {
@@ -98,7 +96,7 @@ export const createCampaign = (payload) => async (dispatch) => {
 }
 
 export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
-    const res = await fetch(`/api/campaigns/${campaignId}`, {
+    const res = await fetch(`/api/campaigns/${campaignId}/updateCampaign/`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -113,13 +111,13 @@ export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
 }
 
 export const deleteCampaign = (campaignId) => async (dispatch) => {
-    const res = await fetch(`/api/campaigns/${campaignId}`, {
-        method: 'DELETE',
+    console.log("we are hitting this store");
+    const res = await fetch(`/api/campaigns/${campaignId}/`, {
+        method: 'DELETE'
     });
+    console.log("res here: ", res);
     if (res.ok) {
-        const campaign = await res.json();
-        dispatch(destroyCampaign(campaign));
-        return campaign;
+        dispatch(destroyCampaign(campaignId));
     }
 }
 
@@ -143,7 +141,7 @@ const campaignsReducer = (state=initialState, action) => {
             }
         case DESTROY_CAMPAIGN:
                 newState = {...state};
-                delete newState[action.campaign.id];
+                delete newState[action.campaign];
                 return newState;
         case GET_CAMPAIGNS:
             const allCampaigns = {};

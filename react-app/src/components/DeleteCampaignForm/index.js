@@ -3,14 +3,10 @@ import { Modal } from "../../context/Modal";
 import  DeleteCampaignPrompt  from "../DeleteCampaignPrompt";
 import "./DeleteCampaignForm.css";
 
-function DeleteCampaignModal() {
+function DeleteCampaignModal({campaignId}) {
   const [showModal, setShowModal] = useState(false);;
   
-  window.addEventListener("click", (e) => {
-    if(e.currentTarget !== e.target) {
-        setShowModal(() => false);
-    }
-  });
+  console.log(campaignId);
 
   return (
     <div>
@@ -19,7 +15,7 @@ function DeleteCampaignModal() {
       </button>
       {showModal && (
         <div className="deleteCampaignPrompt">
-          <DeleteCampaignPrompt setShowModal={setShowModal}/>
+          <DeleteCampaignPrompt setShowModal={setShowModal} campaignId={campaignId}/>
         </div>
       )}
     </div>

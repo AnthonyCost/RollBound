@@ -5,29 +5,23 @@ import { useHistory } from "react-router-dom";
 
 import "./DeleteCampaignPrompt.css";
 
-const DeleteCampaignPrompt = ({setShowModal}) => {
-  const { id } = useParams();
-
-  const campaign = useSelector((state) => state.campaigns[id]);
+const DeleteCampaignPrompt = ({setShowModal, campaignId}) => {
 
   const dispatch = useDispatch();
   const history = useHistory();
 
+  console.log("campaignId", campaignId);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      id,
-    };
-
-    await dispatch(deleteCampaign(payload));
+    await dispatch(deleteCampaign(campaignId));
 
     history.push(`/`);
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    // history.push(`/campaigns/${id}`);
     setShowModal(prev => !prev);
   };
 
@@ -35,7 +29,7 @@ const DeleteCampaignPrompt = ({setShowModal}) => {
   return (
     <div className="deleteCampaign-container">
       <div className="deleteCampaign-banner">
-        <h1>Are you sure you want to delete {campaign?.title}?</h1>
+        <h1>Are you sure you want to delete this campaign?</h1>
       </div>
       <div>
       <form onSubmit={handleSubmit}>
