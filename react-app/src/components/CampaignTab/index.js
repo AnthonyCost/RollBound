@@ -65,9 +65,6 @@ const CampaignTab = ({ campaign }) => {
              <div className="campTab-title">
                <h3>{campaign?.title}</h3>
              </div>
-            {/* <div className="campTab-hostedBy">
-                <h3>Hosted by: {campaign?.hostId?.username}</h3>
-            </div> */}
             {camptabbuttons}
          </div>
       </div>
