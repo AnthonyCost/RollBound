@@ -42,8 +42,9 @@ export const grabCampaigns = () => async (dispatch) => {
     }
 }
 
-export const getSingleCampaign = (campaignId) => async (dispatch) => {
-    const res = await fetch(`/api/campaigns/${campaignId}`);
+export const getSingleCampaign = (id) => async (dispatch) => {
+    const res = await fetch(`/api/campaigns/${id}`);
+    console.log(res)
     if (res.ok) {
         const campaign = await res.json();
         dispatch(grabSingleCampaign(campaign));
@@ -53,19 +54,9 @@ export const getSingleCampaign = (campaignId) => async (dispatch) => {
 
 export const createCampaign = (payload) => async (dispatch) => {
     
-    // const formData = new FormData();
-    // formData.append('hostId', hostId);
-    // formData.append('title', title);
-    // formData.append('story', story);
-    // if (coverImage) {
-    //     formData.append('coverImage', coverImage);
-    // }
 
     const res = await fetch('/api/campaigns/createCampaign/', {
         method: 'POST',
-        // headers: {
-        //     'enctype': 'multipart/form-data',
-        // },
         body: payload,
     });
 
@@ -79,20 +70,6 @@ export const createCampaign = (payload) => async (dispatch) => {
 
     return data;
 
-    
-    
-    // const res = await fetch('/api/createCampaign', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(campaign),
-    // });
-    // if (res.ok) {
-    //     const campaign = await res.json();
-    //     dispatch(addCampaign(campaign));
-    //     return campaign;
-    // }
 }
 
 export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
@@ -111,11 +88,9 @@ export const updateCampaign = (campaignId, campaign) => async (dispatch) => {
 }
 
 export const deleteCampaign = (campaignId) => async (dispatch) => {
-    console.log("we are hitting this store");
     const res = await fetch(`/api/campaigns/${campaignId}`, {
         method: 'DELETE'
     });
-    console.log("res here: ", res);
     if (res.ok) {
         dispatch(destroyCampaign(campaignId));
     }
@@ -134,6 +109,11 @@ const campaignsReducer = (state=initialState, action) => {
                 ...state,
                 [action.campaign.id]: action.campaign,
             }
+        case GRAB_CAMPAIGN:
+        return {
+            ...state,
+            [action.campaign.id]: action.campaign,
+        };
         case EDIT_CAMPAIGN:
             return {
                 ...state,
@@ -151,11 +131,6 @@ const campaignsReducer = (state=initialState, action) => {
             return {
                 ...state,
                 ...allCampaigns,
-            };
-            case GRAB_CAMPAIGN:
-            return {
-                ...state,
-                [action.campaign.id]: action.campaign,
             };
             default:
                 return state;

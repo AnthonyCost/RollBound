@@ -84,18 +84,18 @@ def create_campaign():
     return createdCampaign.to_dict()
 
 
-@campaigns_routes.route('/<int:campaign_id>', methods=['GET'])
-def get_campaign(campaign_id):
+@campaigns_routes.route('/<int:id>', methods=['GET'])
+def get_campaign(id):
     """
     Get a single campaign
     """
-    campaign = Campaign.query.filter_by(id=campaign_id).first()
-    return campaign
+    campaign = Campaign.query.filter_by(id)
+    return campaign.to_dict()
 
 
-@campaigns_routes.route('/<int:campaignId>/updateCampaign/', methods=['PUT'])
+@campaigns_routes.route('/<int:id>/updateCampaign', methods=['PUT'])
 @login_required
-def update_campaign(campaignId):
+def update_campaign(id):
     """
     Update a campaign
     """
@@ -109,7 +109,7 @@ def update_campaign(campaignId):
     if "url" not in upload:
         return {'errors': ['Image upload failed']}, 400
     url = upload['url']
-    updatedCampaign = Campaign.query.filter_by(id=campaign_id).first()
+    updatedCampaign = Campaign.query.filter_by(id).first()
     updatedCampaign.title = request.form['title']
     updatedCampaign.story = request.form['story']
     updatedCampaign.coverImage = url
