@@ -34,7 +34,7 @@ const destroyCampaign = (campaign) => ({
 // Thunks
 
 export const grabCampaigns = () => async (dispatch) => {
-    const res = await fetch('/api/campaigns');
+    const res = await fetch('/api/campaigns/');
     if (res.ok) {
         const campaigns = await res.json();
         dispatch(getCampaigns(campaigns));
