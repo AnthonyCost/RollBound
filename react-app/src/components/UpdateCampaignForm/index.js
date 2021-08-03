@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { updateCampaign, getSingleCampaign} from '../../store/campaigns';
+import { updateCampaign} from '../../store/campaigns';
 import "./UpdateCampaignForm.css"
 
 
-const UpdateCampaignForm = () => {
+const UpdateCampaignForm = ({campaign}) => {
 
-    // const dispatch = useDispatch();
-    const history = useHistory();
-
-    const dispatch = useDispatch();
-
-    const {id} = useParams();
+  
+  // const dispatch = useDispatch();
+  const history = useHistory();
+  
+  const dispatch = useDispatch();
+  
+  const {id} = useParams();
+  // const campaign = useSelector(state => state.campaign);
 
   console.log(id);
 
-  let campaign
-  
-  campaign = dispatch(getSingleCampaign(id));
+  // campaign = dispatch(getSingleCampaign(id));
 
   console.log(campaign);
 

@@ -44,11 +44,9 @@ export const grabCampaigns = () => async (dispatch) => {
 
 export const getSingleCampaign = (id) => async (dispatch) => {
     const res = await fetch(`/api/campaigns/${id}`);
-    console.log(res)
     if (res.ok) {
         const campaign = await res.json();
-        dispatch(grabSingleCampaign(campaign));
-        return campaign;
+        return dispatch(grabSingleCampaign(id));
     }
 }
 

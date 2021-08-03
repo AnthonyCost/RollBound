@@ -89,6 +89,7 @@ def get_campaign(id):
     """
     Get a single campaign
     """
+    print("backend id: ", id)
     campaign = Campaign.query.filter_by(id)
     return campaign.to_dict()
 
