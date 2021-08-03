@@ -1,0 +1,40 @@
+.campPage-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.campPage-cover img{
+    padding: 20px;
+}
+
+
+.campPage-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campPage-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.campPage-title h3{
+    font-family: "Balgruf";
+    font-size: 4rem;
+}
+
+.campPage-hostedBy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.campPage-story {
+    font-family: "Ubuntu";
+    
+}

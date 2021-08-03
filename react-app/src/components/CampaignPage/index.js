@@ -45,9 +45,8 @@ const CampaignPage = () => {
 
   return (
       <div className="campPage-container">
-         <div>
+         <div className="campPage-cover">
          <img
-         className="campPage-cover"
           src={
             campaign?.coverImage
               ? campaign.coverImage
@@ -66,7 +65,7 @@ const CampaignPage = () => {
                 <h3>Hosted by: {campaign?.hostId?.username}</h3>
                 <img alt="host-profile-pic" src={`${campaign?.hostId?.img_url}`} style={{height:'45px', width:'45px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
             </div>
-             <div className="campPage-title">
+             <div className="campPage-story">
                <p>{campaign?.story}</p>
              </div>
          </div>
