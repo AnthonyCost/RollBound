@@ -10,7 +10,6 @@ const DeleteCampaignPrompt = ({setShowModal, campaignId}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  console.log("campaignId", campaignId);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

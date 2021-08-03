@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import  DeleteCampaignModal  from "../DeleteCampaignForm";
 import "./CampaignTab.css"
 
 
@@ -30,14 +31,12 @@ const CampaignTab = ({ campaign }) => {
                 </NavLink>
             </div>
             <div className="campTab-buttonSingle">
-                <NavLink to={`/campaigns/${campaign?.id}`}>
-                    <p>Edit</p>
-                </NavLink>
+            <NavLink to={`/campaigns/${campaign?.id}/updateCampaign`}>
+                        <p>Edit</p>
+                    </NavLink>
             </div>
             <div className="campTab-buttonSingle">
-                <NavLink to={`/campaigns/${campaign?.id}`}>
-                    <p>Delete</p>
-                </NavLink>
+            <DeleteCampaignModal campaignId={campaign?.id}/>
             </div>
         </div>
       )

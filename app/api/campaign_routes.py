@@ -121,9 +121,7 @@ def delete_campaign(campaignId):
     """
     Delete a campaign
     """
-    print("************************************** ", campaignId)
     campaign = Campaign.query.filter_by(id=campaignId).first()
     db.session.delete(campaign)
     db.session.commit()
     return "successful"
-    #! try and catch block later here ^^^
