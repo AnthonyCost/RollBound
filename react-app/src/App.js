@@ -61,7 +61,7 @@ function App() {
         <NavBar />
           <CampaignPage/>
         </ProtectedRoute>
-        <ProtectedRoute path='/campaigns/:id/updateCampaign' exact={true} >
+        <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
         <NavBar />
           <UpdateCampaignForm/>
         </ProtectedRoute>

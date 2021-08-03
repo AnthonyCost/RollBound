@@ -19,11 +19,8 @@ const UpdateCampaignForm = ({campaign}) => {
   const { id } = useParams();
   // const campaign = useSelector(state => state.campaign);
 
-  console.log(id);
-
   // campaign = dispatch(getSingleCampaign(id));
 
-  console.log(campaign);
 
 
     // states here
@@ -47,19 +44,20 @@ const UpdateCampaignForm = ({campaign}) => {
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log("coverImage ", coverImage)
       formData.append('hostId', hostId);
       formData.append('title', title);
       formData.append('story', story);
-    if (coverImage) {
-        formData.append('coverImage', coverImage);
+      console.log("coverImage ", coverImage)
+      if (coverImage) {
+          formData.append('coverImage', coverImage);
     }
-      // const campaign = {hostId, title, coverImage, story};
       const data = await dispatch(updateCampaign(
         id,
         formData ));
-          if (data) {
-            setErrors(data)
+          if (data.errors) {
+            setErrors(data.errors)
+          }
+          else {
             history.push(`/campaigns/${id}`)
           }
         };

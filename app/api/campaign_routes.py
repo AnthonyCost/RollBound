@@ -60,19 +60,6 @@ def create_campaign():
     if "url" not in upload:
         return {'errors': ['Image upload failed']}, 400
     url = upload['url']
-    # if form.validate_on_submit():
-    #     user = User(
-    #         username=form.data['username'],
-    #         email=form.data['email'],
-    #         password=form.data['password'],
-    #         img_url=url
-    #     )
-    #     print("##########", url)
-    #     db.session.add(user)
-    #     db.session.commit()
-    #     login_user(user)
-    #     return user.to_dict()
-    #     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
     createdCampaign = Campaign()
     createdCampaign.hostId = current_user.id
     createdCampaign.title = request.form['title']
@@ -94,15 +81,13 @@ def get_campaign(id):
     return campaign.to_dict()
 
 
-@campaigns_routes.route('/<int:id>/updateCampaign', methods=['PUT'])
+@campaigns_routes.route('/<int:id>/updateCampaign/', methods=['PUT'])
 @login_required
 def update_campaign(id):
     """
     Update a campaign
     """
-    print("stuff here:             ", request.data)
-    data = request.get_json(force = True)
-    print("datae here --------------- ", data)
+    print(" request formData here:             ", request.files)
     if "coverImage" not in request.files:
         print("Image not received:      ************************       ")
         return {'errors': ['Image required']}, 400
@@ -116,13 +101,12 @@ def update_campaign(id):
         print("Image not in upload:      ************************       ")
         return {'errors': ['Image upload failed']}, 400
     url = upload['url']
-    updatedCampaign = Campaign.query.filter_by(id).first()
+    updatedCampaign = Campaign.query.get(id)
     updatedCampaign.title = request.form['title']
     updatedCampaign.story = request.form['story']
     updatedCampaign.coverImage = url
-    print("-------------------------------------------------", updatedCampaign)
     db.session.commit()
-    return updatedCampaign
+    return updatedCampaign.to_dict()
 
 @campaigns_routes.route('/<int:campaignId>', methods=['DELETE'])
 def delete_campaign(campaignId):
