@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import CharacterTab from '../CharacterTab';
 import { NavLink } from 'react-router-dom';
 import { grabCharacters } from '../../store/characters';
 import "./MyCharacters.css"
@@ -32,8 +33,7 @@ const MyCharacters = () => {
           </div>
           <div className="index-campaignsList">
               {characters?.map((character) => (
-                //   <CampaignTab key={campaign.id} campaign={campaign} />
-                <h2>{character?.name}</h2>
+                  <CharacterTab key={character.id} character={character} />
               ))}
         </div>
       </div>
