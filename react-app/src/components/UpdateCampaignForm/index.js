@@ -22,11 +22,6 @@ const UpdateCampaignForm = () => {
   const currentCampaign = useSelector(state => state.campaigns[campaignId]);
 
 
-  useEffect(() => {
-    dispatch(grabCampaigns());
-  }, [dispatch]);
-
-
     // states here
     const [errors, setErrors] = useState([]);
     const [title, setTitle] = useState("");

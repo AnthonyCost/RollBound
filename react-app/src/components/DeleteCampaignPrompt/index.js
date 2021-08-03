@@ -7,6 +7,8 @@ import "./DeleteCampaignPrompt.css";
 
 const DeleteCampaignPrompt = ({setShowModal, campaignId}) => {
 
+  const currentCampaign = useSelector(state => state.campaigns[campaignId]);
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -28,7 +30,7 @@ const DeleteCampaignPrompt = ({setShowModal, campaignId}) => {
   return (
     <div className="deleteCampaign-container">
       <div className="deleteCampaign-banner">
-        <h1>Are you sure you want to delete this campaign?</h1>
+        <h1>Are you sure you want to delete {currentCampaign?.title}?</h1>
       </div>
       <div>
       <form onSubmit={handleSubmit}>
