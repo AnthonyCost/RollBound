@@ -7,13 +7,16 @@ import "./UpdateCampaignForm.css"
 
 const UpdateCampaignForm = ({campaign}) => {
 
-  
+  const user = useSelector(state => state.session.user);
+    const userId = user?.id;
+    const hostId = userId;
+
   // const dispatch = useDispatch();
   const history = useHistory();
   
   const dispatch = useDispatch();
   
-  const {id} = useParams();
+  const { id } = useParams();
   // const campaign = useSelector(state => state.campaign);
 
   console.log(id);
@@ -25,10 +28,9 @@ const UpdateCampaignForm = ({campaign}) => {
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [hostId] = useState(campaign?.hostId);
-    const [title, setTitle] = useState(campaign?.title);
-    const [story, setStory] = useState(campaign?.story);
-    const [coverImage, setCoverImage] = useState(campaign?.coverImage);
+    const [title, setTitle] = useState("");
+    const [story, setStory] = useState("");
+    const [coverImage, setCoverImage] = useState("");
     const [imageLoading, setImageLoading] = useState(false);
 
     // update functions here
@@ -41,14 +43,21 @@ const UpdateCampaignForm = ({campaign}) => {
     }
     
 
+    const formData = new FormData();
     
     const handleSubmit = async (e) => {
       e.preventDefault();
+      console.log("coverImage ", coverImage)
+      formData.append('hostId', hostId);
+      formData.append('title', title);
+      formData.append('story', story);
+    if (coverImage) {
+        formData.append('coverImage', coverImage);
+    }
+      // const campaign = {hostId, title, coverImage, story};
       const data = await dispatch(updateCampaign(
-        hostId,
-        title,
-          coverImage,
-          story ));
+        id,
+        formData ));
           if (data) {
             setErrors(data)
             history.push(`/campaigns/${id}`)
