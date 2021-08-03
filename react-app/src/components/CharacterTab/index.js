@@ -56,7 +56,7 @@ const CharacterTab = ({ character }) => {
               ? character.portraitImage
               : "https://cdnb.artstation.com/p/assets/images/images/010/638/243/large/jonathan-lang-comp-10.jpg?1525438067"
           }
-          style={{height:'500px', width:'500px', objectFit: 'cover'}}
+          style={{height:'500px', width:'500px', objectFit: 'cover', borderRadius: '50%'}}
           alt="Character Portrait"
         />
          </div>
