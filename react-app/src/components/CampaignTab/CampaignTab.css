@@ -1,0 +1,60 @@
+.campTab-container {
+    transition: 300ms;
+    flex-direction: column;
+    animation: ease-in-out; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-image: url("https://user-images.githubusercontent.com/35717793/127716045-8b8c2fe5-6c01-41d2-a0dd-b5cb58990f3e.jpg");
+    background-size: cover;
+    width: 400px;
+    margin: 3rem;
+    padding: 0;
+    color: rgb(255, 255, 255);
+}
+
+.campTab-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.campTab-buttonSingle {
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.campTab-single {
+
+}
+
+.campTab-cover {
+    border: 0;
+
+}
+
+.campTab-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.campTab-title{
+    display: flex;
+    justify-content: center;
+}
+
+.campTab-title h3{
+    font-family: "Balgruf";
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.campTab-hostedBy {
+    font-family: "Balgruf";
+    font-size: 3px;
+
+}

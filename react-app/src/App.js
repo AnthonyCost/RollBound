@@ -8,6 +8,14 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import AllCampaigns from './components/AllCampaigns';
+import CampaignPage from './components/CampaignPage';
+import CreateCampaignForm from './components/CreateCampaignForm';
+import UpdateCampaignForm from './components/UpdateCampaignForm';
+import MyCampaigns from './components/MyCampaignsPage';
+
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,9 +50,25 @@ function App() {
           <NavBar />
           <User />
         </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/myCampaigns/' exact={true} >
+        <NavBar />
+          <MyCampaigns/>
+        </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
-          <h1>My Home Page</h1>
+          <AllCampaigns/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/createCampaign' exact={true} >
+        <NavBar />
+          <CreateCampaignForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
+        <NavBar />
+          <CampaignPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
+        <NavBar />
+          <UpdateCampaignForm/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

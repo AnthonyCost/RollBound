@@ -71,7 +71,7 @@ const LoginForm = () => {
             <div>
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
-              ))}
+                ))}
             </div>
         <div>
           <button type='submit'>Login</button>
@@ -81,6 +81,7 @@ const LoginForm = () => {
           <DemoUserButton />
           <button onClick={redirectToSignUp}>Sign Up</button>
         </div>
+        <img  className="splash-logo" src="https://user-images.githubusercontent.com/35717793/127536568-030443d6-ab1d-48f2-9da5-c422545245e5.png" alt="RollBound logo" />
       </div>
     </div>
   );

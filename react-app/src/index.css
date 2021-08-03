@@ -173,3 +173,16 @@ nav {
     height: 45vh;
     width: 25vw;
 } 
+
+.splash-logo {
+    transition: 5000ms;
+    animation: ease-in-out; 
+    width: 2vw;
+    padding-top: 10px;
+}
+
+.splash-logo:hover {
+    width: 2vw;
+    filter:  hue-rotate(193deg) saturate(5) contrast(1.5);
+    padding-top: 10px;
+}

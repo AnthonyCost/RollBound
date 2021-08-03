@@ -89,15 +89,11 @@ export const signUp = (username, email, password, img_url) => async (dispatch) =
 
   const data = await response.json();
 
-  console.log("We are making it to the thunk!" + data);
-
   if (data.errors) {
     return data
   }
 
   dispatch(setUser(data));
-
-  console.log("If this dispatches correctly, data = validated" + data);
 
   return data
   
