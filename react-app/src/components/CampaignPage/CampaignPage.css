@@ -1,6 +1,20 @@
 .campPage-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.campPage-top {
+    padding: 20em;
+}
+
+.campPage-bottom {
+    display: flex;
     flex-direction: row;
+    padding: 5em;
 }
 
 .campPage-cover img{
@@ -35,6 +49,11 @@
 }
 
 .campPage-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: "Ubuntu";
+    width: 800px;
     
 }

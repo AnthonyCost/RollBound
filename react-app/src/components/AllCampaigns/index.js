@@ -10,14 +10,12 @@ const AllCampaigns = () => {
   const dispatch = useDispatch();
   const campaigns = useSelector(state => Object.values(state.campaigns));
 
-  console.log(campaigns);
-
   useEffect(() => {
     dispatch(grabCampaigns());
   }, [dispatch]);
 
   return (
-      <div>
+      <div className="allCamp-container">
           <div className="index-header">
           <h1>All Campaigns</h1>
           <NavLink to={`/campaigns/createCampaign`}>

@@ -1,6 +1,6 @@
 .campTab-container {
     transition: 300ms;
-    flex-direction: row;
+    flex-direction: column;
     animation: ease-in-out; 
     display: flex;
     justify-content: space-around;
@@ -8,7 +8,7 @@
     align-content: center;
     background-image: url("https://user-images.githubusercontent.com/35717793/127716045-8b8c2fe5-6c01-41d2-a0dd-b5cb58990f3e.jpg");
     background-size: cover;
-    width: 600px;
+    width: 400px;
     margin: 3rem;
     padding: 0;
     color: rgb(255, 255, 255);
