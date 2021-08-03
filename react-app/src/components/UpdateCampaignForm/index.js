@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { updateCampaign} from '../../store/campaigns';
+import { updateCampaign, grabCampaigns} from '../../store/campaigns';
 import "./UpdateCampaignForm.css"
 
 
-const UpdateCampaignForm = ({campaign}) => {
+const UpdateCampaignForm = () => {
 
   const user = useSelector(state => state.session.user);
     const userId = user?.id;
@@ -16,10 +16,15 @@ const UpdateCampaignForm = ({campaign}) => {
   const dispatch = useDispatch();
   
   const { id } = useParams();
-  // const campaign = useSelector(state => state.campaign);
 
-  // campaign = dispatch(getSingleCampaign(id));
+  const campaignId = id;
+  
+  const currentCampaign = useSelector(state => state.campaigns[campaignId]);
 
+
+  useEffect(() => {
+    dispatch(grabCampaigns());
+  }, [dispatch]);
 
 
     // states here
@@ -78,7 +83,7 @@ const UpdateCampaignForm = ({campaign}) => {
         <label>Title</label>
         <input
           type="string"
-          placeholder={`${campaign?.title}`}
+          placeholder={`${currentCampaign?.title}`}
           required
           value={title}
           onChange={updateTitle}
@@ -88,7 +93,7 @@ const UpdateCampaignForm = ({campaign}) => {
         <label>Story</label>
         <input
           type="text"
-          placeholder={`${campaign?.story}`}
+          placeholder={`${currentCampaign?.story}`}
           required
           value={story}
           onChange={updateStory}

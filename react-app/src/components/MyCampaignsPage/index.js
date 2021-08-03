@@ -13,12 +13,8 @@ const MyCampaigns = () => {
   const user = useSelector(state => state.session.user);
   const userId = user?.id
   
-  
-  console.log(allCampaigns)
-  
   const campaigns = allCampaigns.filter(campaign => campaign?.hostId?.id === userId);
-  
-  console.log(campaigns)
+
   
   useEffect(() => {
     dispatch(grabCampaigns());
