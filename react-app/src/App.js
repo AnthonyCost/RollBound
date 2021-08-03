@@ -12,6 +12,7 @@ import AllCampaigns from './components/AllCampaigns';
 import CampaignPage from './components/CampaignPage';
 import CreateCampaignForm from './components/CreateCampaignForm';
 import UpdateCampaignForm from './components/UpdateCampaignForm';
+import MyCampaigns from './components/MyCampaignsPage';
 
 
 
@@ -48,6 +49,10 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <NavBar />
           <User />
+        </ProtectedRoute>
+        <ProtectedRoute path='/campaigns/myCampaigns/' exact={true} >
+        <NavBar />
+          <MyCampaigns/>
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
         <NavBar />

@@ -8,10 +8,18 @@ import "./MyCampaignsPage.css"
 const MyCampaigns = () => {
 
   const dispatch = useDispatch();
-  const campaigns = useSelector(state => Object.values(state.campaigns));
+  const allCampaigns = useSelector(state => Object.values(state.campaigns));
 
-  console.log(campaigns);
-
+  const user = useSelector(state => state.session.user);
+  const userId = user?.id
+  
+  
+  console.log(allCampaigns)
+  
+  const campaigns = allCampaigns.filter(campaign => campaign?.hostId?.id === userId);
+  
+  console.log(campaigns)
+  
   useEffect(() => {
     dispatch(grabCampaigns());
   }, [dispatch]);
@@ -19,7 +27,7 @@ const MyCampaigns = () => {
   return (
       <div>
           <div className="index-header">
-          <h1>All Campaigns</h1>
+          <h1>My Campaigns</h1>
           <NavLink to={`/campaigns/createCampaign`}>
                     <button>Add Campaign</button>
                 </NavLink>

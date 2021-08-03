@@ -11,7 +11,6 @@ const UpdateCampaignForm = ({campaign}) => {
     const userId = user?.id;
     const hostId = userId;
 
-  // const dispatch = useDispatch();
   const history = useHistory();
   
   const dispatch = useDispatch();

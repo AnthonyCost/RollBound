@@ -42,7 +42,7 @@ const NavBar = () => {
         |
         </div>
         <div className='navbar__link'>
-          <NavLink to='/users' exact={true} activeClassName='active'>
+          <NavLink to='/campaigns/myCampaigns/' exact={true} activeClassName='active'>
             My Campaigns 
           </NavLink>
         </div>
