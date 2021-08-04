@@ -10,14 +10,12 @@ const MyCharacters = () => {
   const dispatch = useDispatch();
   const allCharacters = useSelector(state => Object.values(state.characters));
 
-  console.log(allCharacters);
 
   const user = useSelector(state => state.session.user);
   const userId = user?.id
   
   const characters = allCharacters.filter(character => character?.userId?.id === userId);
 
-  console.log(characters);
 
   useEffect(() => {
     dispatch(grabCharacters());

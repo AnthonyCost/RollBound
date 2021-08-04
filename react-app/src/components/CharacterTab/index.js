@@ -26,7 +26,7 @@ const CharacterTab = ({ character }) => {
       charTabbuttons = (
         <div className='charTab-buttons'>          
             <div className="charTab-buttonSingle">
-                    <NavLink to={`/characters/${character.id}`}>
+                    <NavLink to={`/characters/${character.id}/`}>
                         <p>View</p>
                     </NavLink>
             </div>

@@ -1,11 +1,17 @@
 // Action Creators
 
 const GET_CHARACTERS = 'campaigns/GET_CHARACTERS';
+const GRAB_CHARACTER = 'campaigns/GRAB_CHARACTER';
 
 
 const getCharacters = (characters) => ({
     type: GET_CHARACTERS,
     characters,
+})
+
+const grabSingleCharacter = (character) => ({
+    type: GRAB_CHARACTER,
+    character,
 })
 
 // Thunks
@@ -16,6 +22,14 @@ export const grabCharacters = () => async (dispatch) => {
         const characters = await res.json();
         dispatch(getCharacters(characters));
         return characters;
+    }
+}
+
+export const getSingleCharacter = (id) => async (dispatch) => {
+    const res = await fetch(`/api/characters/${id}/`);
+    if (res.ok) {
+        const character = await res.json();
+        return dispatch(grabSingleCharacter(id));
     }
 }
 
@@ -33,11 +47,11 @@ const charactersReducer = (state=initialState, action) => {
         //         ...state,
         //         [action.campaign.id]: action.campaign,
         //     }
-        // case GRAB_CAMPAIGN:
-        // return {
-        //     ...state,
-        //     [action.campaign.id]: action.campaign,
-        // };
+        case GRAB_CHARACTER:
+        return {
+            ...state,
+            [action.character.id]: action.character,
+        };
         // case EDIT_CAMPAIGN:
         //     return {
         //         ...state,

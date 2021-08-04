@@ -14,6 +14,7 @@ import CreateCampaignForm from './components/CreateCampaignForm';
 import UpdateCampaignForm from './components/UpdateCampaignForm';
 import MyCampaigns from './components/MyCampaignsPage';
 import MyCharacters from './components/MyCharactersPage';
+import CharacterProfilePage from './components/CharacterProfilePage';
 
 
 
@@ -70,6 +71,10 @@ function App() {
         <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
         <NavBar />
           <CampaignPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/characters/:id/' exact={true} >
+        <NavBar />
+          <CharacterProfilePage/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
         <NavBar />

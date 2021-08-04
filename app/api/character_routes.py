@@ -15,3 +15,12 @@ def get_characters():
     """
     characters = Character.query.all()
     return {'characters': [character.to_dict() for character in characters]}
+
+@characters_routes.route('/<int:id>', methods=['GET'])
+def get_character(id):
+    """
+    Get a single character
+    """
+    print("backend id: ", id)
+    character = Character.query.filter_by(id)
+    return character.to_dict()
