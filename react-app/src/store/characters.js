@@ -2,6 +2,7 @@
 
 const GET_CHARACTERS = 'campaigns/GET_CHARACTERS';
 const GRAB_CHARACTER = 'campaigns/GRAB_CHARACTER';
+const ADD_CHARACTER = 'campaigns/ADD_CHARACTER';
 
 
 const getCharacters = (characters) => ({
@@ -11,6 +12,11 @@ const getCharacters = (characters) => ({
 
 const grabSingleCharacter = (character) => ({
     type: GRAB_CHARACTER,
+    character,
+})
+
+const addCharacter = (character) => ({
+    type: ADD_CHARACTER,
     character,
 })
 
@@ -33,6 +39,26 @@ export const getSingleCharacter = (id) => async (dispatch) => {
     }
 }
 
+export const createCharacter = (payload) => async (dispatch) => {
+    
+
+    const res = await fetch('/api/characters/createCharacter/', {
+        method: 'POST',
+        body: payload,
+    });
+
+    const data = await res.json();
+
+    if (data.errors) {
+        return data
+    }
+
+    dispatch(addCharacter(data));
+
+    return data;
+
+}
+
 
 // initial state
 const initialState = {}
@@ -42,11 +68,11 @@ const initialState = {}
 const charactersReducer = (state=initialState, action) => {
     // let newState;
     switch (action.type) {
-        // case ADD_CAMPAIGN:
-        //     return {
-        //         ...state,
-        //         [action.campaign.id]: action.campaign,
-        //     }
+        case ADD_CHARACTER:
+            return {
+                ...state,
+                [action.character.id]: action.character,
+            }
         case GRAB_CHARACTER:
         return {
             ...state,
