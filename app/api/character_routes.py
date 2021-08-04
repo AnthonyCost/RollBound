@@ -44,7 +44,7 @@ def create_character():
     createdCharacter.portraitImage = url
     db.session.add(createdCharacter)
     db.session.commit()
-    print(createdCharacter)
+    print("createdCharacter---------------------------- ",createdCharacter)
     return createdCharacter.to_dict()
 
 @characters_routes.route('/<int:id>', methods=['GET'])

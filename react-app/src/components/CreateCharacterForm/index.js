@@ -196,7 +196,5 @@ export default CreateCharacterForm;
               //! Map  options for all the values in races
               //! the value would be the id and the text in between would be the raceName
               //! depending on the value you select, the description that would be rendered would correspond with the stae of the raceId
-          <option value="0">Beginner</option>
-          <option value="1">Amateur</option>
-          <option value="2">Professional</option>
+          <option value="1">Dragonborn</option>
         </select> */}
