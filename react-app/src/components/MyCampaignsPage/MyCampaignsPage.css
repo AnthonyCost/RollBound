@@ -1,0 +1,47 @@
+.index-campaignsList{
+    /* display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.allCamp-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.index-header{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-header h1{
+    font-family: "DevinneSwash";
+    font-size: 60px;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.listContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}

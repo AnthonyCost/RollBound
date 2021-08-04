@@ -50,7 +50,7 @@ const NavBar = () => {
         |
         </div>
         <div className='navbar__link'>
-          <NavLink to='/users' exact={true} activeClassName='active'>
+          <NavLink to='/characters/myCharacters/' exact={true} activeClassName='active'>
             My Characters 
           </NavLink>
         </div>
@@ -65,6 +65,7 @@ const NavBar = () => {
   }
 
   return (
+    <div className="stickyNav">
     <nav>
       { user? <div className="navbar-leftSide">
         <NavLink to='/' exact={true} activeClassName='active'>
@@ -81,6 +82,7 @@ const NavBar = () => {
       }
       {navContent}
     </nav>
+    </div>
   );
 }
 

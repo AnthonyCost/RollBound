@@ -8,11 +8,16 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import { grabMetaData } from './store/characters';
 import AllCampaigns from './components/AllCampaigns';
 import CampaignPage from './components/CampaignPage';
 import CreateCampaignForm from './components/CreateCampaignForm';
 import UpdateCampaignForm from './components/UpdateCampaignForm';
 import MyCampaigns from './components/MyCampaignsPage';
+import MyCharacters from './components/MyCharactersPage';
+import CharacterProfilePage from './components/CharacterProfilePage';
+import CreateCharacterForm from './components/CreateCharacterForm';
+import UpdateCharacterForm from './components/UpdateCharacterForm';
 
 
 
@@ -24,6 +29,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      dispatch(grabMetaData());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -54,6 +60,10 @@ function App() {
         <NavBar />
           <MyCampaigns/>
         </ProtectedRoute>
+        <ProtectedRoute path='/characters/myCharacters/' exact={true} >
+        <NavBar />
+          <MyCharacters/>
+        </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
           <AllCampaigns/>
@@ -62,13 +72,25 @@ function App() {
         <NavBar />
           <CreateCampaignForm/>
         </ProtectedRoute>
+        <ProtectedRoute path='/characters/createCharacter' exact={true} >
+        <NavBar />
+          <CreateCharacterForm/>
+        </ProtectedRoute>
         <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
         <NavBar />
           <CampaignPage/>
         </ProtectedRoute>
+        <ProtectedRoute path='/characters/:id/' exact={true} >
+        <NavBar />
+          <CharacterProfilePage/>
+        </ProtectedRoute>
         <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
         <NavBar />
           <UpdateCampaignForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/characters/:id/updateCharacter/' exact={true} >
+        <NavBar />
+          <UpdateCharacterForm/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

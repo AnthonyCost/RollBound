@@ -1,13 +1,16 @@
-.index-campaignsList{
-    /* display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center; */
+.myCharacters-charactersList{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     grid-template-rows: auto;
     column-gap: 10px;
-    row-gap: 15px;
+    row-gap: 35px;
+}
+
+.listContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .allCamp-container {
@@ -17,7 +20,7 @@
     align-items: center;
 }
 
-.index-header{
+.myCharacters-header{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -25,16 +28,9 @@
     justify-content: center;
 }
 
-.index-header h1{
+.myCharacters-header h1{
     font-family: "DevinneSwash";
     font-size: 60px;
     text-decoration: underline;
     margin-top: 20px;
-}
-
-.listContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }

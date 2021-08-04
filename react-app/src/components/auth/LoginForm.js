@@ -45,7 +45,7 @@ const LoginForm = () => {
       <h1 className="splash-header">RollBound</h1>
       <h3 className="splash-subheader">Weave your legend</h3>
       </div>
-      <div className="form">
+      <div className="logInform">
       <form onSubmit={onLogin}>
         <h2 className="formTitle">Log In</h2>
         <div className="form-element">
