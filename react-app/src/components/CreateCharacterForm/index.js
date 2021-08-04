@@ -16,10 +16,10 @@ const CreateCharacterForm = () => {
 
     const charClasses = metaData?.charClassOptions;
     const charRaces = metaData?.charRaces;
-    // const charBackgrounds = metaData?.backgroundOptions;
-    // const charAlignments = metaData?.alignmentOptions;
+    const charBackgrounds = metaData?.backgroundOptions;
+    const charAlignments = metaData?.alignmentOptions;
 
-    // console.log(charClasses)
+    // console.log(charAlignments)
     // console.log(metaData?.charClassOptions[0]?.id)
     // console.log(metaData?.charClassOptions[0]?.className)
     // console.log(metaData?.charClassOptions[0]?.classDescription)
@@ -101,6 +101,17 @@ const CreateCharacterForm = () => {
         )
       }
 
+      let alignmentInfo
+      
+      if (alignmentId !== '') {
+        alignmentInfo = (
+          <div className="form-elementInfo">
+        <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
+        <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+        </div>
+        )
+      }
+
   return (
     <div className="CreateCampaignForm">
         <div className="CreateCampaignForm-header">
@@ -166,18 +177,22 @@ const CreateCharacterForm = () => {
         />
         </div>
 
-        {/* <div className="form-element">
+        <div className="form-element">
         <label>Alignment</label>
-        <input
-          type="textarea"
-          placeholder="Good, Neutral, or Evil"
-          required
-          value={alignmentId}
+          <select
+          type='integer'
+          name='alignment'
           onChange={updateAlignmentId}
-        />
-        <h4>alignmentName here</h4>
-        <h6>alignmentDescription here</h6>
-        </div> */}
+          value={alignmentId}
+          required
+          >
+          <option key="0" value="">Choose an Alignment!</option>
+          {charAlignments?.map((alignment) => (
+                  <option key={alignment?.id} value={alignment?.id}>{alignment?.alignmentName}</option>
+              ))}
+        </select>
+        {alignmentInfo}
+        </div>
 
         {/* <div className="form-element">
         <label>Background</label>

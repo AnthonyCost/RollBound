@@ -1,6 +1,6 @@
 from flask import Blueprint, request, redirect
 from flask_login.utils import login_required
-from app.models import db, Character, CharClass, Race, Alignment, Background
+from app.models import alignment, db, Character, CharClass, Race, Alignment, Background
 from flask_login import login_required, current_user
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -63,7 +63,7 @@ def get_metaData():
     """
     charClassOptions = [charClass.to_dict() for charClass in CharClass.query.all()]
     charRaces = [race.to_dict() for race in Race.query.all()]
-    # CharClass.query.all()
-    # CharClass.query.all()
+    alignmentOptions = [alignment.to_dict() for alignment in Alignment.query.all()]
+    backgroundOptions = [background.to_dict() for background in Background.query.all()]
     print({"charClassOptions" : charClassOptions})
-    return {"charClassOptions" : charClassOptions, "charRaces" : charRaces}
+    return {"charClassOptions" : charClassOptions, "charRaces" : charRaces, "alignmentOptions" : alignmentOptions, "backgroundOptions" : backgroundOptions}
