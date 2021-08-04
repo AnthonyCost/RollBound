@@ -1,7 +1,29 @@
 .myCharacters-charactersList{
-
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
 }
 
-.myCharacters-header {
-    
+.allCamp-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.myCharacters-header{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.myCharacters-header h1{
+    font-family: "DevinneSwash";
+    font-size: 60px;
+    text-decoration: underline;
+    margin-top: 20px;
 }

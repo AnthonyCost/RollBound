@@ -57,7 +57,7 @@ const CharacterTab = ({ character }) => {
               ? character.portraitImage
               : "https://cdnb.artstation.com/p/assets/images/images/010/638/243/large/jonathan-lang-comp-10.jpg?1525438067"
           }
-          style={{height:'150px', width:'150px', objectFit: 'cover', borderRadius: '50%'}}
+          style={{height:'100px', width:'100px', objectFit: 'cover', borderRadius: '50%'}}
           alt="Character Portrait"
         />
          </div>
@@ -66,7 +66,7 @@ const CharacterTab = ({ character }) => {
                <h2>{character?.name}</h2>
              </div>
                <div className="charTab-subHeader">
-               <h5>Level {character?.level} | {character?.race?.raceName} | {character?.class?.className}</h5>
+               <h6>Level {character?.level} | {character?.race?.raceName} | {character?.class?.className}</h6>
                </div>
          </div>
       </div>

@@ -50,7 +50,7 @@ const CharacterProfilePage = () => {
     
 
     return (
-        <div className="charPage-container" style={{ backgroundImage: `url("https://user-images.githubusercontent.com/35717793/128236299-7c9040dd-0e80-4dfb-b7e3-0fee27d9d188.jpg")`}}>
+        <div className="charPage-container" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1575081151271-b6d77f29ab1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80")`}}>
         <div className="charPage-top">
             <div className="charPage-title">
                 <h3>{character?.title}</h3>
