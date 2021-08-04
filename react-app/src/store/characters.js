@@ -4,7 +4,7 @@ const GET_CHARACTERS = 'campaigns/GET_CHARACTERS';
 const GRAB_CHARACTER = 'campaigns/GRAB_CHARACTER';
 const ADD_CHARACTER = 'campaigns/ADD_CHARACTER';
 const GET_METADATA = 'campaigns/GET_METADATA';
-
+const EDIT_CHARACTER = 'campaigns/EDIT_CHARACTER';
 const DESTROY_CHARACTER = 'campaigns/DESTROY_CHARACTER';
 
 const getCharacters = (characters) => ({
@@ -25,6 +25,11 @@ const addCharacter = (character) => ({
 const getMetadata = (payload) => ({
     type: GET_METADATA,
     payload
+})
+
+const editCharacter = (character) => ({
+    type: EDIT_CHARACTER,
+    character,
 })
 
 const destroyCharacter = (character) => ({
@@ -79,6 +84,19 @@ export const createCharacter = (payload) => async (dispatch) => {
 
 }
 
+export const updateCharacter = (id, formData) => async (dispatch) => {
+    console.log("formData here: ", formData) 
+    const res = await fetch(`/api/characters/${id}/updateCharacter/`, {
+        method: 'PUT',
+        body: formData,
+    });
+    if (res.ok) {
+        const character = await res.json();
+        dispatch(editCharacter(character));
+        return character;
+    }
+}
+
 export const deleteCharacter = (characterId) => async (dispatch) => {
     const res = await fetch(`/api/characters/${characterId}`, {
         method: 'DELETE'
@@ -106,11 +124,11 @@ const charactersReducer = (state=initialState, action) => {
             ...state,
             [action.character.id]: action.character,
         };
-        // case EDIT_CAMPAIGN:
-        //     return {
-        //         ...state,
-        //         [action.campaign.id]: action.campaign,
-        //     }
+        case EDIT_CHARACTER:
+            return {
+                ...state,
+                [action.character.id]: action.character,
+            }
         case DESTROY_CHARACTER:
                 newState = {...state};
                 delete newState[action.character];
