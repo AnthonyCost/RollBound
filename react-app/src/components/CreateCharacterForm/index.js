@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createCharacter } from '../../store/characters';
@@ -10,7 +10,9 @@ const CreateCharacterForm = () => {
     const history = useHistory();
     const user = useSelector(state => state.session.user);
     const userId = user?.id;
+    const metaData = useSelector(state => state.characters.metaData);
 
+    console.log(metaData)
 
     // states here
     const [errors, setErrors] = useState([]);
@@ -64,6 +66,7 @@ const CreateCharacterForm = () => {
         e.preventDefault();
         history.goBack();
       };
+
 
   return (
     <div className="CreateCampaignForm">

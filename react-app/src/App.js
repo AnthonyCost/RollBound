@@ -8,6 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import { grabMetaData } from './store/characters';
 import AllCampaigns from './components/AllCampaigns';
 import CampaignPage from './components/CampaignPage';
 import CreateCampaignForm from './components/CreateCampaignForm';
@@ -27,6 +28,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      dispatch(grabMetaData());
       setLoaded(true);
     })();
   }, [dispatch]);

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, redirect
 from flask_login.utils import login_required
-from app.models import db, Character
+from app.models import db, Character, CharClass, Race, Alignment, Background
 from flask_login import login_required, current_user
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -55,3 +55,15 @@ def get_character(id):
     print("backend id: ", id)
     character = Character.query.filter_by(id)
     return character.to_dict()
+
+@characters_routes.route('/createCharacter/', methods=['GET'])
+def get_metaData():
+    """
+    Get metadata for a single character
+    """
+    charClassOptions = [charClass.to_dict() for charClass in CharClass.query.all()]
+    # CharClass.query.all()
+    # CharClass.query.all()
+    # CharClass.query.all()
+    print({"charClassOptions" : charClassOptions})
+    return {"charClassOptions" : charClassOptions}

@@ -3,6 +3,7 @@
 const GET_CHARACTERS = 'campaigns/GET_CHARACTERS';
 const GRAB_CHARACTER = 'campaigns/GRAB_CHARACTER';
 const ADD_CHARACTER = 'campaigns/ADD_CHARACTER';
+const GET_METADATA = 'campaigns/GET_METADATA';
 
 
 const getCharacters = (characters) => ({
@@ -18,6 +19,11 @@ const grabSingleCharacter = (character) => ({
 const addCharacter = (character) => ({
     type: ADD_CHARACTER,
     character,
+})
+
+const getMetadata = (payload) => ({
+    type: GET_METADATA,
+    payload
 })
 
 // Thunks
@@ -36,6 +42,14 @@ export const getSingleCharacter = (id) => async (dispatch) => {
     if (res.ok) {
         const character = await res.json();
         return dispatch(grabSingleCharacter(id));
+    }
+}
+
+export const grabMetaData = () => async (dispatch) => {
+    const res = await fetch(`/api/characters/createCharacter/`);
+    if (res.ok) {
+        const data = await res.json();
+        return dispatch(getMetadata(data));
     }
 }
 
@@ -95,6 +109,11 @@ const charactersReducer = (state=initialState, action) => {
             return {
                 ...state,
                 ...allCharacters,
+            };
+        case GET_METADATA:
+            return {
+                ...state,
+                "metaData" : action.payload,
             };
             default:
                 return state;
