@@ -47,6 +47,7 @@ const CharacterTab = ({ character }) => {
 
 
   return (
+    <div className="charTab-wrapper">
       <div className="charTab-container">
          <div>
          <img
@@ -56,20 +57,21 @@ const CharacterTab = ({ character }) => {
               ? character.portraitImage
               : "https://cdnb.artstation.com/p/assets/images/images/010/638/243/large/jonathan-lang-comp-10.jpg?1525438067"
           }
-          style={{height:'500px', width:'500px', objectFit: 'cover', borderRadius: '50%'}}
+          style={{height:'150px', width:'150px', objectFit: 'cover', borderRadius: '50%'}}
           alt="Character Portrait"
         />
          </div>
          <div className="charTab-info">
              <div className="charTab-title">
                <h2>{character?.name}</h2>
+             </div>
                <div className="charTab-subHeader">
                <h5>Level {character?.level} | {character?.race?.raceName} | {character?.class?.className}</h5>
                </div>
-             </div>
-            {charTabbuttons}
          </div>
       </div>
+        {charTabbuttons}
+    </div>
   );
 };
 

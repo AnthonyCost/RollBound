@@ -65,6 +65,7 @@ const NavBar = () => {
   }
 
   return (
+    <div className="stickyNav">
     <nav>
       { user? <div className="navbar-leftSide">
         <NavLink to='/' exact={true} activeClassName='active'>
@@ -81,6 +82,7 @@ const NavBar = () => {
       }
       {navContent}
     </nav>
+    </div>
   );
 }
 

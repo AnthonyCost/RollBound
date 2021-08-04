@@ -21,8 +21,6 @@ const CharacterProfilePage = () => {
     
   
     const character = useSelector(state => state.characters[characterId]);
-    
-    console.log(character)
 
     const user = useSelector(state => state.session.user);
     const userId = user.id

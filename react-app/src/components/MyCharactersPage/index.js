@@ -23,13 +23,13 @@ const MyCharacters = () => {
 
   return (
       <div>
-          <div className="index-header">
+          <div className="myCharacters-header">
           <h1>My Characters</h1>
           <NavLink to={`/characters/createCharacter`}>
                     <button>Add Character</button>
                 </NavLink>
           </div>
-          <div className="index-campaignsList">
+          <div className="myCharacters-charactersList">
               {characters?.map((character) => (
                   <CharacterTab key={character.id} character={character} />
               ))}
