@@ -82,16 +82,32 @@ const CreateCharacterForm = () => {
           onChange={updateName}
         />
         </div>
+        
         <div className="form-element">
         <label>BackStory</label>
         <input
-          type="text"
+          type="textarea"
           placeholder="Your origin story"
           required
           value={backstory}
           onChange={updateBackStory}
         />
         </div>
+
+        <div className="form-element">
+        <label>Level</label>
+        <input
+          type="number"
+          placeholder="level"
+          min="1"
+          max="20"
+          required
+          value={level}
+          onChange={updateLevel}
+        />
+        </div>
+
+
         <div className="form-element">
         <label>Character Portrait</label>
         <input
