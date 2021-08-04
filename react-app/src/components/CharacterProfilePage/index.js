@@ -52,7 +52,7 @@ const CharacterProfilePage = () => {
     
 
     return (
-        <div className="charPage-container" style={{ backgroundImage: `url("https://cdnb.artstation.com/p/assets/images/images/031/846/281/4k/samson-castelino-enchanted-castle.jpg?1604766960")`}}>
+        <div className="charPage-container" style={{ backgroundImage: `url("https://user-images.githubusercontent.com/35717793/128236299-7c9040dd-0e80-4dfb-b7e3-0fee27d9d188.jpg")`}}>
         <div className="charPage-top">
             <div className="charPage-title">
                 <h3>{character?.title}</h3>

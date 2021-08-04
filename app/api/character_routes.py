@@ -56,7 +56,7 @@ def get_character(id):
     character = Character.query.filter_by(id)
     return character.to_dict()
 
-@characters_routes.route('/createCharacter/', methods=['GET'])
+@characters_routes.route('/', methods=['GET'])
 def get_metaData():
     """
     Get metadata for a single character
@@ -67,3 +67,4 @@ def get_metaData():
     backgroundOptions = [background.to_dict() for background in Background.query.all()]
     print({"charClassOptions" : charClassOptions})
     return {"charClassOptions" : charClassOptions, "charRaces" : charRaces, "alignmentOptions" : alignmentOptions, "backgroundOptions" : backgroundOptions}
+
