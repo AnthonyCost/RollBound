@@ -64,11 +64,11 @@ const UpdateCampaignForm = () => {
 
       const handleCancelClick = (e) => {
         e.preventDefault();
-        history.push(`/`);
+        history.goBack();
       };
 
   return (
-    <div className="CreateCampaignForm">
+    <div className="CreateCampaignForm form">
         <div className="CreateCampaignForm-header">
             <h1>Update Campaign</h1>
         </div>

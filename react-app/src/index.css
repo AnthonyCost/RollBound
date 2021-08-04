@@ -170,7 +170,8 @@ nav {
     text-decoration: underline;
 }
 
-.form {
+.logInform {
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,6 +180,18 @@ nav {
     background-color: #0000001a;
     height: 45vh;
     width: 25vw;
+} 
+
+.form {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #0000001a;
+    height: 90vh;
+    width: 100%;
 } 
 
 .splash-logo {

@@ -14,16 +14,13 @@ const CampaignPage = () => {
 
 
     const campaign = useSelector(state => state.campaigns[campaignId]);
-    useEffect(() => {
-        dispatch(grabCampaigns());
-      }, [dispatch]);
-
-
-
+    
+    
+    
     const user = useSelector(state => state.session.user);
     const userId = user?.id
     let camppagebuttons = null;
-  
+    
     if(userId === campaign?.hostId.id) {
         camppagebuttons = (
             <div className='campTab-buttons'>          
@@ -39,8 +36,11 @@ const CampaignPage = () => {
         )
     }
 
-
-
+    
+    
+    useEffect(() => {
+        dispatch(grabCampaigns());
+      }, [dispatch]);
 
 
   return (

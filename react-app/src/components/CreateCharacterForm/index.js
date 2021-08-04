@@ -122,7 +122,7 @@ const CreateCharacterForm = () => {
       }
 
   return (
-    <div className="CreateCampaignForm">
+    <div className="CreateCampaignForm form">
         <div className="CreateCampaignForm-header">
             <h1>Create Character</h1>
         </div>
