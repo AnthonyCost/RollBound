@@ -82,17 +82,32 @@ const CreateCharacterForm = () => {
           onChange={updateName}
         />
         </div>
-        
-        <div className="form-element">
-        <label>BackStory</label>
+
+        {/* <div className="form-element">
+        <label>Race</label>
         <input
           type="textarea"
-          placeholder="Your origin story"
+          placeholder="'yer a wizard Harry"
           required
-          value={backstory}
-          onChange={updateBackStory}
+          value={raceId}
+          onChange={updateRaceId}
         />
-        </div>
+        <h4>raceName here</h4>
+        <h6>raceDescription here</h6>
+        </div> */}
+        
+        {/* <div className="form-element">
+        <label>Class</label>
+        <input
+          type="textarea"
+          placeholder="'yer a wizard Harry"
+          required
+          value={classId}
+          onChange={updateClassId}
+        />
+        <h4>className here</h4>
+        <h6>classDescription here</h6>
+        </div> */}
 
         <div className="form-element">
         <label>Level</label>
@@ -107,6 +122,42 @@ const CreateCharacterForm = () => {
         />
         </div>
 
+        {/* <div className="form-element">
+        <label>Alignment</label>
+        <input
+          type="textarea"
+          placeholder="Good, Neutral, or Evil"
+          required
+          value={alignmentId}
+          onChange={updateAlignmentId}
+        />
+        <h4>alignmentName here</h4>
+        <h6>alignmentDescription here</h6>
+        </div> */}
+
+        {/* <div className="form-element">
+        <label>Background</label>
+        <input
+          type="textarea"
+          placeholder="'What were you?"
+          required
+          value={backgroundId}
+          onChange={updateBackgroundId}
+        />
+        <h4>backgroundName here</h4>
+        <h6>backgroundDescription here</h6>
+        </div> */}
+
+        <div className="form-element">
+        <label>BackStory</label>
+        <input
+          type="textarea"
+          placeholder="Your origin story"
+          required
+          value={backstory}
+          onChange={updateBackStory}
+        />
+        </div>
 
         <div className="form-element">
         <label>Character Portrait</label>
