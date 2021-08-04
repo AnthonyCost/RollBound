@@ -12,7 +12,9 @@ const CreateCharacterForm = () => {
     const userId = user?.id;
     const metaData = useSelector(state => state.characters.metaData);
 
-    console.log(metaData)
+    console.log(metaData?.charClassOptions[0]?.id)
+    console.log(metaData?.charClassOptions[0]?.className)
+    console.log(metaData?.charClassOptions[0]?.classDescription)
 
     // states here
     const [errors, setErrors] = useState([]);
@@ -99,18 +101,26 @@ const CreateCharacterForm = () => {
         <h6>raceDescription here</h6>
         </div> */}
         
-        {/* <div className="form-element">
+        <div className="form-element">
         <label>Class</label>
-        <input
-          type="textarea"
-          placeholder="'yer a wizard Harry"
-          required
-          value={classId}
+          <select
+          type='integer'
+          name='race'
           onChange={updateClassId}
-        />
+          value={classId}
+          // placeholder="Be who you want to be"
+          required
+          >
+              //! Map  options for all the values in races
+              //! the value would be the id and the text in between would be the raceName
+              //! depending on the value you select, the description that would be rendered would correspond with the stae of the raceId
+          <option value="1">Dragonborn</option>
+        </select>
+        <div className="form-elementInfo">
         <h4>className here</h4>
         <h6>classDescription here</h6>
-        </div> */}
+        </div>
+        </div>
 
         <div className="form-element">
         <label>Level</label>
