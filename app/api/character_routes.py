@@ -62,8 +62,8 @@ def get_metaData():
     Get metadata for a single character
     """
     charClassOptions = [charClass.to_dict() for charClass in CharClass.query.all()]
-    # CharClass.query.all()
+    charRaces = [race.to_dict() for race in Race.query.all()]
     # CharClass.query.all()
     # CharClass.query.all()
     print({"charClassOptions" : charClassOptions})
-    return {"charClassOptions" : charClassOptions}
+    return {"charClassOptions" : charClassOptions, "charRaces" : charRaces}
