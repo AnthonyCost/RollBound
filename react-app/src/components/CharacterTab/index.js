@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import  DeleteCampaignModal  from "../DeleteCampaignForm";
+import DeleteCharacterModal from "../DeleteCharacterForm";
 import "./CharacterTab.css"
 
 
@@ -35,9 +35,9 @@ const CharacterTab = ({ character }) => {
                         <p>Edit</p>
                     </NavLink>
             </div>
-            {/* <div className="charTab-buttonSingle">
-            <DeleteCampaignModal campaignId={campaign?.id}/>
-            </div> */}
+            <div className="charTab-buttonSingle">
+                <DeleteCharacterModal characterId={character?.id}/>
+            </div>
         </div>
       )
     }

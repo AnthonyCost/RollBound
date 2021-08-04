@@ -68,7 +68,7 @@ def get_metaData():
     print({"charClassOptions" : charClassOptions})
     return {"charClassOptions" : charClassOptions, "charRaces" : charRaces, "alignmentOptions" : alignmentOptions, "backgroundOptions" : backgroundOptions}
 
-@characters_routes.route('/<int:characterId>/', methods=['DELETE'])
+@characters_routes.route('/<int:characterId>', methods=['DELETE'])
 def delete_character(characterId):
     """
     Delete a character
