@@ -65,7 +65,6 @@ def get_metaData():
     charRaces = [race.to_dict() for race in Race.query.all()]
     alignmentOptions = [alignment.to_dict() for alignment in Alignment.query.all()]
     backgroundOptions = [background.to_dict() for background in Background.query.all()]
-    print({"charClassOptions" : charClassOptions})
     return {"charClassOptions" : charClassOptions, "charRaces" : charRaces, "alignmentOptions" : alignmentOptions, "backgroundOptions" : backgroundOptions}
 
 @characters_routes.route('/<int:id>/updateCharacter/', methods=['PUT'])
