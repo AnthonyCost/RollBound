@@ -112,6 +112,17 @@ const CreateCharacterForm = () => {
         )
       }
 
+      let backgroundInfo
+      
+      if (backgroundId !== '') {
+        backgroundInfo = (
+          <div className="form-elementInfo">
+        <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
+        <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+        </div>
+        )
+      }
+
   return (
     <div className="CreateCampaignForm">
         <div className="CreateCampaignForm-header">
@@ -194,18 +205,22 @@ const CreateCharacterForm = () => {
         {alignmentInfo}
         </div>
 
-        {/* <div className="form-element">
+        <div className="form-element">
         <label>Background</label>
-        <input
-          type="textarea"
-          placeholder="'What were you?"
-          required
-          value={backgroundId}
+          <select
+          type='integer'
+          name='background'
           onChange={updateBackgroundId}
-        />
-        <h4>backgroundName here</h4>
-        <h6>backgroundDescription here</h6>
-        </div> */}
+          value={backgroundId}
+          required
+          >
+          <option key="0" value="">Choose a Background!</option>
+          {charBackgrounds?.map((background) => (
+                  <option key={background?.id} value={background?.id}>{background?.backgroundName}</option>
+              ))}
+        </select>
+        {backgroundInfo}
+        </div>
 
         <div className="form-element">
         <label>BackStory</label>
