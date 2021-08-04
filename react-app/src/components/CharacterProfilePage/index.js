@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { grabCharacters } from '../../store/characters';
-// import DeleteCampaignModal from "../DeleteCampaignForm";
+import DeleteCharacterModal from "../DeleteCharacterForm";
 import "./CharacterProfilePage.css"
 
 
@@ -36,9 +36,9 @@ const CharacterProfilePage = () => {
                         <button>Update {character?.name}</button>
                     </NavLink>
                 </div>
-                {/* <div className="campTab-buttonSingle">
-                    <DeleteCampaignModal characterId={characterId}/>
-                </div> */}
+                <div className="charTab-buttonSingle">
+                    <DeleteCharacterModal characterId={characterId}/>
+                </div>
             </div>
         )
     }
