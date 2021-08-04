@@ -31,7 +31,7 @@ const CharacterTab = ({ character }) => {
                     </NavLink>
             </div>
             <div className="charTab-buttonSingle">
-            <NavLink to={`/characters/${character?.id}/updateCharacter`}>
+            <NavLink to={`/characters/${character?.id}/updateCharacter/`}>
                         <p>Edit</p>
                     </NavLink>
             </div>

@@ -32,7 +32,7 @@ const CharacterProfilePage = () => {
         charPagebuttons = (
             <div className='campTab-buttons'>          
                 <div className="campTab-buttonSingle">
-                    <NavLink to={`/campaigns/${character?.id}/updateCharacter`}>
+                    <NavLink to={`/campaigns/${character?.id}/updateCharacter/`}>
                         <button>Update {character?.name}</button>
                     </NavLink>
                 </div>
