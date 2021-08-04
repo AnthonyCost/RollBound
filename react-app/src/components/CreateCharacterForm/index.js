@@ -19,10 +19,6 @@ const CreateCharacterForm = () => {
     const charBackgrounds = metaData?.backgroundOptions;
     const charAlignments = metaData?.alignmentOptions;
 
-    // console.log(charAlignments)
-    // console.log(metaData?.charClassOptions[0]?.id)
-    // console.log(metaData?.charClassOptions[0]?.className)
-    // console.log(metaData?.charClassOptions[0]?.classDescription)
 
     
     // states here
@@ -78,6 +74,8 @@ const CreateCharacterForm = () => {
         history.goBack();
       };
       
+
+      //  reference info here
 
       let raceInfo
       
