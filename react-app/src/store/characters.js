@@ -5,6 +5,7 @@ const GRAB_CHARACTER = 'campaigns/GRAB_CHARACTER';
 const ADD_CHARACTER = 'campaigns/ADD_CHARACTER';
 const GET_METADATA = 'campaigns/GET_METADATA';
 
+const DESTROY_CHARACTER = 'campaigns/DESTROY_CHARACTER';
 
 const getCharacters = (characters) => ({
     type: GET_CHARACTERS,
@@ -24,6 +25,11 @@ const addCharacter = (character) => ({
 const getMetadata = (payload) => ({
     type: GET_METADATA,
     payload
+})
+
+const destroyCharacter = (character) => ({
+    type: DESTROY_CHARACTER,
+    character,
 })
 
 // Thunks
@@ -73,6 +79,14 @@ export const createCharacter = (payload) => async (dispatch) => {
 
 }
 
+export const deleteCharacter = (characterId) => async (dispatch) => {
+    const res = await fetch(`/api/characters/${characterId}`, {
+        method: 'DELETE'
+    });
+    if (res.ok) {
+        dispatch(destroyCharacter(characterId));
+    }
+}
 
 // initial state
 const initialState = {}
@@ -80,7 +94,7 @@ const initialState = {}
 // Reducer
 
 const charactersReducer = (state=initialState, action) => {
-    // let newState;
+    let newState;
     switch (action.type) {
         case ADD_CHARACTER:
             return {
@@ -97,10 +111,10 @@ const charactersReducer = (state=initialState, action) => {
         //         ...state,
         //         [action.campaign.id]: action.campaign,
         //     }
-        // case DESTROY_CAMPAIGN:
-        //         newState = {...state};
-        //         delete newState[action.campaign];
-        //         return newState;
+        case DESTROY_CHARACTER:
+                newState = {...state};
+                delete newState[action.character];
+                return newState;
         case GET_CHARACTERS:
             const allCharacters = {};
             action.characters.characters.forEach((character) => {

@@ -47,7 +47,7 @@ def create_character():
     print("createdCharacter---------------------------- ",createdCharacter)
     return createdCharacter.to_dict()
 
-@characters_routes.route('/<int:id>', methods=['GET'])
+@characters_routes.route('/<int:id>/', methods=['GET'])
 def get_character(id):
     """
     Get a single character
@@ -68,3 +68,12 @@ def get_metaData():
     print({"charClassOptions" : charClassOptions})
     return {"charClassOptions" : charClassOptions, "charRaces" : charRaces, "alignmentOptions" : alignmentOptions, "backgroundOptions" : backgroundOptions}
 
+@characters_routes.route('/<int:characterId>/', methods=['DELETE'])
+def delete_character(characterId):
+    """
+    Delete a character
+    """
+    character = Character.query.filter_by(id=characterId).first()
+    db.session.delete(character)
+    db.session.commit()
+    return "successful"
