@@ -56,7 +56,7 @@ def get_character(id):
     character = Character.query.filter_by(id)
     return character.to_dict()
 
-@characters_routes.route('/', methods=['GET'])
+@characters_routes.route('/createCharacter/', methods=['GET'])
 def get_metaData():
     """
     Get metadata for a single character
