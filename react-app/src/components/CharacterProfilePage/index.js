@@ -30,7 +30,7 @@ const CharacterProfilePage = () => {
         charPagebuttons = (
             <div className='campTab-buttons'>          
                 <div className="campTab-buttonSingle">
-                    <NavLink to={`/campaigns/${character?.id}/updateCharacter/`}>
+                    <NavLink to={`/characters/${character?.id}/updateCharacter/`}>
                         <button>Update {character?.name}</button>
                     </NavLink>
                 </div>
@@ -51,16 +51,8 @@ const CharacterProfilePage = () => {
 
     return (
         <div className="charPage-container" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1575081151271-b6d77f29ab1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80")`}}>
-        <div className="charPage-top">
-            <div className="charPage-title">
-                <h3>{character?.title}</h3>
-            </div>
-            <div className="charPage-hostedBy">
-                <h3>Played by: {character?.userId?.username}</h3>
-                <img alt="host-profile-pic" src={`${character?.userId?.img_url}`} style={{height:'45px', width:'45px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
-            </div>
-        </div>
-        <div className="charPage-bottom">
+        <div className="charpage-content">
+        <div className="charPage-left">
              <div className="charPage-cover">
                 <img
                 src={
@@ -73,22 +65,27 @@ const CharacterProfilePage = () => {
                 />
                 {charPagebuttons}
             </div>
+        </div>
+        <div className="charPage-right">
             <div className="charPage-info">
-            <div className="charTab-title">
-               <h2>{character?.name}</h2>
-               <div className="charTab-subHeader">
+            <div className="charPage-title">
+               <h1 className="charPage-name">{character?.name}</h1>
+               <div className="charPage-subHeader">
                <h3>Level {character?.level} | {character?.race?.raceName} | {character?.class?.className}</h3>
                </div>
-               <div>
-                   <h5>{character?.background?.backgroundName}</h5>
+                <div className="charPage-hostedBy">
+                    <h3>Played by: {character?.userId?.username}</h3>
+                    <img alt="host-profile-pic" src={`${character?.userId?.img_url}`} style={{height:'25px', width:'25px', 'borderRadius':'50%', margin: '5px', marginTop : '10px', objectFit: 'cover'}}/>
+                </div>
+               <div className="charPage-backalign">
+                   <h5>Background: {character?.background?.backgroundName}</h5>
+                   <h5>Alignment: {character?.alignment?.alignmentName}</h5>
                </div>
-               <div>
-                   <h6>{character?.alignment?.alignmentName}</h6>
-               </div>
-             </div>
+            </div>
                 <div className="charPage-story">
                     <p>{character?.backstory}</p>
                 </div>
+             </div>
             </div>
         </div>
     </div>
