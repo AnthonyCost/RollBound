@@ -21,18 +21,20 @@ const MyCampaigns = () => {
   }, [dispatch]);
 
   return (
-      <div>
+      <div className="page-container">
           <div className="index-header">
           <h1>My Campaigns</h1>
           <NavLink to={`/campaigns/createCampaign`}>
                     <button>Add Campaign</button>
                 </NavLink>
           </div>
-          <div className="index-campaignsList">
-              {campaigns?.map((campaign) => (
-                  <CampaignTab key={campaign.id} campaign={campaign} />
-              ))}
-        </div>
+          <div className="listContainer">
+            <div className="index-campaignsList">
+                {campaigns?.map((campaign) => (
+                    <CampaignTab key={campaign.id} campaign={campaign} />
+                ))}
+            </div>
+          </div>
       </div>
   );
 };

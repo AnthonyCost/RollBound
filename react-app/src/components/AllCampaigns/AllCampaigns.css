@@ -31,3 +31,10 @@
     text-decoration: underline;
     margin-top: 20px;
 }
+
+.listContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

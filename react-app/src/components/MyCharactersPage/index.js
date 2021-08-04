@@ -29,11 +29,13 @@ const MyCharacters = () => {
                     <button>Add Character</button>
                 </NavLink>
           </div>
+          <div className="listContainer">
           <div className="myCharacters-charactersList">
               {characters?.map((character) => (
                   <CharacterTab key={character.id} character={character} />
               ))}
         </div>
+          </div>
       </div>
   );
 };

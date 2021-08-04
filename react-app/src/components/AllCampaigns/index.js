@@ -22,11 +22,13 @@ const AllCampaigns = () => {
                     <button>Add Campaign</button>
                 </NavLink>
           </div>
+          <div className="listContainer">
           <div className="index-campaignsList">
               {campaigns?.map((campaign) => (
                   <CampaignTab key={campaign.id} campaign={campaign} />
               ))}
         </div>
+          </div>
       </div>
   );
 };
