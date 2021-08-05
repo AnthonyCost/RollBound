@@ -214,6 +214,16 @@ nav {
     text-decoration: underline;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form button {
+    /* width: 30% */
+}
+
 /* splash page */
 
 .splash-logo {

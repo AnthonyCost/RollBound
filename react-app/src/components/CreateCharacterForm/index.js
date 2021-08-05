@@ -138,7 +138,7 @@ const CreateCharacterForm = () => {
       }
 
   return (
-    <div className="CreateCharacterForm">
+    <div className="CreateCharacterForm form">
         <div className="CreateCharacterForm-header">
             <h1>Create Character</h1>
         </div>
