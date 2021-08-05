@@ -210,3 +210,43 @@ nav {
     filter:  hue-rotate(193deg) saturate(5) contrast(1.5);
     padding-top: 10px;
 }
+
+/* buttons */
+
+button {
+    font-family: "Balgruf";
+    outline: none;
+    display: block;
+    border: solid 1px #00FDEC;
+    color: #00FDEC;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #020202;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+    text-decoration: none;
+  }
+  
+button:focus {
+    background-color: #00FDEC;
+    color: #020202;
+  }
+  
+button:active {
+    background: #020202;
+    color: #00FDEC;
+    border: solid 1px #00FDEC;
+  }
+  
+button:hover {
+    background-color: #00FDEC;
+    color: #020202;
+  }
+
+a  {
+    text-decoration: none;
+}
