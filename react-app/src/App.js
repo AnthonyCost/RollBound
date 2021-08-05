@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      dispatch(grabMetaData());
+      await dispatch(grabMetaData());
       setLoaded(true);
     })();
   }, [dispatch]);

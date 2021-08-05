@@ -1,7 +1,8 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { updateCharacter} from '../../store/characters';
+import {grabCharacters} from '../../store/characters';
 import "./UpdateCharacterForm.css"
 
 
@@ -12,14 +13,18 @@ const UpdateCharacterForm = () => {
     const user = useSelector(state => state.session.user);
     const userId = user?.id;
 
+
   
   const { id } = useParams();
 
   const characterId = id;
   
+  useEffect(() => {
+    dispatch(grabCharacters());
+  }, [dispatch]);
+  
   const currentCharacter = useSelector(state => state.characters[characterId]);
 
-  console.log(currentCharacter)
 
 
     // metaData here
@@ -94,7 +99,7 @@ const UpdateCharacterForm = () => {
 
       let raceInfo
       
-      if (raceId !== '') {
+      if (raceId !== undefined) {
         raceInfo = (
           <div className="form-elementInfo">
             <div className="selectTitle">
@@ -109,7 +114,7 @@ const UpdateCharacterForm = () => {
 
       let classInfo
       
-      if (classId !== '') {
+      if (classId !== undefined) {
         classInfo = (
           <div className="form-elementInfo">
             <div className="selectTitle">
@@ -124,7 +129,7 @@ const UpdateCharacterForm = () => {
 
       let alignmentInfo
       
-      if (alignmentId !== '') {
+      if (alignmentId !== undefined) {
         alignmentInfo = (
           <div className="form-elementInfo">
             <div className="selectTitle">
@@ -139,7 +144,7 @@ const UpdateCharacterForm = () => {
 
       let backgroundInfo
       
-      if (backgroundId !== '') {
+      if (backgroundId !== undefined) {
         backgroundInfo = (
           <div className="form-elementInfo">
             <div className="selectTitle">
@@ -161,6 +166,8 @@ const UpdateCharacterForm = () => {
           </div>
         )
       }
+
+    
 
   return (
     <div className="UpdateCharacterForm form">
