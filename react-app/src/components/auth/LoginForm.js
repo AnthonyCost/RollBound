@@ -73,11 +73,11 @@ const LoginForm = () => {
                 <div key={ind}>{error}</div>
                 ))}
             </div>
-        <div>
+        <div className="splash-buttons">
           <button type='submit'>Login</button>
         </div>
       </form>
-        <div>
+        <div className="splash-buttons">
           <DemoUserButton />
           <button onClick={redirectToSignUp}>Sign Up</button>
         </div>

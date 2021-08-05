@@ -154,6 +154,15 @@ nav {
     width: 50vw;
 }
 
+.splash-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* form */
+
 .formTitle {
     display: flex;
     justify-content: center;
@@ -174,7 +183,6 @@ nav {
     font-family: "Ubuntu";
     text-decoration: underline;
     font-size: 1.5em;
-    padding-right: 10px;
 }
 
 .logInform {
