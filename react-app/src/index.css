@@ -121,13 +121,13 @@ nav {
 
 .splash-header {
     font-family: "Runic";
-    font-size: 300px;
+    font-size: 40vh;
     padding-top: 10px;
 }
 
 .splash-subheader {
     font-family: "Balgruf";
-    font-size: 60px;
+    font-size: 6vh;
 }
 
 .splash-container {
@@ -135,7 +135,11 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-image: url("https://user-images.githubusercontent.com/35717793/127571786-c42c2f79-20f6-47fe-8994-a1b8c554b351.jpg");
+    background-image: url("https://64.media.tumblr.com/4fe5afbe5d56be6921c1354b3d29edcb/tumblr_ple68favqO1ufq8wko1_1280.gifv");
+    /* https://64.media.tumblr.com/4fe5afbe5d56be6921c1354b3d29edcb/tumblr_ple68favqO1ufq8wko1_1280.gifv */
+    /* https://64.media.tumblr.com/0cbdcfa76d2eb280b4c3214f2aca019f/tumblr_on7bfiwtZX1ujca6vo1_640.gifv */
+    /* https://i.pinimg.com/originals/43/0e/9a/430e9abb2039e992275efb898c5948c1.gif */
+    
     background-size: cover;
     height: 100vh;
 }
