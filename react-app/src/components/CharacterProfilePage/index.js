@@ -82,10 +82,10 @@ const CharacterProfilePage = () => {
                    <h5>Alignment: {character?.alignment?.alignmentName}</h5>
                </div>
             </div>
+             </div>
                 <div className="charPage-story">
                     <p>{character?.backstory}</p>
                 </div>
-             </div>
             </div>
         </div>
     </div>
