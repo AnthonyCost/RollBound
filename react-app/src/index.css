@@ -224,7 +224,7 @@ button {
     font-weight: 500;
     line-height: 1;
     border-radius: 30px;
-    background: #020202;
+    background: #060923;
     cursor: pointer;
     transition: all 0.3s linear;
     margin: 5px;
@@ -233,18 +233,18 @@ button {
   
 button:focus {
     background-color: #00FDEC;
-    color: #020202;
+    color: #060923;
   }
   
 button:active {
-    background: #020202;
+    background: #060923;
     color: #00FDEC;
     border: solid 1px #00FDEC;
   }
   
 button:hover {
     background-color: #00FDEC;
-    color: #020202;
+    color: #060923;
   }
 
 a  {
