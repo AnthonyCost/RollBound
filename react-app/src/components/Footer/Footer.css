@@ -1,0 +1,28 @@
+.main-footer {
+    padding: 1em;;
+    display: flex;
+    flex-direction: row;
+    background-color: #060923;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #00FDEC;
+}
+
+.react-icons {
+    color: #00FDEC;
+    padding: .25rem;
+    margin: .25rem;
+}
+
+.react-icons:hover {
+    transition: 500ms;
+    animation: ease-in-out;
+    color: #00ccff77;
+}
+
+.footer-row-row2 a:active, .react-icons:active{
+    background:none !important;
+}

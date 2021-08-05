@@ -14,11 +14,12 @@
 .campPage-bottom {
     display: flex;
     flex-direction: row;
-    padding: 5em;
+    margin-bottom: 5%;
 }
 
 .campPage-cover img{
-    padding: 20px;
+    border: rgba(255, 255, 255, 0.438) 5px;
+    border-style: double;
 }
 
 
@@ -27,6 +28,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.658);
+    height: 800px;
+    width: 800px;
 }
 
 .campPage-title {
@@ -45,7 +49,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+    padding-bottom: 5em;
 }
 
 .campPage-story {
@@ -53,7 +57,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Ubuntu";
-    width: 800px;
+    font-family: "Balgruf";
+    font-size: 1.25em;
+    overflow: auto;
+    width: 600px;
+    font-style: italic;
     
 }

@@ -18,6 +18,7 @@
 .charPage-info{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .charPage-hostedBy{
@@ -29,8 +30,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 50%;
+    height: 800px;
 }
 
 .charPage-subHeader {
@@ -45,6 +47,7 @@
 .charPage-hostedBy{
     display: flex;
     justify-content: center;
+    padding-top: .5em;
 }
 
 .charPage-name{
@@ -60,10 +63,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-top: .5em;
 }
 
 .charPage-story{
     padding-top: 5%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-family: "Balgruf";
+    font-style: italic;
+    font-size: 1.25em;
+    overflow: auto;
 }

@@ -18,6 +18,7 @@ import MyCharacters from './components/MyCharactersPage';
 import CharacterProfilePage from './components/CharacterProfilePage';
 import CreateCharacterForm from './components/CreateCharacterForm';
 import UpdateCharacterForm from './components/UpdateCharacterForm';
+import Footer from './components/Footer';
 
 
 
@@ -43,10 +44,12 @@ function App() {
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
+          <Footer/>
         </Route>
         <Route path='/sign-up' exact={true}>
           <NavBar />
           <SignUpForm />
+          <Footer/>
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <NavBar />
@@ -58,7 +61,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/myCampaigns/' exact={true} >
         <NavBar />
-          <MyCampaigns/>
+        <MyCampaigns />
         </ProtectedRoute>
         <ProtectedRoute path='/characters/myCharacters/' exact={true} >
         <NavBar />
@@ -67,6 +70,7 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
           <AllCampaigns/>
+          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/createCampaign' exact={true} >
         <NavBar />
@@ -79,10 +83,12 @@ function App() {
         <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
         <NavBar />
           <CampaignPage/>
+          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/characters/:id/' exact={true} >
         <NavBar />
           <CharacterProfilePage/>
+          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
         <NavBar />

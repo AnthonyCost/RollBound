@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: rgba(66, 66, 66, 0.418);
     margin: 0;
 }
 
@@ -17,31 +17,31 @@
     outline: none;
     display: block;
     border: solid 1px red;
-    color: red;
+    color: rgb(255, 255, 255);
     font-size: 1rem;
     font-weight: 500;
     line-height: 1;
     border-radius: 30px;
-    background: #373f51;
+    background: #ff0000;
     cursor: pointer;
     transition: all 0.3s linear;
     margin: 5px;
   }
   
   .no-btn:focus {
-    background-color: red;
-    color: #373f51;
+    background-color: #ff000094;
+    color: #ffffff;
   }
   
   .no-btn:active {
-    background: #373f51;
-    color: red;
-    border: solid 1px red;
+    background: rgb(255, 255, 255);
+    color: #ff000094;
+    border: solid 1px #ff000094;
   }
   
   .no-btn:hover {
-    background-color: red;
-    color: #373f51;
+    background-color: #ff000094;
+    color: #ffffff;
   }
 
   /* submit button */
@@ -49,13 +49,13 @@
     text-transform: uppercase;
     outline: none;
     display: block;
-    border: solid 1px green;
-    color: green;
+    border: solid 1px rgb(0, 255, 0);
+    color: rgb(0, 0, 0);
     font-size: 1rem;
     font-weight: 500;
     line-height: 1;
     border-radius: 30px;
-    background: #373f51;
+    background: #09ff00;
     cursor: pointer;
     transition: all 0.3s linear;
     margin: 5px;
@@ -63,16 +63,16 @@
   
   .yes-btn:focus {
     background-color: green;
-    color: #373f51;
+    color: #373f5100;
   }
   
   .yes-btn:active {
-    background: #373f51;
+    background: #373f5100;
     color: green;
     border: solid 1px green;
   }
   
   .yes-btn:hover {
     background-color: green;
-    color: white;
+    color: rgb(0, 0, 0);
   }
