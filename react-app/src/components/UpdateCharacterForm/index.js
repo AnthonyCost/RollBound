@@ -19,6 +19,8 @@ const UpdateCharacterForm = () => {
   
   const currentCharacter = useSelector(state => state.characters[characterId]);
 
+  console.log(currentCharacter)
+
 
     // metaData here
     const metaData = useSelector(state => state.characters.metaData);
@@ -31,13 +33,13 @@ const UpdateCharacterForm = () => {
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [name, setName] = useState('');
-    const [level, setLevel] = useState('');
-    const [classId, setClassId] = useState('');
-    const [raceId, setRaceId] = useState('');
-    const [alignmentId, setAlignmentId] = useState('');
-    const [backgroundId, setBackgroundId] = useState('');
-    const [backstory, setBackStory] = useState('');
+    const [name, setName] = useState(currentCharacter?.name);
+    const [level, setLevel] = useState(currentCharacter?.level);
+    const [classId, setClassId] = useState(currentCharacter?.class?.id);
+    const [raceId, setRaceId] = useState(currentCharacter?.race?.id);
+    const [alignmentId, setAlignmentId] = useState(currentCharacter?.alignment?.id);
+    const [backgroundId, setBackgroundId] = useState(currentCharacter?.background?.id);
+    const [backstory, setBackStory] = useState(currentCharacter?.backstory);
     const [portraitImage, setPortraitImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
 
