@@ -22,7 +22,7 @@ const MyCharacters = () => {
   }, [dispatch]);
 
   return (
-      <div>
+      <div className="myCharacters-container">
           <div className="myCharacters-header">
           <h1>My Characters</h1>
           <NavLink to={`/characters/createCharacter`}>

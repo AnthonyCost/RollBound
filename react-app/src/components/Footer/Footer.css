@@ -1,11 +1,12 @@
 .main-footer {
-    padding: 1em;
+    padding: 1em;;
     display: flex;
     flex-direction: row;
     background-color: #060923;
-    position: relative;
     justify-content: space-evenly;
+    position: relative;
     bottom: 0;
+    left: 0;
     width: 100%;
     color: #00FDEC;
 }

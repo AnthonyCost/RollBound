@@ -44,6 +44,7 @@ function App() {
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
+          <Footer/>
         </Route>
         <Route path='/sign-up' exact={true}>
           <NavBar />
@@ -53,22 +54,18 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <NavBar />
           <UsersList/>
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <NavBar />
           <User />
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/myCampaigns/' exact={true} >
         <NavBar />
-          <MyCampaigns/>
-          <Footer/>
+        <MyCampaigns />
         </ProtectedRoute>
         <ProtectedRoute path='/characters/myCharacters/' exact={true} >
         <NavBar />
           <MyCharacters/>
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
@@ -78,12 +75,10 @@ function App() {
         <ProtectedRoute path='/campaigns/createCampaign' exact={true} >
         <NavBar />
           <CreateCampaignForm/>
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/characters/createCharacter' exact={true} >
         <NavBar />
           <CreateCharacterForm/>
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/:campaignId' exact={true} >
         <NavBar />
@@ -98,12 +93,10 @@ function App() {
         <ProtectedRoute path='/campaigns/:id/updateCampaign/' exact={true} >
         <NavBar />
           <UpdateCampaignForm/>
-          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/characters/:id/updateCharacter/' exact={true} >
         <NavBar />
           <UpdateCharacterForm/>
-          <Footer/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
