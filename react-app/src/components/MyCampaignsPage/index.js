@@ -20,10 +20,20 @@ const MyCampaigns = () => {
     dispatch(grabCampaigns());
   }, [dispatch]);
 
+  let noCampaigns
+  if (campaigns.length === 0) {
+    noCampaigns = (
+      <div className="noCampaigns">
+        <h2 style={{fontFamily: "Balgruf"}}> Create a Campaign to begin your collection! </h2>
+      </div>
+    )
+  }
+
   return (
       <div className="page-container">
           <div className="index-header">
           <h1>My Campaigns</h1>
+          {noCampaigns}
           <NavLink to={`/campaigns/createCampaign`}>
                     <button>Add Campaign</button>
                 </NavLink>
