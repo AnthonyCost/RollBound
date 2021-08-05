@@ -18,6 +18,7 @@ import MyCharacters from './components/MyCharactersPage';
 import CharacterProfilePage from './components/CharacterProfilePage';
 import CreateCharacterForm from './components/CreateCharacterForm';
 import UpdateCharacterForm from './components/UpdateCharacterForm';
+import Footer from './components/Footer';
 
 
 
@@ -67,6 +68,7 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
         <NavBar />
           <AllCampaigns/>
+          <Footer/>
         </ProtectedRoute>
         <ProtectedRoute path='/campaigns/createCampaign' exact={true} >
         <NavBar />
