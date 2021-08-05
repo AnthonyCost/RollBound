@@ -1,12 +1,9 @@
-import React, { useRef, useState } from "react";
-import { Modal } from "../../context/Modal";
+import React, { useState } from "react";
 import  DeleteCampaignPrompt  from "../DeleteCampaignPrompt";
 import "./DeleteCampaignForm.css";
 
 function DeleteCampaignModal({campaignId}) {
   const [showModal, setShowModal] = useState(false);;
-  
-  console.log(campaignId);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createCharacter } from '../../store/characters';
@@ -31,7 +31,7 @@ const CreateCharacterForm = () => {
     const [backgroundId, setBackgroundId] = useState('');
     const [backstory, setBackStory] = useState('');
     const [portraitImage, setPortraitImage] = useState(null);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading] = useState(false);
     
     // update functions here
     
@@ -82,8 +82,12 @@ const CreateCharacterForm = () => {
       if (raceId !== '') {
         raceInfo = (
           <div className="form-elementInfo">
-        <h4>{charRaces[raceId - 1]?.raceName}</h4>
-        <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charRaces[raceId - 1]?.raceName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -93,8 +97,12 @@ const CreateCharacterForm = () => {
       if (classId !== '') {
         classInfo = (
           <div className="form-elementInfo">
-        <h4>{charClasses[classId - 1]?.className}</h4>
-        <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charClasses[classId - 1]?.className}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -104,8 +112,12 @@ const CreateCharacterForm = () => {
       if (alignmentId !== '') {
         alignmentInfo = (
           <div className="form-elementInfo">
-        <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
-        <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -115,18 +127,22 @@ const CreateCharacterForm = () => {
       if (backgroundId !== '') {
         backgroundInfo = (
           <div className="form-elementInfo">
-        <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
-        <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            </div>
         </div>
         )
       }
 
   return (
-    <div className="CreateCampaignForm form">
-        <div className="CreateCampaignForm-header">
+    <div className="CreateCharacterForm form">
+        <div className="CreateCharacterForm-header">
             <h1>Create Character</h1>
         </div>
-        <div className="CreateCampaignForm-content">
+        <div className="CreateCharacterForm-content">
         <form onSubmit={handleSubmit}>
         <div className="form-element">
         <label>Name</label>
@@ -222,13 +238,16 @@ const CreateCharacterForm = () => {
 
         <div className="form-element">
         <label>BackStory</label>
-        <input
+        <textarea
           type="textarea"
           placeholder="Your origin story"
           required
+          rows="5"
+          columns="30"
+          style={{width: "90%"}}
           value={backstory}
           onChange={updateBackStory}
-        />
+        ></textarea>
         </div>
 
         <div className="form-element">
@@ -256,17 +275,3 @@ const CreateCharacterForm = () => {
 };
 
 export default CreateCharacterForm;
-
-{/* <select
-          type='integer'
-          name='race'
-          onChange={updateRaceId}
-          value={raceId}
-          placeholder="Be who you want to be"
-          required
-          >
-              //! Map  options for all the values in races
-              //! the value would be the id and the text in between would be the raceName
-              //! depending on the value you select, the description that would be rendered would correspond with the stae of the raceId
-          <option value="1">Dragonborn</option>
-        </select> */}

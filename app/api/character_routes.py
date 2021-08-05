@@ -53,7 +53,7 @@ def get_character(id):
     Get a single character
     """
     print("backend id: ", id)
-    character = Character.query.filter_by(id)
+    character = Character.query.get(id)
     return character.to_dict()
 
 @characters_routes.route('/createCharacter/', methods=['GET'])

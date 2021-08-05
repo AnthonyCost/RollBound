@@ -21,10 +21,20 @@ const MyCharacters = () => {
     dispatch(grabCharacters());
   }, [dispatch]);
 
+  let noCharacters
+  if (characters.length === 0) {
+    noCharacters = (
+      <div className="noCharacters">
+        <h2 style={{fontFamily: "Balgruf"}}> Create a Character to begin your collection! </h2>
+      </div>
+    )
+  }
+
   return (
       <div className="myCharacters-container">
           <div className="myCharacters-header">
           <h1>My Characters</h1>
+            {noCharacters}
           <NavLink to={`/characters/createCharacter`}>
                     <button>Add Character</button>
                 </NavLink>

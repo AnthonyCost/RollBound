@@ -1,7 +1,8 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { updateCharacter} from '../../store/characters';
+import {grabCharacters} from '../../store/characters';
 import "./UpdateCharacterForm.css"
 
 
@@ -12,12 +13,18 @@ const UpdateCharacterForm = () => {
     const user = useSelector(state => state.session.user);
     const userId = user?.id;
 
+
   
   const { id } = useParams();
 
   const characterId = id;
   
+  useEffect( () => {
+    dispatch(grabCharacters())
+  }, [dispatch, characterId]);
+
   const currentCharacter = useSelector(state => state.characters[characterId]);
+
 
 
     // metaData here
@@ -31,15 +38,15 @@ const UpdateCharacterForm = () => {
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [name, setName] = useState('');
-    const [level, setLevel] = useState('');
-    const [classId, setClassId] = useState('');
-    const [raceId, setRaceId] = useState('');
-    const [alignmentId, setAlignmentId] = useState('');
-    const [backgroundId, setBackgroundId] = useState('');
-    const [backstory, setBackStory] = useState('');
-    const [portraitImage, setPortraitImage] = useState(null);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [name, setName] = useState(currentCharacter?.name);
+    const [level, setLevel] = useState(currentCharacter?.level);
+    const [classId, setClassId] = useState(currentCharacter?.class?.id);
+    const [raceId, setRaceId] = useState(currentCharacter?.race?.id);
+    const [alignmentId, setAlignmentId] = useState(currentCharacter?.alignment?.id);
+    const [backgroundId, setBackgroundId] = useState(currentCharacter?.background?.id);
+    const [backstory, setBackStory] = useState(currentCharacter?.backstory);
+    const [portraitImage, setPortraitImage] = useState(currentCharacter?.portraitImage);
+    const [imageLoading] = useState(false);
 
     // update functions here
 
@@ -92,62 +99,89 @@ const UpdateCharacterForm = () => {
 
       let raceInfo
       
-      if (raceId !== '') {
+      if (raceId !== undefined) {
         raceInfo = (
           <div className="form-elementInfo">
-        <h4>{charRaces[raceId - 1]?.raceName}</h4>
-        <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charRaces[raceId - 1]?.raceName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            </div>
         </div>
         )
       }
 
       let classInfo
       
-      if (classId !== '') {
+      if (classId !== undefined) {
         classInfo = (
           <div className="form-elementInfo">
-        <h4>{charClasses[classId - 1]?.className}</h4>
-        <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charClasses[classId - 1]?.className}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            </div>
         </div>
         )
       }
 
       let alignmentInfo
       
-      if (alignmentId !== '') {
+      if (alignmentId !== undefined) {
         alignmentInfo = (
           <div className="form-elementInfo">
-        <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
-        <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            </div>
         </div>
         )
       }
 
       let backgroundInfo
       
-      if (backgroundId !== '') {
+      if (backgroundId !== undefined) {
         backgroundInfo = (
           <div className="form-elementInfo">
-        <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
-        <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            </div>
         </div>
         )
       }
 
+      let currentImage
+
+      if (portraitImage !== undefined) {
+        currentImage = (
+          <div className="currentImage">
+            <img src={portraitImage} style={{width: "300px"}} alt="Character Portrait"/>
+          </div>
+        )
+      }
+
+    
 
   return (
-    <div className="CreateCharacterForm form">
-        <div className="CreateCharacterForm-header">
+    <div className="UpdateCharacterForm form">
+        <div className="UpdateCharacterForm-header">
             <h1>Update Character</h1>
         </div>
-        <div className="CreateCampaignForm-content">
+        <div className="UpdateCharacterForm-content">
         <form onSubmit={handleSubmit}>
         <div className="form-element">
         <label>Name</label>
         <input
           type="string"
-          placeholder={`${currentCharacter?.name}`}
-          required
+          placeholder={name}
+          required = {true}
           value={name}
           onChange={updateName}
         />
@@ -160,7 +194,7 @@ const UpdateCharacterForm = () => {
           name='race'
           onChange={updateRaceId}
           value={raceId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose a Race!</option>
           {charRaces?.map((race) => (
@@ -194,7 +228,7 @@ const UpdateCharacterForm = () => {
           placeholder="level"
           min="1"
           max="20"
-          required
+          required = {true}
           value={level}
           onChange={updateLevel}
         />
@@ -207,7 +241,7 @@ const UpdateCharacterForm = () => {
           name='alignment'
           onChange={updateAlignmentId}
           value={alignmentId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose an Alignment!</option>
           {charAlignments?.map((alignment) => (
@@ -224,7 +258,7 @@ const UpdateCharacterForm = () => {
           name='background'
           onChange={updateBackgroundId}
           value={backgroundId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose a Background!</option>
           {charBackgrounds?.map((background) => (
@@ -236,17 +270,21 @@ const UpdateCharacterForm = () => {
 
         <div className="form-element">
         <label>BackStory</label>
-        <input
+        <textarea
           type="textarea"
           placeholder="Your origin story"
-          required
+          required = {true}
+          rows="5"
+          columns="30"
+          style={{width: "90%"}}
           value={backstory}
           onChange={updateBackStory}
-        />
+        ></textarea>
         </div>
 
         <div className="form-element">
         <label>Character Portrait</label>
+          {currentImage}
         <input
               type="file"
               accept="image/*"

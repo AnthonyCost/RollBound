@@ -49,10 +49,11 @@ export const grabCharacters = () => async (dispatch) => {
 }
 
 export const getSingleCharacter = (id) => async (dispatch) => {
+    console.log(id);
     const res = await fetch(`/api/characters/${id}/`);
     if (res.ok) {
         const character = await res.json();
-        return dispatch(grabSingleCharacter(id));
+        return dispatch(grabSingleCharacter(character));
     }
 }
 
@@ -85,7 +86,6 @@ export const createCharacter = (payload) => async (dispatch) => {
 }
 
 export const updateCharacter = (id, formData) => async (dispatch) => {
-    console.log("formData here: ", formData) 
     const res = await fetch(`/api/characters/${id}/updateCharacter/`, {
         method: 'PUT',
         body: formData,

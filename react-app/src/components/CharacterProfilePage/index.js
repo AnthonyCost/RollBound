@@ -7,15 +7,18 @@ import "./CharacterProfilePage.css"
 
 
 const CharacterProfilePage = () => {
-
+    
     const dispatch = useDispatch();
-
+    
     const { id } = useParams();
-
+    
     const characterId = id;
-
+    
     // const allCharacters = useSelector(state => Object.values(state.characters));
     
+    useEffect(() => {
+        dispatch(grabCharacters());
+      }, [dispatch]);
     
     // const character = allCharacters.filter(character => character?.userId?.id === characterId);
     
@@ -43,9 +46,6 @@ const CharacterProfilePage = () => {
 
 
 
-    useEffect(() => {
-        dispatch(grabCharacters());
-      }, [dispatch]);
 
     
 
@@ -60,7 +60,8 @@ const CharacterProfilePage = () => {
                     ? character.portraitImage
                     : "https://cdnb.artstation.com/p/assets/images/images/010/638/243/large/jonathan-lang-comp-10.jpg?1525438067"
                 }
-                style={{height:'800px', width:'800px', objectFit: 'cover'}}
+                style={{height:'800px', width:'800px', objectFit: 'cover', border: "rgba(255, 255, 255) 5px",
+                borderStyle: "double"}}
                 alt="Character Portrait"
                 />
                 {charPagebuttons}

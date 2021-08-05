@@ -19,15 +19,19 @@ const UpdateCampaignForm = () => {
 
   const campaignId = id;
   
+  useEffect(() => {
+    dispatch(grabCampaigns());
+  }, [dispatch]);
+
   const currentCampaign = useSelector(state => state.campaigns[campaignId]);
 
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [title, setTitle] = useState("");
-    const [story, setStory] = useState("");
-    const [coverImage, setCoverImage] = useState("");
-    const [imageLoading, setImageLoading] = useState(false);
+    const [title, setTitle] = useState(currentCampaign?.title);
+    const [story, setStory] = useState(currentCampaign?.story);
+    const [coverImage, setCoverImage] = useState(currentCampaign?.coverImage);
+    const [imageLoading] = useState(false);
 
     // update functions here
 
@@ -46,7 +50,6 @@ const UpdateCampaignForm = () => {
       formData.append('hostId', hostId);
       formData.append('title', title);
       formData.append('story', story);
-      console.log("coverImage ", coverImage)
       if (coverImage) {
           formData.append('coverImage', coverImage);
     }
@@ -67,6 +70,16 @@ const UpdateCampaignForm = () => {
         history.goBack();
       };
 
+      let currentImage
+
+      if (coverImage !== undefined) {
+        currentImage = (
+          <div className="currentImage">
+            <img src={coverImage} style={{width: "300px"}} alt="Character Portrait"/>
+          </div>
+        )
+      }
+
   return (
     <div className="CreateCampaignForm form">
         <div className="CreateCampaignForm-header">
@@ -86,16 +99,20 @@ const UpdateCampaignForm = () => {
         </div>
         <div className="form-element">
         <label>Story</label>
-        <input
-          type="text"
-          placeholder={`${currentCampaign?.story}`}
+        <textarea
+          type="textarea"
+          placeholder="Your campaign's story"
           required
+          rows="5"
+          columns="30"
+          style={{width: "300%"}}
           value={story}
           onChange={updateStory}
-        />
+        ></textarea>
         </div>
         <div className="form-element">
         <label>Cover Image</label>
+        {currentImage}
         <input
               type="file"
               accept="image/*"

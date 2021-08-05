@@ -19,6 +19,7 @@ import CharacterProfilePage from './components/CharacterProfilePage';
 import CreateCharacterForm from './components/CreateCharacterForm';
 import UpdateCharacterForm from './components/UpdateCharacterForm';
 import Footer from './components/Footer';
+import PageNotFound from './components/PageNotFound';
 
 
 
@@ -30,7 +31,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      dispatch(grabMetaData());
+      await dispatch(grabMetaData());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -97,6 +98,11 @@ function App() {
         <ProtectedRoute path='/characters/:id/updateCharacter/' exact={true} >
         <NavBar />
           <UpdateCharacterForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/*' >
+        <NavBar />
+          <PageNotFound/>
+          <Footer/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
