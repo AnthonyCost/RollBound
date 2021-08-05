@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCampaign } from "../../store/campaigns";
-import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 
 import "./DeleteCampaignPrompt.css";

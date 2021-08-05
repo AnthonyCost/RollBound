@@ -30,7 +30,7 @@ const PageNotFound = () => {
                     </div>
                 </div>
                 <div className="pageNotFound-rightSide">
-                    <img src="https://user-images.githubusercontent.com/35717793/128381842-6474d294-5430-4291-99df-f062f78169ef.png"/>
+                    <img src="https://user-images.githubusercontent.com/35717793/128381842-6474d294-5430-4291-99df-f062f78169ef.png" alt="404 Dice"/>
                 </div>
         </div>
     </div>

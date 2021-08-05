@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { Modal } from "../../context/Modal";
+import React, { useState } from "react";
 import  DeleteCharacterPrompt  from "../DeleteCharacterPrompt";
 import "./DeleteCharacterForm.css";
 

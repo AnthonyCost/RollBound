@@ -85,7 +85,6 @@ export const createCharacter = (payload) => async (dispatch) => {
 }
 
 export const updateCharacter = (id, formData) => async (dispatch) => {
-    console.log("formData here: ", formData) 
     const res = await fetch(`/api/characters/${id}/updateCharacter/`, {
         method: 'PUT',
         body: formData,

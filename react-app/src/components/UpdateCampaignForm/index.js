@@ -46,7 +46,6 @@ const UpdateCampaignForm = () => {
       formData.append('hostId', hostId);
       formData.append('title', title);
       formData.append('story', story);
-      console.log("coverImage ", coverImage)
       if (coverImage) {
           formData.append('coverImage', coverImage);
     }
@@ -72,7 +71,7 @@ const UpdateCampaignForm = () => {
       if (coverImage !== undefined) {
         currentImage = (
           <div className="currentImage">
-            <img src={coverImage} style={{width: "300px"}}/>
+            <img src={coverImage} style={{width: "300px"}} alt="Character Portrait"/>
           </div>
         )
       }

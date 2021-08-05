@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createCharacter } from '../../store/characters';
@@ -275,17 +275,3 @@ const CreateCharacterForm = () => {
 };
 
 export default CreateCharacterForm;
-
-{/* <select
-          type='integer'
-          name='race'
-          onChange={updateRaceId}
-          value={raceId}
-          placeholder="Be who you want to be"
-          required
-          >
-              //! Map  options for all the values in races
-              //! the value would be the id and the text in between would be the raceName
-              //! depending on the value you select, the description that would be rendered would correspond with the stae of the raceId
-          <option value="1">Dragonborn</option>
-        </select> */}

@@ -71,7 +71,6 @@ export const createCampaign = (payload) => async (dispatch) => {
 }
 
 export const updateCampaign = (id, formData) => async (dispatch) => {
-    console.log("formData here: ", formData)
     // const {hostId, title, coverImage, story } = formData;
     // const formObject = {hostId, title, coverImage, story} 
     const res = await fetch(`/api/campaigns/${id}/updateCampaign/`, {
