@@ -77,13 +77,16 @@ const CreateCampaignForm = () => {
         </div>
         <div className="form-element">
         <label>Story</label>
-        <input
-          type="text"
-          placeholder="Story of your campaign"
+        <textarea
+          type="textarea"
+          placeholder="Your campaign's story"
           required
+          rows="5"
+          columns="30"
+          style={{width: "300%"}}
           value={story}
           onChange={updateStory}
-        />
+        ></textarea>
         </div>
         <div className="form-element">
         <label>Cover Image</label>

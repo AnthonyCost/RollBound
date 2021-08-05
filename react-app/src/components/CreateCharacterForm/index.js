@@ -238,13 +238,16 @@ const CreateCharacterForm = () => {
 
         <div className="form-element">
         <label>BackStory</label>
-        <input
+        <textarea
           type="textarea"
           placeholder="Your origin story"
           required
+          rows="5"
+          columns="30"
+          style={{width: "90%"}}
           value={backstory}
           onChange={updateBackStory}
-        />
+        ></textarea>
         </div>
 
         <div className="form-element">
