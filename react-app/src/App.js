@@ -102,6 +102,7 @@ function App() {
         <ProtectedRoute path='/*' >
         <NavBar />
           <PageNotFound/>
+          <Footer/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
