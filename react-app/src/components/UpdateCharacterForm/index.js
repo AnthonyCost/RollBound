@@ -19,14 +19,12 @@ const UpdateCharacterForm = () => {
 
   const characterId = id;
   
-  useEffect(async () => {
-    // dispatch(grabCharacters())
-    await dispatch(getSingleCharacter(characterId));
+  useEffect( () => {
+    dispatch(grabCharacters())
+    // dispatch(getSingleCharacter(characterId));
   }, [dispatch, characterId]);
 
-
-
-  const currentCharacter = useSelector(state => state.character);
+  const currentCharacter = useSelector(state => state.characters[characterId]);
 
 
 
@@ -183,8 +181,8 @@ const UpdateCharacterForm = () => {
         <label>Name</label>
         <input
           type="string"
-          placeholder={`${currentCharacter?.name}`}
-          required
+          placeholder={name}
+          required = {true}
           value={name}
           onChange={updateName}
         />
@@ -197,7 +195,7 @@ const UpdateCharacterForm = () => {
           name='race'
           onChange={updateRaceId}
           value={raceId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose a Race!</option>
           {charRaces?.map((race) => (
@@ -231,7 +229,7 @@ const UpdateCharacterForm = () => {
           placeholder="level"
           min="1"
           max="20"
-          required
+          required = {true}
           value={level}
           onChange={updateLevel}
         />
@@ -244,7 +242,7 @@ const UpdateCharacterForm = () => {
           name='alignment'
           onChange={updateAlignmentId}
           value={alignmentId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose an Alignment!</option>
           {charAlignments?.map((alignment) => (
@@ -261,7 +259,7 @@ const UpdateCharacterForm = () => {
           name='background'
           onChange={updateBackgroundId}
           value={backgroundId}
-          required
+          required = {true}
           >
           <option key="0" value="">Choose a Background!</option>
           {charBackgrounds?.map((background) => (
@@ -276,7 +274,7 @@ const UpdateCharacterForm = () => {
         <textarea
           type="textarea"
           placeholder="Your origin story"
-          required
+          required = {true}
           rows="5"
           columns="30"
           style={{width: "90%"}}
