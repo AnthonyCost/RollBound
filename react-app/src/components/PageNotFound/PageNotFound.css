@@ -1,0 +1,47 @@
+.pageNotFound-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.pageNotFound-contentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pageNotFound-rightSide img {
+    width: 63.7%;
+}
+
+.pageNotFound-rightSide {
+    display: flex;
+    justify-content: center;
+}
+
+.pageNotFound-leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageNotFound-btn, .pageNotFound-subHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.pageNotFound-header h1{
+    font-family: "Balgruf";
+    font-size: 8vw;
+    text-decoration: underline;
+}
+
+.pageNotFound-subHeader {
+    font-style: italic;
+}
