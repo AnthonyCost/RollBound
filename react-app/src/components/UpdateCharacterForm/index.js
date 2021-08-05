@@ -2,7 +2,7 @@ import { useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { updateCharacter} from '../../store/characters';
-import {grabCharacters, getSingleCharacter} from '../../store/characters';
+import {grabCharacters} from '../../store/characters';
 import "./UpdateCharacterForm.css"
 
 
@@ -21,7 +21,6 @@ const UpdateCharacterForm = () => {
   
   useEffect( () => {
     dispatch(grabCharacters())
-    // dispatch(getSingleCharacter(characterId));
   }, [dispatch, characterId]);
 
   const currentCharacter = useSelector(state => state.characters[characterId]);
