@@ -95,8 +95,12 @@ const UpdateCharacterForm = () => {
       if (raceId !== '') {
         raceInfo = (
           <div className="form-elementInfo">
-        <h4>{charRaces[raceId - 1]?.raceName}</h4>
-        <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charRaces[raceId - 1]?.raceName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charRaces[raceId - 1]?.raceDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -106,8 +110,12 @@ const UpdateCharacterForm = () => {
       if (classId !== '') {
         classInfo = (
           <div className="form-elementInfo">
-        <h4>{charClasses[classId - 1]?.className}</h4>
-        <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charClasses[classId - 1]?.className}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charClasses[classId - 1]?.classDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -117,8 +125,12 @@ const UpdateCharacterForm = () => {
       if (alignmentId !== '') {
         alignmentInfo = (
           <div className="form-elementInfo">
-        <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
-        <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charAlignments[alignmentId - 1]?.alignmentName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charAlignments[alignmentId - 1]?.alignmentDescription}</h6>
+            </div>
         </div>
         )
       }
@@ -128,19 +140,23 @@ const UpdateCharacterForm = () => {
       if (backgroundId !== '') {
         backgroundInfo = (
           <div className="form-elementInfo">
-        <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
-        <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            <div className="selectTitle">
+              <h4>{charBackgrounds[backgroundId - 1]?.backgroundName}</h4>
+            </div>
+            <div className="selectDescription">
+              <h6>{charBackgrounds[backgroundId - 1]?.backgroundDescription}</h6>
+            </div>
         </div>
         )
       }
 
 
   return (
-    <div className="CreateCharacterForm form">
-        <div className="CreateCharacterForm-header">
+    <div className="UpdateCharacterForm form">
+        <div className="UpdateCharacterForm-header">
             <h1>Update Character</h1>
         </div>
-        <div className="CreateCampaignForm-content">
+        <div className="UpdateCharacterForm-content">
         <form onSubmit={handleSubmit}>
         <div className="form-element">
         <label>Name</label>
