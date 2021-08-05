@@ -40,7 +40,7 @@ const UpdateCharacterForm = () => {
     const [alignmentId, setAlignmentId] = useState(currentCharacter?.alignment?.id);
     const [backgroundId, setBackgroundId] = useState(currentCharacter?.background?.id);
     const [backstory, setBackStory] = useState(currentCharacter?.backstory);
-    const [portraitImage, setPortraitImage] = useState(null);
+    const [portraitImage, setPortraitImage] = useState(currentCharacter?.portraitImage);
     const [imageLoading, setImageLoading] = useState(false);
 
     // update functions here
@@ -152,6 +152,15 @@ const UpdateCharacterForm = () => {
         )
       }
 
+      let currentImage
+
+      if (portraitImage !== undefined) {
+        currentImage = (
+          <div className="currentImage">
+            <img src={portraitImage} style={{width: "300px"}}/>
+          </div>
+        )
+      }
 
   return (
     <div className="UpdateCharacterForm form">
@@ -265,6 +274,7 @@ const UpdateCharacterForm = () => {
 
         <div className="form-element">
         <label>Character Portrait</label>
+          {currentImage}
         <input
               type="file"
               accept="image/*"

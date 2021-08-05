@@ -24,9 +24,9 @@ const UpdateCampaignForm = () => {
 
     // states here
     const [errors, setErrors] = useState([]);
-    const [title, setTitle] = useState("");
-    const [story, setStory] = useState("");
-    const [coverImage, setCoverImage] = useState("");
+    const [title, setTitle] = useState(currentCampaign?.title);
+    const [story, setStory] = useState(currentCampaign?.story);
+    const [coverImage, setCoverImage] = useState(currentCampaign?.coverImage);
     const [imageLoading, setImageLoading] = useState(false);
 
     // update functions here
@@ -67,6 +67,16 @@ const UpdateCampaignForm = () => {
         history.goBack();
       };
 
+      let currentImage
+
+      if (coverImage !== undefined) {
+        currentImage = (
+          <div className="currentImage">
+            <img src={coverImage} style={{width: "300px"}}/>
+          </div>
+        )
+      }
+
   return (
     <div className="CreateCampaignForm form">
         <div className="CreateCampaignForm-header">
@@ -96,6 +106,7 @@ const UpdateCampaignForm = () => {
         </div>
         <div className="form-element">
         <label>Cover Image</label>
+        {currentImage}
         <input
               type="file"
               accept="image/*"
