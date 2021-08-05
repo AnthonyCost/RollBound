@@ -19,6 +19,10 @@ const UpdateCampaignForm = () => {
 
   const campaignId = id;
   
+  useEffect(() => {
+    dispatch(grabCampaigns());
+  }, [dispatch]);
+
   const currentCampaign = useSelector(state => state.campaigns[campaignId]);
 
 
@@ -27,7 +31,7 @@ const UpdateCampaignForm = () => {
     const [title, setTitle] = useState(currentCampaign?.title);
     const [story, setStory] = useState(currentCampaign?.story);
     const [coverImage, setCoverImage] = useState(currentCampaign?.coverImage);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading] = useState(false);
 
     // update functions here
 

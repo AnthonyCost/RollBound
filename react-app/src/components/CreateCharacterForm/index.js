@@ -31,7 +31,7 @@ const CreateCharacterForm = () => {
     const [backgroundId, setBackgroundId] = useState('');
     const [backstory, setBackStory] = useState('');
     const [portraitImage, setPortraitImage] = useState(null);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading] = useState(false);
     
     // update functions here
     

@@ -15,7 +15,7 @@ const CreateCampaignForm = () => {
     const [title, setTitle] = useState('');
     const [story, setStory] = useState('');
     const [coverImage, setCoverImage] = useState(null);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading] = useState(false);
 
     // update functions here
 

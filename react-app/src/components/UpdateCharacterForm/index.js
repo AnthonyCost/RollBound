@@ -2,7 +2,7 @@ import { useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { updateCharacter} from '../../store/characters';
-import {grabCharacters} from '../../store/characters';
+import {grabCharacters, getSingleCharacter} from '../../store/characters';
 import "./UpdateCharacterForm.css"
 
 
@@ -19,11 +19,14 @@ const UpdateCharacterForm = () => {
 
   const characterId = id;
   
-  useEffect(() => {
-    dispatch(grabCharacters());
-  }, [dispatch]);
+  useEffect(async () => {
+    // dispatch(grabCharacters())
+    await dispatch(getSingleCharacter(characterId));
+  }, [dispatch, characterId]);
 
-  const currentCharacter = useSelector(state => state.characters[characterId]);
+
+
+  const currentCharacter = useSelector(state => state.character);
 
 
 
@@ -46,7 +49,7 @@ const UpdateCharacterForm = () => {
     const [backgroundId, setBackgroundId] = useState(currentCharacter?.background?.id);
     const [backstory, setBackStory] = useState(currentCharacter?.backstory);
     const [portraitImage, setPortraitImage] = useState(currentCharacter?.portraitImage);
-    const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading] = useState(false);
 
     // update functions here
 
@@ -162,7 +165,7 @@ const UpdateCharacterForm = () => {
       if (portraitImage !== undefined) {
         currentImage = (
           <div className="currentImage">
-            <img src={portraitImage} style={{width: "300px"}}/>
+            <img src={portraitImage} style={{width: "300px"}} alt="Character Portrait"/>
           </div>
         )
       }
