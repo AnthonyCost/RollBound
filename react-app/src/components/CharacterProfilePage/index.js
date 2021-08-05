@@ -7,15 +7,18 @@ import "./CharacterProfilePage.css"
 
 
 const CharacterProfilePage = () => {
-
+    
     const dispatch = useDispatch();
-
+    
     const { id } = useParams();
-
+    
     const characterId = id;
-
+    
     // const allCharacters = useSelector(state => Object.values(state.characters));
     
+    useEffect(() => {
+        dispatch(grabCharacters());
+      }, [dispatch]);
     
     // const character = allCharacters.filter(character => character?.userId?.id === characterId);
     
@@ -43,9 +46,6 @@ const CharacterProfilePage = () => {
 
 
 
-    useEffect(() => {
-        dispatch(grabCharacters());
-      }, [dispatch]);
 
     
 
