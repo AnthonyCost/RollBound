@@ -19,6 +19,7 @@ import CharacterProfilePage from './components/CharacterProfilePage';
 import CreateCharacterForm from './components/CreateCharacterForm';
 import UpdateCharacterForm from './components/UpdateCharacterForm';
 import Footer from './components/Footer';
+import PageNotFound from './components/PageNotFound';
 
 
 
@@ -97,6 +98,10 @@ function App() {
         <ProtectedRoute path='/characters/:id/updateCharacter/' exact={true} >
         <NavBar />
           <UpdateCharacterForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/*' >
+        <NavBar />
+          <PageNotFound/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
