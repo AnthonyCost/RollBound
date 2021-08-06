@@ -71,19 +71,20 @@ export const createCampaign = (payload) => async (dispatch) => {
 }
 
 export const updateCampaign = (id, formData) => async (dispatch) => {
-    // const {hostId, title, coverImage, story } = formData;
-    // const formObject = {hostId, title, coverImage, story} 
     const res = await fetch(`/api/campaigns/${id}/updateCampaign/`, {
         method: 'PUT',
-        // headers: {
-        //     'Content-Type': 'application/json',
-        // },
         body: formData,
     });
     if (res.ok) {
         const campaign = await res.json();
         dispatch(editCampaign(campaign));
         return campaign;
+    }
+    else if(res.status < 500) {
+        const data = await res.json();
+        if (data.errors) {
+            return data.errors
+        }
     }
 }
 

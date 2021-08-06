@@ -59,24 +59,29 @@ def update_campaign(id):
     """
     Update a campaign
     """
-    print(" request formData here:             ", request.files)
+    # print(" request formData here:             ", request.files)
+    # if "coverImage" not in request.files:
+    #     print("Image not received:      ************************       ")
+    #     return {'errors': ['Image required']}, 400
     if "coverImage" not in request.files:
         print("Image not received:      ************************       ")
-        return {'errors': ['Image required']}, 400
-    image = request.files['coverImage']
-    if not allowed_file (image.filename):
-        print("Image not allowed:      ************************       ")
-        return {'errors': ['Invalid file type']}, 400
-    image.fileName = get_unique_filename(image.filename)
-    upload = upload_file_to_s3(image)
-    if "url" not in upload:
-        print("Image not in upload:      ************************       ")
-        return {'errors': ['Image upload failed']}, 400
-    url = upload['url']
+        selectedImage = request.form['coverImage']
+        print("******************************************************************************************       ", selectedImage)
+    else:
+        image = request.files['coverImage']
+        if not allowed_file (image.filename):
+            print("Image not allowed:      ************************       ")
+            return {'errors': ['Invalid file type']}, 400
+        image.fileName = get_unique_filename(image.filename)
+        upload = upload_file_to_s3(image)
+        if "url" not in upload:
+            print("Image not in upload:      ************************       ")
+            return {'errors': ['Image upload failed']}, 400
+        selectedImage = upload['url']
     updatedCampaign = Campaign.query.get(id)
     updatedCampaign.title = request.form['title']
     updatedCampaign.story = request.form['story']
-    updatedCampaign.coverImage = url
+    updatedCampaign.coverImage = selectedImage
     db.session.commit()
     return updatedCampaign.to_dict()
 
