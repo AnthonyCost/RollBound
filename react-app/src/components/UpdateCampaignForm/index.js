@@ -117,7 +117,6 @@ const UpdateCampaignForm = () => {
               type="file"
               accept="image/*"
               onChange={updateCoverImage}
-              required={true}
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>
