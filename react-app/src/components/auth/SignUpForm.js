@@ -18,12 +18,12 @@ const SignUpForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password, img_url));
-      if (data) {
-        setErrors(data)
+      if (data.errors) {
+        setErrors(data.errors)
       }
     }
-    if (password !== repeatPassword) {
-      setErrors(['Passwords do not match'])
+    else if(password !== repeatPassword) {
+      setErrors(["Passwords do not match, try again"])
     }
 
   };
@@ -109,7 +109,8 @@ const updateImage = (e) => {
           ></input>
       </div>
           <div className="form-errors">
-            {errors.map((error, ind) => (
+            {console.log(errors)}
+            {errors?.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
           </div>
