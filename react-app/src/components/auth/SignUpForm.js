@@ -23,11 +23,7 @@ const SignUpForm = () => {
       }
     }
     if (password !== repeatPassword) {
-      errors.push(['Passwords do not match'])
-    }
-    
-    if(errors.length > 0){
-      return errors
+      setErrors(['Passwords do not match'])
     }
 
   };
