@@ -101,7 +101,7 @@ const updateImage = (e) => {
           required={true}
           ></input>
       </div>
-          <div>
+          <div className="form-errors">
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}

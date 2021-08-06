@@ -228,8 +228,14 @@ form {
     justify-content: center;
 }
 
-.form button {
-    /* width: 30% */
+.form-errors {
+    color: rgb(255, 0, 64);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px; 
 }
 
 /* splash page */
