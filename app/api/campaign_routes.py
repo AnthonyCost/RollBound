@@ -59,10 +59,6 @@ def update_campaign(id):
     """
     Update a campaign
     """
-    # print(" request formData here:             ", request.files)
-    # if "coverImage" not in request.files:
-    #     print("Image not received:      ************************       ")
-    #     return {'errors': ['Image required']}, 400
     if "coverImage" not in request.files:
         print("Image not received:      ************************       ")
         selectedImage = request.form['coverImage']
