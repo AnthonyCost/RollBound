@@ -22,6 +22,13 @@ const SignUpForm = () => {
         setErrors(data)
       }
     }
+    if (password !== repeatPassword) {
+      errors.push(['Passwords do not match'])
+    }
+    
+    if(errors.length > 0){
+      return errors
+    }
 
   };
 
