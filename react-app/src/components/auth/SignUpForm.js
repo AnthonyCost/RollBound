@@ -62,6 +62,7 @@ const updateImage = (e) => {
           name='username'
           onChange={updateUsername}
           value={username}
+          required={true}
           ></input>
       </div>
       <div className="form-element">
@@ -69,6 +70,7 @@ const updateImage = (e) => {
         <input
           type='text'
           name='email'
+          required={true}
           onChange={updateEmail}
           value={email}
           ></input>
@@ -79,6 +81,7 @@ const updateImage = (e) => {
               type="file"
               accept="image/*"
               onChange={updateImage}
+              required={true}
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>
@@ -89,6 +92,7 @@ const updateImage = (e) => {
           name='password'
           onChange={updatePassword}
           value={password}
+          required={true}
           ></input>
       </div>
       <div className="form-element">

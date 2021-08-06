@@ -81,8 +81,8 @@ const UpdateCharacterForm = () => {
       const data = await dispatch(updateCharacter(
         id,
         formData ));
-          if (data.errors) {
-            setErrors([data.errors])
+          if (data) {
+            setErrors(data)
           }
           else {
             history.push(`/characters/${id}`)
@@ -289,6 +289,7 @@ const UpdateCharacterForm = () => {
               type="file"
               accept="image/*"
               onChange={updatePortraitImage}
+              required={true}
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>

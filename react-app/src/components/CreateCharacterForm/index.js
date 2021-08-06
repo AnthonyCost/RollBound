@@ -256,6 +256,7 @@ const CreateCharacterForm = () => {
               type="file"
               accept="image/*"
               onChange={updatePortraitImage}
+              required={true}
               />
             {(imageLoading)&& <p>Loading...</p>}
       </div>
