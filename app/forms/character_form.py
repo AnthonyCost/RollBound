@@ -29,3 +29,13 @@ class CreateCharacterForm(FlaskForm):
     # backgroundId = db.Column(db.Integer, db.ForeignKey('backgrounds.id'), nullable=False)
     # portraitImage = db.Column(db.String(255), nullable=False)
     # backstory = TextAreaField()
+
+class EditCharacterForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired("Name your character"), Length(max=50, message="Your character's name is too long. (Max is 50 characters)")])
+    level = IntegerField('level', validators=[DataRequired("Give your character a level"), NumberRange(min=1, max=20, message="Your character's level out of range, the lowest level is 1 and the maximum level is 20")])
+    # classId = db.Column(db.Integer, db.ForeignKey('charclasses.id'), nullable=False)
+    # raceId = db.Column(db.Integer, db.ForeignKey('races.id'), nullable=False)
+    # alignmentId = db.Column(db.Integer, db.ForeignKey('alignments.id'), nullable=False)
+    # backgroundId = db.Column(db.Integer, db.ForeignKey('backgrounds.id'), nullable=False)
+    # portraitImage = db.Column(db.String(255), nullable=False)
+    # backstory = TextAreaField()
