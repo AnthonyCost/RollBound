@@ -73,20 +73,22 @@ def update_character(id):
     """
     Update a character
     """
-    print(" request formData here:             ", request.files)
+    
     if "portraitImage" not in request.files:
         print("Image not received:      ************************       ")
-        return {'errors': ['Image required']}, 400
-    image = request.files['portraitImage']
-    if not allowed_file (image.filename):
-        print("Image not allowed:      ************************       ")
-        return {'errors': ['Invalid file type']}, 400
-    image.fileName = get_unique_filename(image.filename)
-    upload = upload_file_to_s3(image)
-    if "url" not in upload:
-        print("Image not in upload:      ************************       ")
-        return {'errors': ['Image upload failed']}, 400
-    url = upload['url']
+        selectedImage = request.form['portraitImage']
+        print("******************************************************************************************       ", selectedImage)
+    else:
+        image = request.files['portraitImage']
+        if not allowed_file (image.filename):
+            print("Image not allowed:      ************************       ")
+            return {'errors': ['Invalid file type']}, 400
+        image.fileName = get_unique_filename(image.filename)
+        upload = upload_file_to_s3(image)
+        if "url" not in upload:
+            print("Image not in upload:      ************************       ")
+            return {'errors': ['Image upload failed']}, 400
+        selectedImage = upload['url']
     updatedCharacter = Character.query.get(id)
     updatedCharacter.userId = current_user.id
     updatedCharacter.name = request.form['name']
@@ -96,7 +98,8 @@ def update_character(id):
     updatedCharacter.alignmentId = request.form['alignmentId']
     updatedCharacter.backgroundId = request.form['backgroundId']
     updatedCharacter.backstory = request.form['backstory']
-    updatedCharacter.portraitImage = url
+    updatedCharacter.portraitImage = selectedImage
+    # db.session.add(updatedCharacter)
     db.session.commit()
     return updatedCharacter.to_dict()
 

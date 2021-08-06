@@ -93,7 +93,13 @@ export const updateCharacter = (id, formData) => async (dispatch) => {
     if (res.ok) {
         const character = await res.json();
         dispatch(editCharacter(character));
-        return character;
+        return character
+    }
+    else if(res.status < 500) {
+        const data = await res.json();
+        if (data.errors) {
+            return data.errors
+        }
     }
 }
 

@@ -82,7 +82,7 @@ const UpdateCharacterForm = () => {
         id,
         formData ));
           if (data.errors) {
-            setErrors(data.errors)
+            setErrors([data.errors])
           }
           else {
             history.push(`/characters/${id}`)
