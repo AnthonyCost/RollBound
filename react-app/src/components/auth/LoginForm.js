@@ -68,7 +68,7 @@ const LoginForm = () => {
             onChange={updatePassword}
             />
         </div>
-            <div>
+            <div className="form-errors">
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
                 ))}
