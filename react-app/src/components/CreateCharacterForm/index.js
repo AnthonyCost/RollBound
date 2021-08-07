@@ -47,6 +47,7 @@ const CreateCharacterForm = () => {
         setPortraitImage(file);
       }
       
+      console.log(typeof(portraitImage))
       
       const handleSubmit = async (e) => {
         e.preventDefault();
