@@ -64,3 +64,12 @@
     font-style: italic;
     
 }
+
+/* responsive design here */
+
+@media only screen and (max-width: 1281px){
+    .campPage-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+  }
