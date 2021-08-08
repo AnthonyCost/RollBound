@@ -50,7 +50,6 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <NavBar />
           <SignUpForm />
-          <Footer/>
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <NavBar />
