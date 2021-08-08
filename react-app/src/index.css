@@ -217,9 +217,8 @@ nav {
     align-content: center;
     justify-content: center;
     background-color: #0000001a;
-    height: 90vh;
+    height: 100%;
     width: 100%;
-    margin-top: 25%;
 } 
 
 .form-elementInfo{
