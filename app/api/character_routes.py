@@ -1,7 +1,7 @@
 from flask import Blueprint, request, redirect
 from flask_login.utils import login_required
 from app.models import db, Character, CharClass, Race, Alignment, Background
-from app.forms import CreateCharacterForm, UpdateCharacterForm
+from app.forms import CreateCharacterForm
 from flask_login import login_required, current_user
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)

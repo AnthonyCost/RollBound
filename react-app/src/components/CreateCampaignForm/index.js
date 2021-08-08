@@ -32,13 +32,6 @@ const CreateCampaignForm = () => {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        // const payload = {
-        //   hostId: userId,
-        //   title,
-        //   coverImage,
-        //   story
-        // };
 
     const formData = new FormData();
     formData.append('hostId', hostId);
@@ -49,7 +42,12 @@ const CreateCampaignForm = () => {
     }
         let newCampaign = await dispatch(createCampaign(formData));
         if (newCampaign) {
-          history.push(`/campaigns/${newCampaign.id}`);
+          if (newCampaign.errors) {
+            setErrors(Object.values(newCampaign.errors));
+          }
+          else {
+            history.push(`/campaigns/${newCampaign.id}`);
+          }
         }
       };
 
@@ -70,7 +68,7 @@ const CreateCampaignForm = () => {
         <input
           type="string"
           placeholder="Title of your campaign"
-          required
+          // required
           value={title}
           onChange={updateTitle}
         />
@@ -80,7 +78,7 @@ const CreateCampaignForm = () => {
         <textarea
           type="textarea"
           placeholder="Your campaign's story"
-          required
+          // required
           rows="5"
           columns="30"
           style={{width: "300%"}}
