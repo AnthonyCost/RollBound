@@ -78,7 +78,9 @@ def update_character(id):
     """
     Update a character
     """
-    
+    # form = UpdateCharacterForm()
+    # form['csrf_token'].data = request.cookies['csrf_token']
+    # if form.validate_on_submit():
     if "portraitImage" not in request.files:
         print("Image not received:      ************************       ")
         selectedImage = request.form['portraitImage']
@@ -107,6 +109,7 @@ def update_character(id):
     # db.session.add(updatedCharacter)
     db.session.commit()
     return updatedCharacter.to_dict()
+    # return {'errors': (form.errors)}, 401
 
 @characters_routes.route('/<int:characterId>', methods=['DELETE'])
 def delete_character(characterId):

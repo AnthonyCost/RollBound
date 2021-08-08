@@ -82,13 +82,15 @@ const UpdateCharacterForm = () => {
         id,
         formData ));
           if (data) {
-            setErrors(data)
-          }
-          else {
-            history.push(`/characters/${id}`)
+            if (data.errors) {
+              setErrors(Object.values(data.errors));
+            }
+            else {
+              history.push(`/characters/${id}`)
+            }
           }
         };
-        
+
 
       const handleCancelClick = (e) => {
         e.preventDefault();
@@ -211,7 +213,7 @@ const UpdateCharacterForm = () => {
           name='race'
           onChange={updateClassId}
           value={classId}
-          required
+          required = {true}
           >
           <option key="0" value="">Pick a Class!</option>
           {charClasses?.map((character) => (
