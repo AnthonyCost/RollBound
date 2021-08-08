@@ -126,8 +126,18 @@ nav {
 }
 
 .splash-subheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Balgruf";
-    font-size: 6vh;
+    font-size: 2em;
+}
+
+.splash-subheaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 
 .splash-container {

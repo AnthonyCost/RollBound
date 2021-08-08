@@ -43,7 +43,9 @@ const LoginForm = () => {
     <div className="splash-container">
       <div className="splash-banner">
       <h1 className="splash-header">RollBound</h1>
-      <h3 className="splash-subheader">Weave your legend</h3>
+      <div className="splash-subheaderContainer">
+      <h3 className="splash-subheader">Weave your legend with this D&D character and campaign builder</h3>
+      </div>
       </div>
       <div className="logInform">
       <form onSubmit={onLogin}>
