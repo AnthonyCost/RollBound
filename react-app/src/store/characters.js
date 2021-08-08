@@ -49,7 +49,6 @@ export const grabCharacters = () => async (dispatch) => {
 }
 
 export const getSingleCharacter = (id) => async (dispatch) => {
-    console.log(id);
     const res = await fetch(`/api/characters/${id}/`);
     if (res.ok) {
         const character = await res.json();

@@ -109,7 +109,6 @@ const updateImage = (e) => {
           ></input>
       </div>
           <div className="form-errors">
-            {console.log(errors)}
             {errors?.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
