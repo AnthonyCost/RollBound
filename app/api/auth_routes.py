@@ -63,18 +63,18 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    if "image" not in request.files:
-        return {'errors': ['Image required']}, 400
-    image = request.files['image']
-    if not allowed_file (image.filename):
-        return {'errors': ['Invalid file type']}, 400
-    image.fileName = get_unique_filename(image.filename)
-    upload = upload_file_to_s3(image)
-    if "url" not in upload:
-        return {'errors': ['Image upload failed']}, 400
-    url = upload['url']
-    print("**********", url)
     if form.validate_on_submit():
+        if "image" not in request.files:
+            return {'errors': ['Image required']}, 400
+        image = request.files['image']
+        if not allowed_file (image.filename):
+            return {'errors': ['Invalid file type']}, 400
+        image.fileName = get_unique_filename(image.filename)
+        upload = upload_file_to_s3(image)
+        if "url" not in upload:
+            return {'errors': ['Image upload failed']}, 400
+        url = upload['url']
+        print("**********", url)
         user = User(
             username=form.data['username'],
             email=form.data['email'],

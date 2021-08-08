@@ -47,6 +47,7 @@ const CreateCharacterForm = () => {
         setPortraitImage(file);
       }
       
+      console.log(typeof(portraitImage))
       
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -65,7 +66,12 @@ const CreateCharacterForm = () => {
       }
       let newCharacter = await dispatch(createCharacter(formData));
       if (newCharacter) {
+        if (newCharacter.errors) {
+          setErrors(Object.values(newCharacter.errors));
+        }
+        else {
         history.push(`/characters/${newCharacter.id}`);
+        }
       }
       };
       
@@ -138,10 +144,11 @@ const CreateCharacterForm = () => {
       }
 
   return (
-    <div className="CreateCharacterForm form">
+    <div className="CreateCharacterForm">
         <div className="CreateCharacterForm-header">
             <h1>Create Character</h1>
         </div>
+        
         <div className="CreateCharacterForm-content">
         <form onSubmit={handleSubmit}>
         <div className="form-element">
@@ -149,7 +156,7 @@ const CreateCharacterForm = () => {
         <input
           type="string"
           placeholder="Name your character"
-          required
+          // required
           value={name}
           onChange={updateName}
         />
@@ -162,7 +169,7 @@ const CreateCharacterForm = () => {
           name='race'
           onChange={updateRaceId}
           value={raceId}
-          required
+          // required
           >
           <option key="0" value="">Choose a Race!</option>
           {charRaces?.map((race) => (
@@ -179,7 +186,7 @@ const CreateCharacterForm = () => {
           name='race'
           onChange={updateClassId}
           value={classId}
-          required
+          // required
           >
           <option key="0" value="">Pick a Class!</option>
           {charClasses?.map((character) => (
@@ -196,7 +203,7 @@ const CreateCharacterForm = () => {
           placeholder="level"
           min="1"
           max="20"
-          required
+          // required
           value={level}
           onChange={updateLevel}
         />
@@ -209,7 +216,7 @@ const CreateCharacterForm = () => {
           name='alignment'
           onChange={updateAlignmentId}
           value={alignmentId}
-          required
+          // required
           >
           <option key="0" value="">Choose an Alignment!</option>
           {charAlignments?.map((alignment) => (
@@ -226,7 +233,7 @@ const CreateCharacterForm = () => {
           name='background'
           onChange={updateBackgroundId}
           value={backgroundId}
-          required
+          // required
           >
           <option key="0" value="">Choose a Background!</option>
           {charBackgrounds?.map((background) => (
@@ -241,7 +248,7 @@ const CreateCharacterForm = () => {
         <textarea
           type="textarea"
           placeholder="Your origin story"
-          required
+          // required
           rows="5"
           columns="30"
           style={{width: "90%"}}
@@ -264,7 +271,7 @@ const CreateCharacterForm = () => {
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
-          </div>
+        </div>
         <button className="btn-submit" type="submit">Create new character</button>
         <button className="btn-cancel" type="button" onClick={handleCancelClick}>
           Cancel
