@@ -50,7 +50,7 @@ def create_character():
         db.session.commit()
         print("createdCharacter---------------------------- ",createdCharacter)
         return createdCharacter.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    return {'errors': (form.errors)}, 401
 
 @characters_routes.route('/<int:id>/', methods=['GET'])
 def get_character(id):
