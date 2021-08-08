@@ -170,7 +170,7 @@ const UpdateCharacterForm = () => {
     
 
   return (
-    <div className="UpdateCharacterForm form">
+    <div className="UpdateCharacterForm">
         <div className="UpdateCharacterForm-header">
             <h1>Update Character</h1>
         </div>

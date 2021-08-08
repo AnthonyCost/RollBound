@@ -144,10 +144,11 @@ const CreateCharacterForm = () => {
       }
 
   return (
-    <div className="CreateCharacterForm form">
+    <div className="CreateCharacterForm">
         <div className="CreateCharacterForm-header">
             <h1>Create Character</h1>
         </div>
+        
         <div className="CreateCharacterForm-content">
         <form onSubmit={handleSubmit}>
         <div className="form-element">
@@ -270,7 +271,7 @@ const CreateCharacterForm = () => {
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
-          </div>
+        </div>
         <button className="btn-submit" type="submit">Create new character</button>
         <button className="btn-cancel" type="button" onClick={handleCancelClick}>
           Cancel
