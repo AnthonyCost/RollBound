@@ -15,18 +15,25 @@ Weave your legend with this D&D character and campaign builder
 > - ### Campaigns
 > - - Create campaigns and add them to your library!
 
-### Characters
-- Create characters from a variety of different races, classes, backgrounds, and alignments to choose from!
+> - ### Characters
+> - - Create characters from a variety of different races, classes, backgrounds, and alignments to choose from!
+
+> - ### AWS S3 Image uploading
+> - - Upload images from your local machine and have them render and display on Rollbound as your profile picture, character portrait, or campaign cover image!
 
 ## Coming Soon
 
-### Characters able to join and leave campaigns
-- Right now the database is set up for it, currently working on implementing this on the front end in a seamless manner and to the same standard as the last two big features.
+> - ### Characters able to join and leave campaigns
+> - - Right now the database is set up for it, currently working on implementing this on the front end in a seamless manner and to the same standard as the last two big features.
 
-### Character Items and Inventory
+> - ### Character Items and Inventory
 
-### Roll Character Stats 
+> - ### Roll Character Stats 
 
-### Mobile Friendly
+> - ### Mobile Friendly
 
 ## Technologies Used
+
+> -  Front End: JavaScript, React, Redux, React-Icons
+> -  Back End: Flask, SQLAlchemy, Postgresql, Python
+> -  Other Programs: Adobe Fresco, AWS S3, Adobe Photshop
