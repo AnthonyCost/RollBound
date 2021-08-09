@@ -8,12 +8,12 @@ Weave your legend with this D&D character and campaign builder
 
 > - RollBound is an application designed where you can bring the characters and campaigns of your imagination to real life! It was designed to function with an easy to understand UI for the user to navigate around the site. Create an account or log in as the demo user to explore RollBound yourself!
 
-Live link [here](https://rollbound.herokuapp.com/login)
+> - Live link [here](https://rollbound.herokuapp.com/login)
 
 ## Features
 
-### Campaigns
-- Create campaigns and add them to your library!
+> - ### Campaigns
+> - - Create campaigns and add them to your library!
 
 ### Characters
 - Create characters from a variety of different races, classes, backgrounds, and alignments to choose from!
