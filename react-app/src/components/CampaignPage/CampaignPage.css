@@ -72,4 +72,10 @@
         display: flex;
         flex-direction: column;
     }
+    .campTab-buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
   }
