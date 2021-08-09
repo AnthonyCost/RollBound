@@ -12,6 +12,21 @@ Live link [here](https://rollbound.herokuapp.com/login)
 
 ## Features
 
+### Campaigns
+- Create campaigns and add them to your library!
+
+### Characters
+- Create characters from a variety of different races, classes, backgrounds, and alignments to choose from!
+
 ## Coming Soon
+
+### Characters able to join and leave campaigns
+- Right now the database is set up for it, currently working on implementing this on the front end in a seamless manner and to the same standard as the last two big features.
+
+### Character Items and Inventory
+
+### Roll Character Stats 
+
+### Mobile Friendly
 
 ## Technologies Used
