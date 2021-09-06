@@ -1,10 +1,6 @@
 .index-campaignsList{
-    /* display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center; */
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 10px;
     row-gap: 15px;
@@ -39,3 +35,17 @@
     align-items: center;
 
 }
+
+@media (max-width: 1281px){
+    .index-campaignsList{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto;
+        column-gap: 10px;
+        row-gap: 15px;
+        height: 100%;
+    }
+    .allCamp-container {
+        width: 100%;
+    }
+  }
