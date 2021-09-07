@@ -315,3 +315,37 @@ button:hover {
 a  {
     text-decoration: none;
 }
+
+.btn-cancel{
+    font-family: "Balgruf";
+    outline: none;
+    display: block;
+    border: solid 1px #fd003f;
+    color: #fd003f;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #140303;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.btn-cancel:focus {
+    background-color: #fd003f;
+    color: #140303;
+  }
+  
+.btn-cancel:active {
+    background: #fd003f;
+    color: #fd003f;
+    border: solid 1px #fd003f;
+  }
+  
+.btn-cancel:hover {
+    background-color: #fd003f;
+    color: #140303;
+  }
