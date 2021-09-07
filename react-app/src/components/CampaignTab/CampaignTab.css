@@ -25,9 +25,16 @@
     padding-right: 10px;
 }
 
-/* .campTab-single {
+.campTab-buttonSingle a p {
+    color: #00FDEC;
+    transition: 300ms;
+}
 
-} */
+.campTab-buttonSingle a p:hover {
+    color: white;
+    border-radius: 3px;
+    transition: 300ms;
+}
 
 .campTab-cover {
     border: 0;
@@ -56,5 +63,4 @@
 .campTab-hostedBy {
     font-family: "Balgruf";
     font-size: 3px;
-
 }

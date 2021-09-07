@@ -403,13 +403,18 @@ a  {
     width: 100vw;
 }
 
-.campTab-buttons .campTab-buttonSingle .deleteCampaignForm-container .deleteCampaignPrompt .deleteCampaign-container {
+/* .campTab-buttons .campTab-buttonSingle .deleteCampaignForm-container .deleteCampaignPrompt .deleteCampaign-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-content: center;
+    padding: 20px;
     position: absolute;
+    top: 0;
     left: 0;
-    width: 100vw;
-}
+    width: 40vw;
+    margin-left: 30vw;
+    background-color: #00000093;
+    border-radius: 10px;
+} */
