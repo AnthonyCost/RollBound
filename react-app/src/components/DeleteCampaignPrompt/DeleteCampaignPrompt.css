@@ -4,12 +4,15 @@
     flex-direction: row;
 }
 
-.deleteCampaign-banner h2 {
+.deleteCampaign-banner {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.deleteCampaign-banner h2 {
     margin: 0;
-    font-size: 1em;
+    font-size: .9em;
 }
 
 .no-btn {
