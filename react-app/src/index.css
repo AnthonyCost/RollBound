@@ -248,6 +248,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .form-errors {
@@ -314,4 +315,101 @@ button:hover {
 
 a  {
     text-decoration: none;
+}
+
+.btn-cancel{
+    font-family: "Balgruf";
+    outline: none;
+    display: block;
+    border: solid 1px #fd003f;
+    color: #fd003f;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #140303;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+    text-decoration: none;
+    width:200px;
+    height: 2.5rem;
+}
+
+.btn-cancel:focus {
+    background-color: #fd003f;
+    color: #140303;
+  }
+  
+.btn-cancel:active {
+    background: #fd003f;
+    color: #fd003f;
+    border: solid 1px #fd003f;
+  }
+  
+.btn-cancel:hover {
+    background-color: #fd003f;
+    color: #140303;
+  }
+
+  .btn-submit{
+    font-family: "Balgruf";
+    outline: none;
+    display: block;
+    border: solid 1px #00fd69;
+    color: #00fd69;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #03140c;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+    text-decoration: none;
+    width:200px;
+    height: 2.5rem;
+}
+
+.btn-submit:focus {
+    background-color: #00fd69;
+    color: #03140c;
+  }
+  
+.btn-submit:active {
+    background: #00fd69;
+    color: #00fd69;
+    border: solid 1px #00fd69;
+  }
+  
+.btn-submit:hover {
+    background-color: #00fd69;
+    color: #03140c;
+  }
+
+  /* delete prompts on tabs */
+
+.charTab-buttons .charTab-buttonSingle .deleteCharacterForm-container .deleteCharacterPrompt .deleteCharacter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: -200;
+    left: 0;
+    width: 100vw;
+}
+
+.campTab-buttons .campTab-buttonSingle .deleteCampaignForm-container .deleteCampaignPrompt .deleteCampaign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 2px;
+    background-color: #00000093;
+    border-radius: 10px;
 }

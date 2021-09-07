@@ -27,9 +27,9 @@ const DeleteCharacterPrompt = ({setShowModal, characterId}) => {
 
 
   return (
-    <div className="deleteCampaign-container">
-      <div className="deleteCampaign-banner">
-        <h1>Are you sure you want to delete {currentCharacter?.name}?</h1>
+    <div className="deleteCharacter-container">
+      <div className="deleteCharacter-banner">
+        <h2>Are you sure you want to delete {currentCharacter?.name}?</h2>
       </div>
       <div>
       <form onSubmit={handleSubmit}>
