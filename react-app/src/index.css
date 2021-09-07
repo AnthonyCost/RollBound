@@ -248,6 +248,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .form-errors {
@@ -332,6 +333,7 @@ a  {
     transition: all 0.3s linear;
     margin: 5px;
     text-decoration: none;
+    width:40%;
 }
 
 .btn-cancel:focus {
@@ -348,4 +350,39 @@ a  {
 .btn-cancel:hover {
     background-color: #fd003f;
     color: #140303;
+  }
+
+  .btn-submit{
+    font-family: "Balgruf";
+    outline: none;
+    display: block;
+    border: solid 1px #00fd69;
+    color: #00fd69;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #03140c;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+    text-decoration: none;
+    width:40%;
+}
+
+.btn-submit:focus {
+    background-color: #00fd69;
+    color: #03140c;
+  }
+  
+.btn-submit:active {
+    background: #00fd69;
+    color: #00fd69;
+    border: solid 1px #00fd69;
+  }
+  
+.btn-submit:hover {
+    background-color: #00fd69;
+    color: #03140c;
   }
