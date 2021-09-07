@@ -333,7 +333,7 @@ a  {
     transition: all 0.3s linear;
     margin: 5px;
     text-decoration: none;
-    width:40%;
+    width:200px;
 }
 
 .btn-cancel:focus {
@@ -368,7 +368,7 @@ a  {
     transition: all 0.3s linear;
     margin: 5px;
     text-decoration: none;
-    width:40%;
+    width:200px;
 }
 
 .btn-submit:focus {
