@@ -388,3 +388,17 @@ a  {
     background-color: #00fd69;
     color: #03140c;
   }
+
+  /* delete prompts on tabs */
+
+.charTab-buttons .charTab-buttonSingle .deleteCharacterForm-container .deleteCharacterPrompt .deleteCharacter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: -200;
+    left: 0;
+    width: 100vw;
+}

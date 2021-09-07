@@ -7,7 +7,7 @@ function DeleteCharacterModal({characterId}) {
 
 
   return (
-    <div className="deleteCampaignForm-container">
+    <div className="deleteCharacterForm-container">
       <button className="btn" onClick={() => setShowModal(prev => !prev)}>
         Delete Character
       </button>
