@@ -334,6 +334,7 @@ a  {
     margin: 5px;
     text-decoration: none;
     width:200px;
+    height: 2.5rem;
 }
 
 .btn-cancel:focus {
@@ -369,6 +370,7 @@ a  {
     margin: 5px;
     text-decoration: none;
     width:200px;
+    height: 2.5rem;
 }
 
 .btn-submit:focus {
