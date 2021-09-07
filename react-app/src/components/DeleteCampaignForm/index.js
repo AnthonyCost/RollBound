@@ -6,7 +6,7 @@ function DeleteCampaignModal({campaignId}) {
   const [showModal, setShowModal] = useState(false);;
 
   return (
-    <div>
+    <div className="deleteCampaignForm-container">
       <button className="btn" onClick={() => setShowModal(prev => !prev)}>
         Delete Campaign
       </button>
