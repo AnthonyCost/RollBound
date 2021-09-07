@@ -29,7 +29,7 @@ const DeleteCampaignPrompt = ({setShowModal, campaignId}) => {
   return (
     <div className="deleteCampaign-container">
       <div className="deleteCampaign-banner">
-        <h1>Are you sure you want to delete {currentCampaign?.title}?</h1>
+        <h2>Are you sure you want to delete {currentCampaign?.title}?</h2>
       </div>
       <div>
       <form onSubmit={handleSubmit}>
