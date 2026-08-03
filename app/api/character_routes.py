@@ -25,6 +25,19 @@ def create_character():
     """
     form = CreateCharacterForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+# Start of debugging here
+    print("=== DEBUG: CREATE CHARACTER ===")
+    print(f"Request form keys: {list(request.form.keys())}")
+    print(f"Request files keys: {list(request.files.keys())}")
+    print(f"CSRF token in cookie: {request.cookies.get('csrf_token', 'MISSING')}")
+    
+    form = CreateCharacterForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    
+    if not form.validate_on_submit():
+        print(f"FORM VALIDATION FAILED: {form.errors}")
+        return {'errors': form.errors}, 400
+    # End debugging here
     if form.validate_on_submit():
         if "portraitImage" not in request.files:
                 return {'errors': ['Image required']}, 400
