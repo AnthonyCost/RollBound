@@ -37,7 +37,7 @@ def create_character():
     if not form.validate_on_submit():
         print(f"FORM VALIDATION FAILED: {form.errors}")
         return {'errors': form.errors}, 400
-    # End debugging here
+# End debugging here
     if form.validate_on_submit():
         if "portraitImage" not in request.files:
                 return {'errors': ['Image required']}, 400
