@@ -13,6 +13,12 @@ class Character(db.Model):
     raceId = db.Column(db.Integer, db.ForeignKey('races.id'), nullable=False)
     alignmentId = db.Column(db.Integer, db.ForeignKey('alignments.id'), nullable=False)
     backgroundId = db.Column(db.Integer, db.ForeignKey('backgrounds.id'), nullable=False)
+    strengthAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
+    dexterityAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
+    constitutionAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
+    intelligenceAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
+    wisdomAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
+    charismaAttributeValue = db.Column(db.Integer, nullable=False, server_default='10')
     portraitImage = db.Column(db.String(255), nullable=False)
     backstory = db.Column(db.Text, nullable=False)
 
@@ -32,6 +38,12 @@ class Character(db.Model):
         'race': self.race.to_dict(),
         'alignment': self.alignment.to_dict(),
         'background': self.background.to_dict(),
+        'strengthAttributeValue': self.strengthAttributeValue,
+        'dexterityAttributeValue': self.dexterityAttributeValue,
+        'constitutionAttributeValue': self.constitutionAttributeValue,
+        'intelligenceAttributeValue': self.intelligenceAttributeValue,
+        'wisdomAttributeValue': self.wisdomAttributeValue,
+        'charismaAttributeValue': self.charismaAttributeValue,
         'portraitImage': self.portraitImage,
         'backstory': self.backstory
         }
