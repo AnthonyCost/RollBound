@@ -29,6 +29,12 @@ const CreateCharacterForm = () => {
     const [raceId, setRaceId] = useState('');
     const [alignmentId, setAlignmentId] = useState('');
     const [backgroundId, setBackgroundId] = useState('');
+    const [strengthAttributeValue, setStrengthAttributeValue] = useState('10');
+    const [dexterityAttributeValue, setDexterityAttributeValue] = useState('10');
+    const [constitutionAttributeValue, setConstitutionAttributeValue] = useState('10');
+    const [intelligenceAttributeValue, setIntelligenceAttributeValue] = useState('10');
+    const [wisdomAttributeValue, setWisdomAttributeValue] = useState('10');
+    const [charismaAttributeValue, setCharismaAttributeValue] = useState('10');
     const [backstory, setBackStory] = useState('');
     const [portraitImage, setPortraitImage] = useState(null);
     const [imageLoading] = useState(false);
@@ -41,6 +47,12 @@ const CreateCharacterForm = () => {
     const updateRaceId = (e) => setRaceId(e.target.value);
     const updateAlignmentId = (e) => setAlignmentId(e.target.value);
     const updateBackgroundId = (e) => setBackgroundId(e.target.value);
+    const updateStrengthAttributeValue = (e) => setStrengthAttributeValue(e.target.value);
+    const updateDexterityAttributeValue = (e) => setDexterityAttributeValue(e.target.value);
+    const updateConstitutionAttributeValue = (e) => setConstitutionAttributeValue(e.target.value);
+    const updateIntelligenceAttributeValue = (e) => setIntelligenceAttributeValue(e.target.value);
+    const updateWisdomAttributeValue = (e) => setWisdomAttributeValue(e.target.value);
+    const updateCharismaAttributeValue = (e) => setCharismaAttributeValue(e.target.value);
     const updateBackStory = (e) => setBackStory(e.target.value);
     const updatePortraitImage = (e) => {
       const file = e.target.files[0];
@@ -58,6 +70,12 @@ const CreateCharacterForm = () => {
     formData.append('raceId', parseInt(raceId));
     formData.append('alignmentId', parseInt(alignmentId));
     formData.append('backgroundId', parseInt(backgroundId));
+    formData.append('strengthAttributeValue', parseInt(strengthAttributeValue));
+    formData.append('dexterityAttributeValue', parseInt(dexterityAttributeValue));
+    formData.append('constitutionAttributeValue', parseInt(constitutionAttributeValue));
+    formData.append('intelligenceAttributeValue', parseInt(intelligenceAttributeValue));
+    formData.append('wisdomAttributeValue', parseInt(wisdomAttributeValue));
+    formData.append('charismaAttributeValue', parseInt(charismaAttributeValue));
     formData.append('backstory', backstory);
     if (portraitImage) {
         formData.append('portraitImage', portraitImage);
@@ -239,6 +257,72 @@ const CreateCharacterForm = () => {
               ))}
         </select>
         {backgroundInfo}
+        </div>
+
+        <div className="form-element">
+        <label>Strength</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={strengthAttributeValue}
+          onChange={updateStrengthAttributeValue}
+        />
+        </div>
+
+        <div className="form-element">
+        <label>Dexterity</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={dexterityAttributeValue}
+          onChange={updateDexterityAttributeValue}
+        />
+        </div>
+
+        <div className="form-element">
+        <label>Constitution</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={constitutionAttributeValue}
+          onChange={updateConstitutionAttributeValue}
+        />
+        </div>
+
+        <div className="form-element">
+        <label>Intelligence</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={intelligenceAttributeValue}
+          onChange={updateIntelligenceAttributeValue}
+        />
+        </div>
+
+        <div className="form-element">
+        <label>Wisdom</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={wisdomAttributeValue}
+          onChange={updateWisdomAttributeValue}
+        />
+        </div>
+
+        <div className="form-element">
+        <label>Charisma</label>
+        <input
+          type="number"
+          min="1"
+          max="30"
+          value={charismaAttributeValue}
+          onChange={updateCharismaAttributeValue}
+        />
         </div>
 
         <div className="form-element">
