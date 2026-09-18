@@ -44,6 +44,12 @@ def create_character():
         createdCharacter.raceId = request.form['raceId']
         createdCharacter.alignmentId = request.form['alignmentId']
         createdCharacter.backgroundId = request.form['backgroundId']
+        createdCharacter.strengthAttributeValue = request.form.get('strengthAttributeValue', 10)
+        createdCharacter.dexterityAttributeValue = request.form.get('dexterityAttributeValue', 10)
+        createdCharacter.constitutionAttributeValue = request.form.get('constitutionAttributeValue', 10)
+        createdCharacter.intelligenceAttributeValue = request.form.get('intelligenceAttributeValue', 10)
+        createdCharacter.wisdomAttributeValue = request.form.get('wisdomAttributeValue', 10)
+        createdCharacter.charismaAttributeValue = request.form.get('charismaAttributeValue', 10)
         createdCharacter.backstory = request.form['backstory']
         createdCharacter.portraitImage = url
         db.session.add(createdCharacter)
@@ -104,6 +110,12 @@ def update_character(id):
     updatedCharacter.raceId = request.form['raceId']
     updatedCharacter.alignmentId = request.form['alignmentId']
     updatedCharacter.backgroundId = request.form['backgroundId']
+    updatedCharacter.strengthAttributeValue = request.form.get('strengthAttributeValue', updatedCharacter.strengthAttributeValue)
+    updatedCharacter.dexterityAttributeValue = request.form.get('dexterityAttributeValue', updatedCharacter.dexterityAttributeValue)
+    updatedCharacter.constitutionAttributeValue = request.form.get('constitutionAttributeValue', updatedCharacter.constitutionAttributeValue)
+    updatedCharacter.intelligenceAttributeValue = request.form.get('intelligenceAttributeValue', updatedCharacter.intelligenceAttributeValue)
+    updatedCharacter.wisdomAttributeValue = request.form.get('wisdomAttributeValue', updatedCharacter.wisdomAttributeValue)
+    updatedCharacter.charismaAttributeValue = request.form.get('charismaAttributeValue', updatedCharacter.charismaAttributeValue)
     updatedCharacter.backstory = request.form['backstory']
     updatedCharacter.portraitImage = selectedImage
     # db.session.add(updatedCharacter)
